@@ -1,6 +1,7 @@
 <template>
   <main>
     <section>
+      <img class="theme-btn" @click="toggleTheme" :src="png" alt="dark-light" />
       <h3>Hi, my name is...</h3>
       <h1>Moe Ezzeldin</h1>
       <h2>Junior Developer && Cloud Eng</h2>
@@ -10,50 +11,123 @@
         blah blah
       </p>
     </section>
+    <!-- Nav -->
     <nav class="nav">
-      <a href="#About"><span></span>About</a>
-      <a href="#Pro-exp"><span></span>Experience</a>
-      <a href="#Projects"><span></span>Projects</a>
-      <a href="#CONNECT"><span></span>Connect</a>
+      <ul>
+        <li>
+          <a href="#About"><span></span>About</a>
+        </li>
+        <li>
+          <a href="#Pro-exp"><span></span>Experience</a>
+        </li>
+        <li>
+          <a href="#Projects"><span></span>Projects</a>
+        </li>
+        <li>
+          <a href="#CONNECT"><span></span>Connect</a>
+        </li>
+      </ul>
     </nav>
     <footer>
       <!-- Links and Icons for CONTACT -->
-      <a href="https://example.com/link1">
-        <img src="../assets/github_3291695.png" alt="Description of Image 1" />
+      <a href="https://github.com/MoeEzzeldin" target="_blank">
+        <img :src="gitHub" alt="Description of Image 1" />
       </a>
-      <a href="https://example.com/link2">
-        <img src="../assets/linkedin_3992606.png" alt="Description of Image 2" />
+      <a href="https://www.linkedin.com/in/moe-ezz-columbus-ohio/" target="_blank">
+        <img :src="linkedIn" alt="" />
       </a>
-      <a href="https://example.com/link3">
-        <img src="../assets/envelope_15047426.png" alt="Description of Image 3" />
+      <a href="mailto:ezzeldin.mo3@gmail.com" target="_blank">
+        <img :src="gmail" alt="" />
       </a>
-      <a href="https://example.com/link3">
-        <img src="../assets/phone-call_455907.png" alt="Description of Image 3" />
+      <a href="'tel:' + 6148169143">
+        <img :src="phone" alt="phone icon" />
       </a>
     </footer>
   </main>
 </template>
 
 <script>
-export default {}
+import switchLight from '@/assets/darkpng.png'
+import switchDark from '@/assets/lightpng.png'
+
+import gitLight from '@/assets/github-l.png'
+import gitDark from '@/assets/github-d.png'
+
+import inLight from '@/assets/in-l.png'
+import inDark from '@/assets/in-l.png'
+
+import mailLight from '@/assets/gmail-l.png'
+import mailDark from '@/assets/gmail-d.png'
+
+import phoneLight from '@/assets/phone-l.png'
+import phoneDark from '@/assets/phone-d.png'
+
+export default {
+  data() {
+    return {
+      theme: localStorage.getItem('theme') || 'light',
+      png: localStorage.getItem('png') || switchLight,
+      gitHub: localStorage.getItem('gitHub') || gitLight,
+      linkedIn: localStorage.getItem('linkedIn') || inLight,
+      gmail: localStorage.getItem('gmail') || mailLight,
+      phone: localStorage.getItem('phone') || phoneLight
+    }
+  },
+  mounted() {
+    // Apply the saved theme or the default when the component is mounted
+    document.documentElement.setAttribute('data-theme', this.theme)
+  },
+  methods: {
+    toggleTheme() {
+      this.theme = this.theme === 'light' ? 'dark' : 'light'
+      this.png = this.getThemePng() === switchLight ? switchDark : switchLight
+      this.gitHub = this.getGitPng()
+      this.linkedIn = this.getInPng()
+      this.gmail = this.getGmailPng()
+      this.phone = this.getPhonePng()
+      document.documentElement.setAttribute('data-theme', this.theme)
+      localStorage.setItem('theme', this.theme)
+      localStorage.setItem('png', this.png)
+      localStorage.setItem('gitHub', this.gitHub)
+      localStorage.setItem('linkedIn', this.linkedIn)
+      localStorage.setItem('gmail', this.gmail)
+      localStorage.setItem('phone', this.phone)
+    },
+    getThemePng() {
+      return this.theme === 'light' ? switchDark : switchLight
+    },
+    getGitPng() {
+      return this.theme === 'light' ? gitLight : gitDark
+    },
+    getInPng() {
+      return this.theme === 'light' ? inLight : inDark
+    },
+    getGmailPng() {
+      return this.theme === 'light' ? mailLight : mailDark
+    },
+    getPhonePng() {
+      return this.theme === 'light' ? phoneLight : phoneDark
+    }
+  }
+}
 </script>
 
 <style scoped>
-/* Dark Mode Palette:
-Background: #1E1E1E (Very dark gray)
-Primary Text: #E0E0E0 (Light gray)
-Secondary Text: #B0B0B0 (Medium gray)
-Accent: #4CAF50 (Green)
-Light Mode Palette:
-Background: #F5F5F5 (Light gray)
-Primary Text: #333333 (Very dark gray)
-Secondary Text: #666666 (Medium gray)
-Accent: #4CAF50 (Green) */
 main {
   font-family: 'Poppins', sans-serif;
   display: grid;
   grid-template-rows: 1fr 0.6fr 0.6fr;
   gap: 25px;
+  box-sizing: border-box;
+}
+
+.theme-btn {
+  height: 50px;
+  position: absolute;
+  left: -65px;
+  top: 7px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 main h1 {
   font-weight: 700;
@@ -68,23 +142,18 @@ main h3 {
   color: #4caf50;
 }
 main h2 {
-  color: wheat;
   font-weight: 500;
   font-style: normal;
 }
 main p {
-  color: #b0b0b0;
   font-weight: 300;
   font-style: normal;
-  overflow-wrap: break-word; /* Also known as word-wrap */
-  word-break: break-word; /* Fallback for older browsers */
+  width:calc();
 }
 .nav {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
-footer{
-
+footer {
 }
 
 footer a img {
