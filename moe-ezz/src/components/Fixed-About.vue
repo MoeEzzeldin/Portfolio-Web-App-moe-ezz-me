@@ -16,13 +16,13 @@
     <nav class="nav">
       <ul class="list">
         <li class="holder">
-          <span></span><a class="link" href="#About"><span></span>About</a>
+          <span></span><a class="link" href="#about"><span></span>About</a>
         </li>
         <li class="holder">
-          <span></span><a class="link" href="#Pro-exp"><span></span>Experience</a>
+          <span></span><a class="link" href="#experience"><span></span>Experience</a>
         </li>
         <li class="holder">
-          <span></span><a class="link" href="#Projects"><span></span>Projects</a>
+          <span></span><a class="link" href="#projects"><span></span>Projects</a>
         </li>
       </ul>
     </nav>
@@ -40,10 +40,10 @@
       <a href="'tel:' + 6148169143">
         <img :src="icons.phone" alt="phone icon" />
       </a>
-    </footer>
-    <div class="copy">
+      <div class="copy">
       <p>© 2024 Moe Ezzeldin. All rights reserved.</p>
     </div>
+    </footer>
   </main>
 </template>
 
@@ -70,7 +70,7 @@ export default {
 main {
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 0.5fr 0.3fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 0.3fr;
   gap: 25px;
   box-sizing: border-box;
 }
@@ -87,12 +87,14 @@ main .header > * {
 }
 
 main .greet {
-  font-family: 'Pixelify Sans', sans-serif;
+  /* font-family: 'Pixelify Sans', sans-serif; */
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  color: #4caf50;
-}
+  background: linear-gradient(to right, rgb(255, 106, 0), blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;}
 
 main .name {
   font-weight: 700;
@@ -105,7 +107,7 @@ main .name {
 main .whomi {
   font-weight: 700;
   font-style: normal;
-  background: linear-gradient(to right, blue, red);
+  background: linear-gradient(to right, rgb(255, 106, 0), blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -121,6 +123,7 @@ main .nav {
   justify-content: left;
   align-items: center;
   width: 100px;
+  margin-bottom: 100px;
 }
 
 main .list {
@@ -132,20 +135,19 @@ main .list {
 }
 
 main .list > * {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
 }
 
 main .holder {
+  display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 25px;
 }
 
-main .holder:hover span:not(link) {
+main .holder:hover span {
   height: 3px;
-  width: 100px;
-  /* transform:scale(1.1) ; */
-  transition: transform 6s ease; /* Smooth scaling */
+  width: 75px;
+  transform: scale(1.1);
 }
 
 main .list span {
@@ -154,13 +156,24 @@ main .list span {
   width: 50px;
   font-weight: 700;
   font-style: normal;
-  background: linear-gradient(to right, rgb(255, 106, 0), rgb(234, 255, 0));
+  background: linear-gradient(to right, rgb(255, 106, 0), rgb(90, 60, 240));
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease;
 }
 
 main .list a {
   text-decoration: none;
   color: var(--text-color);
   padding: 10px 0;
+  transform: scale(1.1);
+}
+main .holder:hover a {
+  transform: scale(1.3);
+  background: linear-gradient(to right, rgb(255, 89, 0), rgb(255, 204, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 footer {
@@ -169,6 +182,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  gap: 20px;
 }
 
 footer a img {

@@ -136,7 +136,16 @@ export default {
   right: 25px;
   top: 25px;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, height  0.3s ease;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 1),/* Outer glow */
+              0 0 15px rgba(255, 255, 255, 0.6); /* Softer, spread-out glow */
+  transition: box-shadow 0.3s ease;
+  border-radius: 100%;
+}
+.theme-btn:hover {
+  transition: scale(1.1);
+  box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.8),  /* Brighter glow on hover */
+              0 0 60px rgba(255, 255, 255, 0.8);
 }
 /* Mobile */
 @media (max-width: 767px) {

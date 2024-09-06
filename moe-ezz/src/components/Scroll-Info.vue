@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section>
+    <section id="About">
       <h1>Hello Im About</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptatum tempore
