@@ -41,8 +41,8 @@
         <img :src="icons.phone" alt="phone icon" />
       </a>
       <div class="copy">
-      <p>© 2024 Moe Ezzeldin. All rights reserved.</p>
-    </div>
+        <p>© 2024 Moe Ezzeldin. All rights reserved.</p>
+      </div>
     </footer>
   </main>
 </template>
@@ -94,7 +94,8 @@ main .greet {
   background: linear-gradient(to right, rgb(255, 106, 0), blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;}
+  background-clip: text;
+}
 
 main .name {
   font-weight: 700;

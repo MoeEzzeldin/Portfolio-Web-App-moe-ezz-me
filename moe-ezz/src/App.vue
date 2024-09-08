@@ -9,7 +9,7 @@
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div class="scroll">
         <div class="about">
-          <ScrollInfo />
+          <About />
         </div>
         <div class="experience">
           <Experience />
@@ -24,7 +24,7 @@
 
 <script>
 import FixedAbout from './components/Fixed-About.vue'
-import ScrollInfo from './components/Scroll-Info.vue'
+import About from './components/About-me.vue'
 import Experience from './components/Experience.vue'
 import Projects from './components/Projects.vue'
 
@@ -45,7 +45,7 @@ import phoneDark from '@/assets/phone-d.png'
 export default {
   components: {
     FixedAbout,
-    ScrollInfo,
+    About,
     Experience,
     Projects
   },
@@ -73,7 +73,13 @@ export default {
       this.icons.linkedIn = this.getInPng()
       this.icons.gmail = this.getGmailPng()
       this.icons.phone = this.getPhonePng()
+      this.setDocToCurrent()
+      this.setLocalStorage()
+    },
+    setDocToCurrent() {
       document.documentElement.setAttribute('data-theme', this.theme)
+    },
+    setLocalStorage() {
       localStorage.setItem('theme', this.theme)
       localStorage.setItem('png', this.icons.png)
       localStorage.setItem('gitHub', this.icons.gitHub)
@@ -136,16 +142,21 @@ export default {
   right: 25px;
   top: 25px;
   cursor: pointer;
-  transition: opacity 0.3s ease, height  0.3s ease;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 1),/* Outer glow */
-              0 0 15px rgba(255, 255, 255, 0.6); /* Softer, spread-out glow */
+  transition:
+    opacity 0.3s ease,
+    height 0.3s ease;
+  box-shadow:
+    0 0 5px var(--hover-color),
+    /* Outer glow */ 0 0 15px rgba(255, 255, 255, 0.6); /* Softer, spread-out glow */
+  box-shadow: 0 0 5px var(--hover-color);
   transition: box-shadow 0.3s ease;
   border-radius: 100%;
 }
 .theme-btn:hover {
   transition: scale(1.1);
-  box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.8),  /* Brighter glow on hover */
-              0 0 60px rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 0 20px 10px var(--accent-color),
+    0 0 60px rgba(255, 255, 255, 0.8);
 }
 /* Mobile */
 @media (max-width: 767px) {
