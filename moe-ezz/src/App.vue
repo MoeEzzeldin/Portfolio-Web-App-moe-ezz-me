@@ -1,15 +1,17 @@
 <template>
+  <!-- I want this png to also expand the background color@click -->
   <img class="theme-btn" @click="toggleTheme" :src="icons.png" alt="dark-light" />
   <main class="main">
+
     <div class="container">
       <!-- my info / Pic -->
-      <div class="fixed">
-        <FixedAbout :theme :icons />
+      <div class="sticky">
+        <Sticky-About :theme :icons />
       </div>
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div class="scroll">
         <div class="about">
-          <About />
+          <ElPitch />
         </div>
         <div class="experience">
           <Experience />
@@ -23,8 +25,8 @@
 </template>
 
 <script>
-import FixedAbout from './components/Fixed-About.vue'
-import About from './components/About-me.vue'
+import StickyAbout from './components/Sticky-About.vue'
+import ElPitch from './components/El-Pitch.vue'
 import Experience from './components/Experience.vue'
 import Projects from './components/Projects.vue'
 
@@ -44,10 +46,10 @@ import phoneLight from '@/assets/phone-l.png'
 import phoneDark from '@/assets/phone-d.png'
 export default {
   components: {
-    FixedAbout,
-    About,
+    StickyAbout,
+    ElPitch,
     Experience,
-    Projects
+    Projects,
   },
   data() {
     return {
@@ -112,8 +114,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
   color: var(--text-color);
+  padding-top: 65px;
 }
 /* content container carries my fixed and scroll */
 .container {
@@ -121,20 +123,25 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
 }
-.fixed,
+
+/* devided the width on my sticky and scroll wraps*/
+.sticky,
 .scroll {
   width: 48%;
 }
-
-.fixed {
+/*  */
+.sticky {
+  height: 80vh;
   position: sticky;
-  top: 50px;
+  top: 65px;
 }
 
 .scroll {
   display: grid;
   gap: 20px;
+  height: fit-content;
 }
 .theme-btn {
   height: 40px;
@@ -142,40 +149,43 @@ export default {
   right: 25px;
   top: 25px;
   cursor: pointer;
+  /* fix effect */
   transition:
     opacity 0.3s ease,
     height 0.3s ease;
   box-shadow:
     0 0 5px var(--hover-color),
-    /* Outer glow */ 0 0 15px rgba(255, 255, 255, 0.6); /* Softer, spread-out glow */
+    0 0 5px rgba(255, 255, 255, 0.6); 
   box-shadow: 0 0 5px var(--hover-color);
   transition: box-shadow 0.3s ease;
-  border-radius: 100%;
+  border-radius: 100%; 
 }
 .theme-btn:hover {
   transition: scale(1.1);
   box-shadow:
-    0 0 20px 10px var(--accent-color),
-    0 0 60px rgba(255, 255, 255, 0.8);
+    0 0 8px 1px var(--accent-color),
+    0 0 8px 1px rgba(255, 255, 255, 0.8); 
 }
 /* Mobile */
-@media (max-width: 767px) {
+
+@media (max-width: 992px) {
   /* Styles for mobile devices */
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     padding: 0;
   }
-  .fixed,
+  .sticky,
   .scroll {
     padding: 0;
     text-align: left;
     width: 100%;
   }
-  .fixed {
+  .sticky {
     position: static;
+    height: 100vh ;
   }
   .scroll {
     margin: 0;

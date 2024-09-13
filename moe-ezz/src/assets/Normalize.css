@@ -1,13 +1,15 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Color Palette */
 :root {
-  --background-color: #c7e6ff; /* Primary Background */
-  --card-background: #eee4f4; /* Secondary Background / Cards */
-  --text-color: #000000; /* Text */
-  --heading-color: #30004b; /* Headings */
-  --accent-color: #8a2be2; /* Accent */
-  --hover-color: #ff4081; /* Hover */
-  --border-color: #dddddd; /* Borders / Dividers */
+  --background-color: #d4eeff; /* Light background */
+  --card-background: #c3e8ff; /* Lighter card background */
+  --accent-color: #5d546f; /* Darker surface as accent */
+  --text-color: #170e30; /* Dark text for readability */
+  --heading-color: #2d2444; /* Darker heading color */
+  --hover-color: #766e86; /* Darker hover effect */
+  --border-color: #2d2444; /* Dark surface for subtle borders */
+  --button-color: #453c59; /* Surface color for buttons */
+  --input-color: #b9e4ff; /* Light input background */
 }
 
 /* Dark Mode */
@@ -18,30 +20,27 @@
   --heading-color: #f5f5f5;
   --accent-color: #18ffff;
   --hover-color: #8e24aa;
-  --border-color: #555555;
+  --border-color: #ccebff; /* Light primary color for borders */
+  --button-color: #c3e8ff; /* Light but noticeable button color */
+  --input-color: #5d546f; /* Input color that's a little lighter than the card */
   transition: background-color 0.8s ease;
+
 }
-
-
 
 :root {
   --font-small: 12px;
   --font-medium: 16px;
   --font-large: 20px;
   --font-xlarge: 24px;
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font: '';
 }
 
 /* Dark Mode */
-[data-theme='dark'] {
-  --font-small: 13px;
-  --font-medium: 17px;
-  --font-large: 21px;
-  --font-xlarge: 25px;
-}
+
 /* Document
    ========================================================================== */
 /* Color Theme Swatches in Hex */
-
 
 /**
  * 1. Correct the line height in all browsers.
@@ -60,18 +59,19 @@ html {
 /**
    * Remove the margin in all browsers.
    */
-*{
+* {
   margin: 0;
 }
 body {
+  scroll-behavior: smooth;
   height: 100%;
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.8s ease;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--primary-font);
 }
-#app{
+#app {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -133,7 +133,6 @@ a {
   font-style: normal;
   color: #4caf50;
   letter-spacing: 1.5px;
-
 }
 
 /**

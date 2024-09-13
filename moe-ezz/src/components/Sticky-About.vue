@@ -28,18 +28,20 @@
     </nav>
     <footer>
       <!-- Links and Icons for CONTACT -->
-      <a href="https://github.com/MoeEzzeldin" target="_blank">
-        <img :src="icons.gitHub" alt="Description of Image 1" />
-      </a>
-      <a href="https://www.linkedin.com/in/moe-ezz-columbus-ohio/" target="_blank">
-        <img :src="icons.linkedIn" alt="" />
-      </a>
-      <a href="mailto:ezzeldin.mo3@gmail.com" target="_blank">
-        <img :src="icons.gmail" alt="" />
-      </a>
-      <a href="'tel:' + 6148169143">
-        <img :src="icons.phone" alt="phone icon" />
-      </a>
+       <div class="icons">
+         <a href="https://github.com/MoeEzzeldin" target="_blank">
+           <img :src="icons.gitHub" alt="Description of Image 1" />
+         </a>
+         <a href="https://www.linkedin.com/in/moe-ezz-columbus-ohio/" target="_blank">
+           <img :src="icons.linkedIn" alt="" />
+         </a>
+         <a href="mailto:ezzeldin.mo3@gmail.com" target="_blank">
+           <img :src="icons.gmail" alt="" />
+         </a>
+         <a href="'tel:' + 6148169143">
+           <img :src="icons.phone" alt="phone icon" />
+         </a>
+       </div>
       <div class="copy">
         <p>© 2024 Moe Ezzeldin. All rights reserved.</p>
       </div>
@@ -49,7 +51,7 @@
 
 <script>
 export default {
-  name: 'Fixed-About',
+  name: 'Sticky-About',
   props: {
     theme: {
       type: String,
@@ -70,10 +72,13 @@ export default {
 main {
   height: 100vh;
   display: grid;
-  grid-template-rows: 0.5fr 0.5fr 0.3fr;
+  grid-template-rows: 0.3fr 0.3fr 0.3fr;
   gap: 25px;
   box-sizing: border-box;
 }
+
+
+
 
 main .header {
   display: flex;
@@ -123,8 +128,7 @@ main .nav {
   display: flex;
   justify-content: left;
   align-items: center;
-  width: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 main .list {
@@ -158,9 +162,7 @@ main .list span {
   font-weight: 700;
   font-style: normal;
   background: linear-gradient(to right, rgb(255, 106, 0), rgb(90, 60, 240));
-  transition:
-    transform 0.3s ease,
-    width 0.3s ease;
+  transition: transform 0.3s ease, width 0.3s ease;
 }
 
 main .list a {
@@ -178,18 +180,37 @@ main .holder:hover a {
 }
 
 footer {
-  height: 50px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .icons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   gap: 20px;
+  width: 100%;
 }
+
+footer .copy{
+  text-align: center;
+}
+
+
 
 footer a img {
   font-weight: 400;
   font-style: normal;
   height: 50px;
   width: 50px;
+}
+@media (max-width: 767px){
+  .copy{
+    display: none;
+  }
 }
 </style>
