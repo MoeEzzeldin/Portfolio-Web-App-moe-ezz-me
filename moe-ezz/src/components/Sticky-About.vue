@@ -5,7 +5,7 @@
         <h3 class="greet">Hi, my name is...</h3>
         <h1 class="name">Moe Ezzeldin</h1>
         <h2 class="whomi">Junior Developer && Cloud Eng</h2>
-        <p class="para">
+        <p class="intro">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eligendi dolorem
           aspernatur! Accusantium a vel in atque laborum dolor facilis eaque fugiat accusamus, sint
           distinctio harum placeat suscipit molestiae ut!
@@ -16,7 +16,7 @@
     <nav class="nav">
       <ul class="list">
         <li class="holder">
-          <span></span><a class="link" href="#about"><span></span>About</a>
+          <span></span><a class="link" href="#scroll"><span></span>About</a>
         </li>
         <li class="holder">
           <span></span><a class="link" href="#experience"><span></span>Experience</a>
@@ -38,7 +38,7 @@
          <a href="mailto:ezzeldin.mo3@gmail.com" target="_blank">
            <img :src="icons.gmail" alt="" />
          </a>
-         <a href="'tel:' + 6148169143">
+         <a href="'tel:'+16148169143">
            <img :src="icons.phone" alt="phone icon" />
          </a>
        </div>
@@ -74,7 +74,6 @@ main {
   display: grid;
   grid-template-rows: 0.3fr 0.3fr 0.3fr;
   gap: 25px;
-  box-sizing: border-box;
 }
 
 
@@ -108,6 +107,9 @@ main .name {
   font-size: 3rem;
   line-height: 1;
   margin: 0;
+  color: var(--heading-color);
+  text-shadow: -5px -3px 5px var(--shadow-color);
+  ;
 }
 
 main .whomi {
@@ -116,19 +118,20 @@ main .whomi {
   background: linear-gradient(to right, rgb(255, 106, 0), blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  width: 400px;
 }
 
-main .para {
-  font-weight: 400;
+main .intro {
+  font-weight: 500;
   font-style: normal;
+  width: 475px;
 }
 
 main .nav {
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 
 main .list {
@@ -137,6 +140,7 @@ main .list {
   gap: 20px;
   list-style: none;
   padding: 0;
+  
 }
 
 main .list > * {
@@ -180,7 +184,7 @@ main .holder:hover a {
 }
 
 footer {
-  height: 200px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -192,9 +196,9 @@ footer .icons {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  gap: 20px;
-  width: 100%;
+  width: 80%;
 }
+
 
 footer .copy{
   text-align: center;
@@ -207,10 +211,53 @@ footer a img {
   font-style: normal;
   height: 50px;
   width: 50px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 5px var(--shadow-color);
+  transition: transform 0.3s ease, box-shaodw 0.3s ease;
 }
-@media (max-width: 767px){
-  .copy{
+footer a img:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 1200px) {
+  /* Styles for mobile devices */
+
+  footer{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+  }
+  footer .copy{
     display: none;
   }
+
+  main{
+    height: 50vh;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-sizing: border-box;
+  }
+
+  main .greeting .intro{
+    /* width: 500px; */
+  }
+  .nav.nav{
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
 }
+
+@media (min-width: 1201px) {
+  /* Styles for mobile devices */
+  main {
+    height: 100vh;
+    justify-content: space-between;
+    gap: 100px;
+  }
+  footer{
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
 </style>

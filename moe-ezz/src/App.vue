@@ -5,19 +5,19 @@
 
     <div class="container">
       <!-- my info / Pic -->
-      <div class="sticky">
+      <div id="sticky">
         <Sticky-About :theme :icons />
       </div>
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
-      <div class="scroll">
+      <div id="scroll">
         <div class="about">
           <ElPitch />
         </div>
         <div class="experience">
-          <Experience />
+          <Experience :expo :arrow />
         </div>
         <div class="projects">
-          <Projects />
+          <Projects :expo />
         </div>
       </div>
     </div>
@@ -27,32 +27,39 @@
 <script>
 import StickyAbout from './components/Sticky-About.vue'
 import ElPitch from './components/El-Pitch.vue'
-import Experience from './components/Experience.vue'
-import Projects from './components/Projects.vue'
+import Experience from './components/My-Experience.vue'
+import Projects from './components/My-Projects.vue'
 
 import switchLight from '@/assets/darkpng.png'
 import switchDark from '@/assets/lightpng.png'
 
 import gitLight from '@/assets/github-l.png'
-import gitDark from '@/assets/github-d.png'
+import gitDark from '@/assets/github-l.png'
 
-import inLight from '@/assets/in-l.png'
-import inDark from '@/assets/in-l.png'
+import inLight from '@/assets/linkedin.png'
+import inDark from '@/assets/linkedin.png'
 
-import mailLight from '@/assets/gmail-l.png'
+import mailLight from '@/assets/gmail-d.png'
 import mailDark from '@/assets/gmail-d.png'
 
-import phoneLight from '@/assets/phone-l.png'
-import phoneDark from '@/assets/phone-d.png'
+import phoneLight from '@/assets/phone.png'
+import phoneDark from '@/assets/phone.png'
+ 
+import expo from '@/assets/export.png'
+import arrow from '@/assets/right-arrow.png'
+
+
 export default {
   components: {
     StickyAbout,
     ElPitch,
     Experience,
-    Projects,
+    Projects
   },
   data() {
     return {
+      arrow: arrow,
+      expo: expo,
       theme: localStorage.getItem('theme') || 'light',
       icons: {
         png: localStorage.getItem('png') || switchLight,
@@ -125,20 +132,23 @@ export default {
   align-items: flex-start;
   position: relative;
 }
-
+.about{
+  /* height: 50vh; */
+  padding-bottom: 15rem;
+}
 /* devided the width on my sticky and scroll wraps*/
-.sticky,
-.scroll {
+#sticky,
+#scroll {
   width: 48%;
 }
 /*  */
-.sticky {
+#sticky {
   height: 80vh;
   position: sticky;
   top: 65px;
 }
 
-.scroll {
+#scroll {
   display: grid;
   gap: 20px;
   height: fit-content;
@@ -161,34 +171,40 @@ export default {
   border-radius: 100%; 
 }
 .theme-btn:hover {
-  transition: scale(1.1);
-  box-shadow:
-    0 0 8px 1px var(--accent-color),
-    0 0 8px 1px rgba(255, 255, 255, 0.8); 
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 5px var(--shadow-color);
+
 }
 /* Mobile */
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   /* Styles for mobile devices */
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
     padding: 0;
   }
-  .sticky,
-  .scroll {
+
+  #sticky,
+  #scroll {
     padding: 0;
     text-align: left;
     width: 100%;
   }
-  .sticky {
+  #sticky {
     position: static;
-    height: 100vh ;
+    height: 70vh;
   }
-  .scroll {
+  #scroll {
     margin: 0;
   }
+  .theme-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
 }
 </style>

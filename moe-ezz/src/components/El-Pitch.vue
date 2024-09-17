@@ -1,7 +1,10 @@
 <template>
   <main>
-    <section id="">
+    <section id="about">
       <h3>Elevator pitch:</h3>
+      <p>
+        {{ this.pitch }}
+      </p>
       <p>
         {{ this.pitch }}
       </p>
@@ -16,13 +19,7 @@ export default {
   name:'El-Pitch',
     data(){
       return{
-        pitch: `Back in 2010 I was volenteering to teach the children of my community the basics of using the internet safely with AWA LINK,
-               I got the opportunity to attend some open source workshops with Deca Adef, including hands on Linux and Ubuntu.
-              That's when I thought I had something for tech.
-              I started digging more into linux, but I didn't have enough resources to continue on my own.
-              right after moving to the united states in 2019 is when that spark lit again and I started a cource "Cource name" in HTML5 CSS and JS.
-              I started inspecting famouse websites to learn the how beyond all of that.
-              It wasn't so simple and my curiousity drove me deeper into code, so i started "TE SUMMERY"`,
+        pitch: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. At ut, voluptate pariatur nesciunt impedit sed fugit vero perspiciatis doloremque cum praesentium molestias odit, perferendis quaerat eius maxime maiores necessitatibus rerum.Lorem, ipsum dolor sit amet consectetur adipisicing elit. At ut, voluptate pariatur nesciunt impedit sed fugit vero perspiciatis doloremque cum praesentium molestias odit, perferendis quaerat eius maxime maiores necessitatibus rerum.`
       }
     }
 }
@@ -31,16 +28,14 @@ export default {
 <style scoped>
 main {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
 }
 
 p{
   color: var(--text-color);
-  line-height: 1.5;
-  padding: 15px 0
+  line-height: 2;
+  padding: 10px 0 0 30px;
 }
-#about{
-  padding : 25px 0;
-}
+
 </style>
