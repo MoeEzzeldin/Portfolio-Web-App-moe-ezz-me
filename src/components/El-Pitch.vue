@@ -37,5 +37,8 @@ p{
   line-height: 2;
   padding: 10px 0 0 30px;
 }
+h3{
+  padding-top: 2rem;
+}
 
 </style>

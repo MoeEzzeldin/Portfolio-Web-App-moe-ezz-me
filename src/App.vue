@@ -10,13 +10,13 @@
       </div>
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
-        <div class="about">
+        <div id="about">
           <ElPitch />
         </div>
-        <div class="experience">
+        <div id="experience">
           <Experience :expo :arrow />
         </div>
-        <div class="projects">
+        <div id="projects">
           <Projects :expo />
         </div>
       </div>
@@ -132,14 +132,16 @@ export default {
   align-items: flex-start;
   position: relative;
 }
-.about{
+#about{
   /* height: 50vh; */
-  padding-bottom: 15rem;
+  padding-bottom: 8rem;
 }
 /* devided the width on my sticky and scroll wraps*/
 #sticky,
 #scroll {
-  width: 48%;
+  width: 100%;
+  text-align: left;
+  padding: 0;
 }
 /*  */
 #sticky {
@@ -150,7 +152,7 @@ export default {
 
 #scroll {
   display: grid;
-  gap: 20px;
+  gap: 2rem;
   height: fit-content;
 }
 .theme-btn {
@@ -178,13 +180,16 @@ export default {
 /* Mobile */
 
 @media (max-width: 1200px) {
+  .main {
+    padding: 0;
+  }
   /* Styles for mobile devices */
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding: 0;
+    justify-content: space-between;
+    align-items:center;
+    gap: 2rem;
   }
 
   #sticky,
@@ -192,13 +197,17 @@ export default {
     padding: 0;
     text-align: left;
     width: 100%;
+    position: relative;
+    /* idk what position the two wrappers should be in at media 1200! */
   }
   #sticky {
-    position: static;
-    height: 70vh;
+    top: 50px;
+    z-index: 100;
+    /* height: 130vh; */
   }
   #scroll {
     margin: 0;
+    z-index: 1;
   }
   .theme-btn {
     position: absolute;

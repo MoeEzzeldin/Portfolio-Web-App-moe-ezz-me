@@ -70,7 +70,6 @@ export default {
 
 <style scoped>
 main {
-  height: 100vh;
   display: grid;
   grid-template-rows: 0.3fr 0.3fr 0.3fr;
   gap: 25px;
@@ -99,6 +98,7 @@ main .greet {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding-top: 2rem;
 }
 
 main .name {
@@ -184,12 +184,12 @@ main .holder:hover a {
 }
 
 footer {
-  height: 100px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 footer .icons {
   display: flex;
@@ -202,6 +202,7 @@ footer .icons {
 
 footer .copy{
   text-align: center;
+  
 }
 
 
