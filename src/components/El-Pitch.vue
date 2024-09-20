@@ -1,7 +1,7 @@
 <template>
   <main>
     <section id="about">
-      <h3>Elevator pitch:</h3>
+      <h3>Elevator pitch</h3>
       <p>
         {{ this.pitch }}
       </p>
@@ -34,7 +34,7 @@ main {
 
 p{
   color: var(--text-color);
-  line-height: 2;
+  line-height: 2.5;
   padding: 10px 0 0 30px;
 }
 h3{

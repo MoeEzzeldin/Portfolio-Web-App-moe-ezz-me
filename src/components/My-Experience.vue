@@ -124,8 +124,8 @@ export default {
 <style scoped>
 #experience {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
 #experience .card {
@@ -161,11 +161,11 @@ export default {
   right: 5px;
   cursor: pointer;
   filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(0.8);
-  opacity: 0;
+  opacity: 1;
   transition: all 0.3s ease;
 }
 .card:hover .expo {
-  opacity: 1;
+  /* opacity: 1; */
   transition: all 0.3s ease;
 }
 

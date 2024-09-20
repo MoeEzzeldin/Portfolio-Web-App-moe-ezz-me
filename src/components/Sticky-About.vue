@@ -28,20 +28,20 @@
     </nav>
     <footer>
       <!-- Links and Icons for CONTACT -->
-       <div class="icons">
-         <a href="https://github.com/MoeEzzeldin" target="_blank">
-           <img :src="icons.gitHub" alt="Description of Image 1" />
-         </a>
-         <a href="https://www.linkedin.com/in/moe-ezz-columbus-ohio/" target="_blank">
-           <img :src="icons.linkedIn" alt="" />
-         </a>
-         <a href="mailto:ezzeldin.mo3@gmail.com" target="_blank">
-           <img :src="icons.gmail" alt="" />
-         </a>
-         <a href="'tel:'+16148169143">
-           <img :src="icons.phone" alt="phone icon" />
-         </a>
-       </div>
+      <div class="icons">
+        <a href="https://github.com/MoeEzzeldin" target="_blank">
+          <img :src="icons.gitHub" alt="Description of Image 1" />
+        </a>
+        <a href="https://www.linkedin.com/in/moe-ezz-columbus-ohio/" target="_blank">
+          <img :src="icons.linkedIn" alt="" />
+        </a>
+        <a href="mailto:ezzeldin.mo3@gmail.com" target="_blank">
+          <img :src="icons.gmail" alt="" />
+        </a>
+        <a href="'tel:'+16148169143">
+          <img :src="icons.phone" alt="phone icon" />
+        </a>
+      </div>
       <div class="copy">
         <p>© 2024 Moe Ezzeldin. All rights reserved.</p>
       </div>
@@ -71,12 +71,10 @@ export default {
 <style scoped>
 main {
   display: grid;
-  grid-template-rows: 0.3fr 0.3fr 0.3fr;
-  gap: 25px;
+  grid-template-rows: 1fr 1fr 0.9fr;
+  gap: 2rem;
+  /* padding-left: 2rem; */
 }
-
-
-
 
 main .header {
   display: flex;
@@ -97,7 +95,6 @@ main .greet {
   background: linear-gradient(to right, rgb(255, 106, 0), blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   padding-top: 2rem;
 }
 
@@ -109,7 +106,6 @@ main .name {
   margin: 0;
   color: var(--heading-color);
   text-shadow: -5px -3px 5px var(--shadow-color);
-  ;
 }
 
 main .whomi {
@@ -122,16 +118,15 @@ main .whomi {
 }
 
 main .intro {
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
-  width: 475px;
+  padding-right: 1rem;
 }
 
 main .nav {
   display: flex;
   justify-content: left;
   align-items: center;
-  /* margin-bottom: 60px; */
 }
 
 main .list {
@@ -140,7 +135,6 @@ main .list {
   gap: 20px;
   list-style: none;
   padding: 0;
-  
 }
 
 main .list > * {
@@ -166,7 +160,9 @@ main .list span {
   font-weight: 700;
   font-style: normal;
   background: linear-gradient(to right, rgb(255, 106, 0), rgb(90, 60, 240));
-  transition: transform 0.3s ease, width 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease;
 }
 
 main .list a {
@@ -184,28 +180,21 @@ main .holder:hover a {
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  position: relative;
+  display: grid;
+  align-items: flex-end;
+  left: -16px;
 }
+
 footer .icons {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
-  width: 80%;
+  padding-bottom: 5rem;
 }
 
-
-footer .copy{
-  text-align: center;
-  
+footer .copy {
+  display: none;
 }
-
-
 
 footer a img {
   font-weight: 400;
@@ -214,51 +203,41 @@ footer a img {
   width: 50px;
   border-radius: 100%;
   box-shadow: 0px 0px 10px 5px var(--shadow-color);
-  transition: transform 0.3s ease, box-shaodw 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shaodw 0.3s ease;
 }
 footer a img:hover {
   transform: scale(1.1);
 }
-@media (max-width: 1200px) {
-  /* Styles for mobile devices */
 
-  footer{
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  main {
     display: flex;
-    justify-content: center;
-    height: 100px;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 50px;
+  }
+  nav, footer {
+    width: 100%;
+  }
+  footer{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+  }
+  footer .icons{
+    padding: 0;
   }
   footer .copy{
     display: none;
   }
-
-  main{
-    height: 50vh;
-    grid-template-rows: 1fr 1fr 1fr;
-    box-sizing: border-box;
-  }
-
-  main .greeting .intro{
-    /* width: 500px; */
-  }
-  .nav.nav{
-    margin: 0;
-    padding: 0;
-    gap: 0;
+  footer:last-child{
+    text-align: center;
   }
 }
 
-@media (min-width: 1201px) {
-  /* Styles for mobile devices */
-  main {
-    height: 100vh;
-    justify-content: space-between;
-    gap: 100px;
-  }
-  footer{
-    justify-content: space-between;
-    align-items: center;
-  }
-
-}
 
 </style>

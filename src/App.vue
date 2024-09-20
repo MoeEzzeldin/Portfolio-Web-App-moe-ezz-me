@@ -1,29 +1,25 @@
 <template>
   <!-- I want this png to also expand the background color@click -->
   <img class="theme-btn" @click="toggleTheme" :src="icons.png" alt="dark-light" />
-  <main class="main">
-
-    <div class="container">
-      <!-- my info / Pic -->
-      <div id="sticky">
-        <Sticky-About :theme :icons />
+  <main id="main">
+    <!-- my info / Pic -->
+    <div id="sticky">
+      <Sticky-About :theme :icons />
+    </div>
+    <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
+    <div id="scroll">
+      <div id="about">
+        <ElPitch />
       </div>
-      <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
-      <div id="scroll">
-        <div id="about">
-          <ElPitch />
-        </div>
-        <div id="experience">
-          <Experience :expo :arrow />
-        </div>
-        <div id="projects">
-          <Projects :expo />
-        </div>
+      <div id="experience">
+        <Experience :expo :arrow />
+      </div>
+      <div id="projects">
+        <Projects :expo />
       </div>
     </div>
   </main>
 </template>
-
 <script>
 import StickyAbout from './components/Sticky-About.vue'
 import ElPitch from './components/El-Pitch.vue'
@@ -44,10 +40,9 @@ import mailDark from '@/assets/gmail-d.png'
 
 import phoneLight from '@/assets/phone.png'
 import phoneDark from '@/assets/phone.png'
- 
+
 import expo from '@/assets/export.png'
 import arrow from '@/assets/right-arrow.png'
-
 
 export default {
   components: {
@@ -116,48 +111,29 @@ export default {
 </script>
 
 <style scoped>
-/* main Wrapper */
-.main {
+/* Mobile settings */
+#main {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  color: var(--text-color);
-  padding-top: 65px;
-}
-/* content container carries my fixed and scroll */
-.container {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-}
-#about{
-  /* height: 50vh; */
-  padding-bottom: 8rem;
+  padding: 15px;
 }
 /* devided the width on my sticky and scroll wraps*/
-#sticky,
-#scroll {
-  width: 100%;
-  text-align: left;
-  padding: 0;
-}
-/*  */
+
 #sticky {
-  height: 80vh;
-  position: sticky;
-  top: 65px;
+  top: 50px;
 }
 
 #scroll {
-  display: grid;
-  gap: 2rem;
-  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
+
 .theme-btn {
   height: 40px;
-  position: fixed;
+  position: absolute;
   right: 25px;
   top: 25px;
   cursor: pointer;
@@ -167,53 +143,209 @@ export default {
     height 0.3s ease;
   box-shadow:
     0 0 5px var(--hover-color),
-    0 0 5px rgba(255, 255, 255, 0.6); 
+    0 0 5px rgba(255, 255, 255, 0.6);
   box-shadow: 0 0 5px var(--hover-color);
   transition: box-shadow 0.3s ease;
-  border-radius: 100%; 
+  border-radius: 100%;
+  z-index: 100;
 }
 .theme-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 10px 5px var(--shadow-color);
-
 }
-/* Mobile */
 
-@media (max-width: 1200px) {
-  .main {
-    padding: 0;
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* CSS rules for tablets */
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15;
   }
-  /* Styles for mobile devices */
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: space-between;
-    align-items:center;
-    gap: 2rem;
-  }
+  /* devided the width on my sticky and scroll wraps*/
 
-  #sticky,
-  #scroll {
-    padding: 0;
-    text-align: left;
-    width: 100%;
-    position: relative;
-    /* idk what position the two wrappers should be in at media 1200! */
-  }
   #sticky {
+    height: 100vh;
     top: 50px;
-    z-index: 100;
-    /* height: 130vh; */
-  }
-  #scroll {
-    margin: 0;
-    z-index: 1;
-  }
-  .theme-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
   }
 
+  #scroll {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .theme-btn {
+    height: 40px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    /* fix effect */
+    transition:
+      opacity 0.3s ease,
+      height 0.3s ease;
+    box-shadow:
+      0 0 5px var(--hover-color),
+      0 0 5px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 5px var(--hover-color);
+    transition: box-shadow 0.3s ease;
+    border-radius: 100%;
+    z-index: 100;
+  }
+  .theme-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px var(--shadow-color);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* CSS rules for tablets */
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 65px 50px 0 50px;
+  }
+  /* devided the width on my sticky and scroll wraps*/
+
+  #sticky {
+    height: 100vh;
+    top: 50px;
+  }
+
+  #scroll {
+    display: flex wrap center ;
+    gap: 5rem;
+  }
+
+  .theme-btn {
+    height: 40px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    /* fix effect */
+    transition:
+      opacity 0.3s ease,
+      height 0.3s ease;
+    box-shadow:
+      0 0 5px var(--hover-color),
+      0 0 5px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 5px var(--hover-color);
+    transition: box-shadow 0.3s ease;
+    border-radius: 100%;
+    z-index: 100;
+  }
+  .theme-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px var(--shadow-color);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* CSS rules for large desktops */
+   /* CSS rules for desktops */
+   #main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 65px 20px 0 20px;
+    position: relative;
+  }
+  /* devided the width on my sticky and scroll wraps*/
+
+
+  #main #sticky {
+    position: sticky;
+    top: 65px;
+
+  }
+
+  #scroll {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10rem;
+  }
+
+  .theme-btn {
+    height: 40px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    /* fix effect */
+    transition:
+      opacity 0.3s ease,
+      height 0.3s ease;
+    box-shadow:
+      0 0 5px var(--hover-color),
+      0 0 5px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 5px var(--hover-color);
+    transition: box-shadow 0.3s ease;
+    border-radius: 100%;
+    z-index: 100;
+  }
+  .theme-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px var(--shadow-color);
+  }
+}
+
+/* Extra extra large devices (extra large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  #main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    padding: 65px 50px 0 50px;
+  }
+  /* devided the width on my sticky and scroll wraps*/
+
+
+  #main #sticky {
+    position: sticky;
+    top: 65px;
+  }
+
+  #scroll {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10rem;
+  }
+
+  .theme-btn {
+    height: 40px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    /* fix effect */
+    transition:
+      opacity 0.3s ease,
+      height 0.3s ease;
+    box-shadow:
+      0 0 5px var(--hover-color),
+      0 0 5px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 5px var(--hover-color);
+    transition: box-shadow 0.3s ease;
+    border-radius: 100%;
+    z-index: 100;
+  }
+  .theme-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px var(--shadow-color);
+  }
 }
 </style>
