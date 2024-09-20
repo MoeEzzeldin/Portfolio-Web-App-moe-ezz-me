@@ -71,8 +71,8 @@ export default {
 <style scoped>
 main {
   display: grid;
-  grid-template-rows: 1fr 1fr 0.9fr;
-  gap: 2rem;
+  grid-template-rows: 1fr 0.5fr 0.9fr;
+  gap: 4rem;
   /* padding-left: 2rem; */
 }
 

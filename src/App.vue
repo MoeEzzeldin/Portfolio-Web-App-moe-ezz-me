@@ -1,24 +1,27 @@
 <template>
   <!-- I want this png to also expand the background color@click -->
   <img class="theme-btn" @click="toggleTheme" :src="icons.png" alt="dark-light" />
-  <main id="main">
-    <!-- my info / Pic -->
-    <div id="sticky">
-      <Sticky-About :theme :icons />
-    </div>
-    <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
-    <div id="scroll">
-      <div id="about">
-        <ElPitch />
+  <!-- im adding wrapper to make main fit 80vw in mobile views -->
+  <div class="container">
+    <main id="main">
+      <!-- my info / Pic -->
+      <div id="sticky">
+        <Sticky-About :theme :icons />
       </div>
-      <div id="experience">
-        <Experience :expo :arrow />
+      <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
+      <div id="scroll">
+        <div id="about">
+          <ElPitch />
+        </div>
+        <div id="experience">
+          <Experience :expo :arrow />
+        </div>
+        <div id="projects">
+          <Projects :expo />
+        </div>
       </div>
-      <div id="projects">
-        <Projects :expo />
-      </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 <script>
 import StickyAbout from './components/Sticky-About.vue'
@@ -112,16 +115,23 @@ export default {
 
 <style scoped>
 /* Mobile settings */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
 #main {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 15px;
+  left: 25px;
+  position: relative;
+  top: 100px;
 }
 /* devided the width on my sticky and scroll wraps*/
 
 #sticky {
-  top: 50px;
 }
 
 #scroll {
@@ -218,7 +228,7 @@ export default {
   }
 
   #scroll {
-    display: flex wrap center ;
+    display: flex wrap center;
     gap: 5rem;
   }
 
@@ -249,8 +259,8 @@ export default {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1399.98px) {
   /* CSS rules for large desktops */
-   /* CSS rules for desktops */
-   #main {
+  /* CSS rules for desktops */
+  #main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
@@ -261,11 +271,10 @@ export default {
   }
   /* devided the width on my sticky and scroll wraps*/
 
-
   #main #sticky {
     position: sticky;
     top: 65px;
-
+    height: 70vh;
   }
 
   #scroll {
@@ -312,10 +321,10 @@ export default {
   }
   /* devided the width on my sticky and scroll wraps*/
 
-
   #main #sticky {
     position: sticky;
     top: 65px;
+    height: 80vh;
   }
 
   #scroll {
