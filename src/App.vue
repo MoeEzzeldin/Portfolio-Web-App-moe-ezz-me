@@ -167,6 +167,12 @@ export default {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* CSS rules for tablets */
+  .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
   #main {
     display: flex;
     flex-wrap: wrap;
@@ -214,6 +220,12 @@ export default {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
+  .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
   #main {
     display: flex;
     flex-wrap: wrap;
@@ -260,6 +272,12 @@ export default {
 @media (min-width: 1200px) and (max-width: 1399.98px) {
   /* CSS rules for large desktops */
   /* CSS rules for desktops */
+  .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
   #main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -310,6 +328,12 @@ export default {
 
 /* Extra extra large devices (extra large desktops, 1400px and up) */
 @media (min-width: 1400px) {
+  .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
   #main {
     display: grid;
     grid-template-columns: 1fr 1fr;
