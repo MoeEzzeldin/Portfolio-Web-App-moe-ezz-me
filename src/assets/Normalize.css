@@ -42,7 +42,6 @@
 
 
 html {
-  line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   font-size: 16px;
   scroll-behavior: smooth;
@@ -59,18 +58,13 @@ html {
 }
 
 body {
-  height: 100vh;
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.5s ease;
   font-family: var(--primary-font);
 }
-#app {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+
 /**
    * Render the `main` element consistently in IE.
    */

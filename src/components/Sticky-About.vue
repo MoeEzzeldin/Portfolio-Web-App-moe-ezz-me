@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main id="main">
     <section class="greeting">
       <div class="header">
         <h3 class="greet">Hi, my name is...</h3>
@@ -69,22 +69,25 @@ export default {
 </script>
 
 <style scoped>
-main {
+#main main {
+  height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 0.5fr 0.9fr;
-  gap: 4rem;
+  grid-template-rows: 1fr 1fr 1fr ;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   /* padding-left: 2rem; */
 }
+
 
 main .header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 10px;
+  gap: 1rem;
 }
 
 main .header > * {
-  padding-top: 10px;
 }
 
 main .greet {
@@ -115,12 +118,14 @@ main .whomi {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 400px;
+  padding-right: 3rem;
 }
 
 main .intro {
   font-weight: 400;
   font-style: normal;
-  padding-right: 1rem;
+  padding-right: 3rem;
+  width: minmax(500px, 700px);
 }
 
 main .nav {
@@ -181,9 +186,8 @@ main .holder:hover a {
 
 footer {
   position: relative;
-  display: grid;
-  align-items: flex-end;
-  left: -16px;
+  align-self: end;
+  justify-self: space-evenly;
 }
 
 footer .icons {
@@ -237,7 +241,34 @@ footer a img:hover {
   footer:last-child{
     text-align: center;
   }
+}@media (min-width: 1200px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 50px;
+  }
+  nav, footer {
+    width: 100%;
+  }
+  footer{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+  }
+  footer .icons{
+    padding: 0;
+  }
+  footer .copy{
+    display: block;
+  }
+  footer:last-child{
+    text-align: center;
+  }
 }
+
 
 
 </style>
