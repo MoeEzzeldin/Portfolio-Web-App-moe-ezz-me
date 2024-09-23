@@ -69,25 +69,18 @@ export default {
 </script>
 
 <style scoped>
-.main main {
-  height: 100vh;
+.main{
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr ;
-  align-items: center;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-content: space-between;
-  gap: 20px;
-  /* padding-left: 2rem; */
+  height: 100vh;
 }
-
 
 main .header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   gap: 1rem;
-}
-
-main .header > * {
 }
 
 main .greet {
@@ -212,37 +205,15 @@ footer a img:hover {
   transform: scale(1.1);
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
-
-  footer{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: space-between;
-    align-items: center;
-  }
-  footer .icons{
-    padding: 0;
-  }
-  footer .copy{
-    display: none;
-  }
-  footer:last-child{
-    text-align: center;
-  }
-}
-
 @media (min-width: 1200px) {
-
-  main .main{
+  main .main {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    gap:25px;
+    gap: 40px;
     height: 95vh;
   }
-
-
+  .nav, footer {
+    width: 100%;
+  }
 }
-
-
-
 </style>
