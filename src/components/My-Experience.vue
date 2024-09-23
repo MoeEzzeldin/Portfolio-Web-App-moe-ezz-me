@@ -130,7 +130,6 @@ export default {
 }
 
 #experience .card {
-  width: 600px;
   position: relative;
   display: grid;
   grid-template-columns: 0.7fr 2fr;
