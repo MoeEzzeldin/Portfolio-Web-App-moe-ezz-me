@@ -1,5 +1,5 @@
 <template>
-  <main id="main">
+  <main class="main">
     <section class="greeting">
       <div class="header">
         <h3 class="greet">Hi, my name is...</h3>
@@ -26,7 +26,7 @@
         </li>
       </ul>
     </nav>
-    <footer>
+    <footer class="footer">
       <!-- Links and Icons for CONTACT -->
       <div class="icons">
         <a href="https://github.com/MoeEzzeldin" target="_blank">
@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style scoped>
-#main main {
+.main main {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr ;
@@ -117,15 +117,12 @@ main .whomi {
   background: linear-gradient(to right, rgb(255, 106, 0), blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: 400px;
-  padding-right: 3rem;
 }
 
 main .intro {
   font-weight: 400;
   font-style: normal;
-  padding-right: 3rem;
-  width: minmax(500px, 700px);
+  /* max-width: 680px; */
 }
 
 main .nav {
@@ -188,12 +185,12 @@ footer {
   position: relative;
   align-self: end;
   justify-self: space-evenly;
+  padding-bottom: 50px;
 }
 
 footer .icons {
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 5rem;
 }
 
 footer .copy {
@@ -216,21 +213,12 @@ footer a img:hover {
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    gap: 50px;
-  }
-  nav, footer {
-    width: 100%;
-  }
+
   footer{
     display: grid;
     grid-template-columns: 1fr;
     justify-content: space-between;
     align-items: center;
-    height: 150px;
   }
   footer .icons{
     padding: 0;
@@ -241,32 +229,18 @@ footer a img:hover {
   footer:last-child{
     text-align: center;
   }
-}@media (min-width: 1200px) {
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    gap: 50px;
-  }
-  nav, footer {
-    width: 100%;
-  }
-  footer{
+}
+
+@media (min-width: 1200px) {
+
+  main .main{
     display: grid;
-    grid-template-columns: 1fr;
-    justify-content: space-between;
-    align-items: center;
-    height: 150px;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:25px;
+    height: 95vh;
   }
-  footer .icons{
-    padding: 0;
-  }
-  footer .copy{
-    display: block;
-  }
-  footer:last-child{
-    text-align: center;
-  }
+
+
 }
 
 

@@ -137,11 +137,13 @@ export default {
   transition: all 0.5s ease; /* Smooth transition for background color and border-radius */
   overflow: hidden;
   border-radius: 8px;
+  width: minmax(450px, 750px);
 }
 .card:hover {
   background-color: var(--card-background);
   backdrop-filter: blur(25px); /* Applies the blur */
   box-shadow: 0 0 10px var(--shadow-color);
+  cursor:default;
 }
 
 .card:hover .title {
@@ -220,5 +222,9 @@ export default {
 
 .card:hover .tag {
   transition: all 0.5s ease-in;
+}
+
+@media (min-width: 1200px){
+
 }
 </style>
