@@ -73,7 +73,7 @@ export default {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   justify-content: space-between;
-  height: 100vh;
+  height: 95vh;
 }
 
 main .header {
@@ -177,7 +177,6 @@ main .holder:hover a {
 footer {
   position: relative;
   align-self: end;
-  justify-self: space-evenly;
   padding-bottom: 50px;
 }
 
@@ -212,8 +211,22 @@ footer a img:hover {
     gap: 40px;
     height: 95vh;
   }
-  .nav, footer {
+
+
+  footer {
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  footer .icons {
     width: 100%;
+    justify-content: space-around;
+  }
+  footer .copy {
+    display:block;
   }
 }
 </style>

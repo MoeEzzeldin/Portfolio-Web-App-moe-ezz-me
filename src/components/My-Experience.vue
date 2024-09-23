@@ -125,10 +125,12 @@ export default {
 #experience {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 50px;
 }
 
 #experience .card {
+  width: 600px;
   position: relative;
   display: grid;
   grid-template-columns: 0.7fr 2fr;
@@ -137,7 +139,6 @@ export default {
   transition: all 0.5s ease; /* Smooth transition for background color and border-radius */
   overflow: hidden;
   border-radius: 8px;
-  width: minmax(450px, 750px);
 }
 .card:hover {
   background-color: var(--card-background);

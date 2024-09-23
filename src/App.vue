@@ -133,8 +133,8 @@ export default {
 .theme-btn {
   height: 40px;
   position: absolute;
-  right: 25px;
-  top: 25px;
+  right: 10px;
+  top: 10px;
   cursor: pointer;
   /* fix effect */
   transition:
@@ -172,10 +172,11 @@ export default {
     grid-template-columns: 1fr 1fr;
     align-items: start;
     gap: 2rem;
+    width: 95%;
   }
   /* devided the width on my sticky and scroll wraps*/
   #main main > *:not(:last-child) {
-    padding-left: 25px;
+    padding-left: 40px;
   }
   #sticky,
   #scroll {
@@ -199,9 +200,9 @@ export default {
 
   .theme-btn {
     height: 40px;
-    position: absolute;
-    right: 25px;
-    top: 25px;
+    position: fixed;
+    right: 15px;
+    top: 15px;
     cursor: pointer;
     /* fix effect */
     transition:
