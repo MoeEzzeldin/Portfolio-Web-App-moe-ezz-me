@@ -73,8 +73,8 @@ export default {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   justify-content: space-between;
-  height: 95vh;
-  gap: 10px;
+  height: auto;
+  gap: 25px;
 }
 
 main .header {

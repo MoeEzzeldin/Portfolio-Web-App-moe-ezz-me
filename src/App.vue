@@ -226,12 +226,4 @@ export default {
   }
 }
 
-@media (orientation: landscape) {
-  #main {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
 </style>
