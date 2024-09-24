@@ -73,7 +73,11 @@ export default {
   display: grid;
   grid-template-rows: 1fr .5fr .5fr;
   justify-content: space-between;
+  height: 100vh;
   gap: 25px;
+}
+.main .nav, .main .greeting  {
+  margin-left: 25px;
 }
 
 main .header {
@@ -177,7 +181,7 @@ main .holder:hover a {
 .footer {
   position: relative;
   align-self: end;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .footer .icons {
@@ -227,6 +231,11 @@ main .holder:hover a {
   }
   .footer .copy {
     display:block;
+  }
+}
+@media (orientation: landscape) {
+  .main {
+    height: auto;
   }
 }
 </style>

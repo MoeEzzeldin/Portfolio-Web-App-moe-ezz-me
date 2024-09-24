@@ -117,6 +117,7 @@ export default {
 /* Mobile settings */
 .container{
   display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
   justify-content: center;
   
@@ -128,9 +129,7 @@ export default {
   justify-content: space-between;
 }
 
-#main .wrapper > *:not(:last-child) {
-  margin-left: 25px;
-}
+
 
 #scroll {
   display: flex;
@@ -178,22 +177,18 @@ export default {
 @media (min-width: 1200px) {
   /* CSS rules for desktops */
   .container{
-  display: grid;
-  align-items: center;
+  display: flex;
+  align-items:center;
   justify-content: center;
-  
 }
   #main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
     gap: 2rem;
-    width: 95%;
+    width: 90%;
   }
-  /* devided the width on my sticky and scroll wraps*/
-  #main main > *:not(:last-child) {
-    padding-left: 40px;
-  }
+ 
   #sticky,
   #scroll {
     top: 20px;
