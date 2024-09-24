@@ -74,7 +74,7 @@ export default {
   grid-template-rows: 1fr .5fr .5fr;
   justify-content: space-between;
   height: 95vh;
-  gap: 5rem;
+  gap: 4rem;
 }
 .main >*:not(:last-child) {
   margin-left: 25px;
@@ -186,6 +186,7 @@ main .holder:hover a {
 .footer .icons {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .footer .copy {
@@ -195,13 +196,14 @@ main .holder:hover a {
 .footer a img {
   font-weight: 400;
   font-style: normal;
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   filter: drop-shadow(0px 5px 10px var(--shadow-color));
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
 }
+
 .footer a img:hover {
   transform: scale(1.1);
 }
