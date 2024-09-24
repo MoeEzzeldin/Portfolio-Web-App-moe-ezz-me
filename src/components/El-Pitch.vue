@@ -26,10 +26,25 @@ export default {
 </script>
 
 <style scoped>
+ 
+
 main {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-style: normal;
+}
+
+p{
+  color: var(--text-color);
+  line-height: 2.5;
+}
+
+@media (min-width: 1200px){
+  main {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  height: 100vh;
 }
 
 p{
@@ -40,5 +55,5 @@ p{
 h3{
   padding-top: 2rem;
 }
-
+}
 </style>

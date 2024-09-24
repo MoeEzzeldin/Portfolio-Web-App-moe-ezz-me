@@ -32,17 +32,17 @@ import Projects from './components/My-Projects.vue'
 import switchLight from '@/assets/darkpng.png'
 import switchDark from '@/assets/lightpng.png'
 
-import gitLight from '@/assets/github-l.png'
-import gitDark from '@/assets/github-l.png'
+import gitLight from '@/assets/github.png'
+import gitDark from '@/assets/github-d.png'
 
 import inLight from '@/assets/linkedin.png'
-import inDark from '@/assets/linkedin.png'
+import inDark from '@/assets/linkedin-d.png'
 
-import mailLight from '@/assets/gmail-d.png'
+import mailLight from '@/assets/gmail.png'
 import mailDark from '@/assets/gmail-d.png'
 
 import phoneLight from '@/assets/phone.png'
-import phoneDark from '@/assets/phone.png'
+import phoneDark from '@/assets/phone-d.png'
 
 import expo from '@/assets/export.png'
 import arrow from '@/assets/right-arrow.png'
@@ -127,6 +127,7 @@ export default {
   grid-template-columns: 1fr;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 
@@ -136,6 +137,7 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
+  margin: 0 15px;
 }
 
 .theme-btn {
@@ -185,13 +187,13 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
-    gap: 2rem;
+    gap: 3rem;
     width: 90%;
   }
  
   #sticky,
   #scroll {
-    top: 20px;
+    top: 45px;
   }
   #sticky {
     position: sticky;
@@ -205,9 +207,7 @@ export default {
     position: relative;
   }
 
-  #about {
-    height: 95vh;
-  }
+
 
   .theme-btn {
     height: 40px;

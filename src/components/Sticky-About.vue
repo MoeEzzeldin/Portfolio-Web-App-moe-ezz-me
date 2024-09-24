@@ -74,9 +74,9 @@ export default {
   grid-template-rows: 1fr .5fr .5fr;
   justify-content: space-between;
   height: 95vh;
-  gap: 25px;
+  gap: 5rem;
 }
-.main .nav, .main .greeting  {
+.main >*:not(:last-child) {
   margin-left: 25px;
 }
 
@@ -181,7 +181,6 @@ main .holder:hover a {
 .footer {
   position: relative;
   align-self: end;
-  padding-bottom: 20px;
 }
 
 .footer .icons {
@@ -196,13 +195,12 @@ main .holder:hover a {
 .footer a img {
   font-weight: 400;
   font-style: normal;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  box-shadow: 0px 0px 10px 5px var(--shadow-color);
+  height: 30px;
+  width: 30px;
+  filter: drop-shadow(0px 5px 10px var(--shadow-color));
   transition:
     transform 0.3s ease,
-    box-shaodw 0.3s ease;
+    filter 0.3s ease;
 }
 .footer a img:hover {
   transform: scale(1.1);
@@ -213,7 +211,7 @@ main .holder:hover a {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 40px;
-    height: 95vh;
+    height: 88vh;
   }
 
 
@@ -233,9 +231,14 @@ main .holder:hover a {
     display:block;
   }
 }
+
 @media (orientation: landscape) {
   .main {
     height: auto;
+    gap: 2rem;
+  }
+  #scroll {
+    gap: 2rem;
   }
 }
 </style>
