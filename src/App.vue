@@ -2,24 +2,26 @@
   <!-- I want this png to also expand the background color@click -->
   <img class="theme-btn" @click="toggleTheme" :src="icons.png" alt="dark-light" />
   <!-- im adding wrapper to make main fit 80vw in mobile views -->
-  <main id="main" class="wrapper">
-    <!-- my info / Pic -->
-    <div id="sticky">
-      <Sticky-About :theme :icons />
-    </div>
-    <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
-    <div id="scroll">
-      <div id="about">
-        <ElPitch />
-      </div>
-      <div id="experience">
-        <Experience :expo :arrow />
-      </div>
-      <div id="projects">
-        <Projects :expo />
-      </div>
-    </div>
-  </main>
+   <div class="container">
+     <main id="main" class="wrapper">
+       <!-- my info / Pic -->
+       <div id="sticky">
+         <Sticky-About :theme :icons />
+       </div>
+       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
+       <div id="scroll">
+         <div id="about">
+           <ElPitch />
+         </div>
+         <div id="experience">
+           <Experience :expo :arrow />
+         </div>
+         <div id="projects">
+           <Projects :expo />
+         </div>
+       </div>
+     </main>
+   </div>
 </template>
 <script>
 import StickyAbout from './components/Sticky-About.vue'
@@ -113,16 +115,21 @@ export default {
 
 <style scoped>
 /* Mobile settings */
+.container{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  
+}
 #main {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
 }
-/* devided the width on my sticky and scroll wraps*/
+
 #main .wrapper > *:not(:last-child) {
-  padding-left: 25px;
+  margin-left: 25px;
 }
 
 #scroll {
@@ -170,6 +177,12 @@ export default {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   /* CSS rules for desktops */
+  .container{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  
+}
   #main {
     display: grid;
     grid-template-columns: 1fr 1fr;

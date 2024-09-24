@@ -71,9 +71,8 @@ export default {
 <style scoped>
 .main{
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr .5fr .5fr;
   justify-content: space-between;
-  height: auto;
   gap: 25px;
 }
 
