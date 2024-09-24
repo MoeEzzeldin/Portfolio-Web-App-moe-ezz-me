@@ -114,12 +114,14 @@ export default {
 <style scoped>
 /* Mobile settings */
 #main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
+  justify-content: space-between;
+  gap: 25px;
 }
 /* devided the width on my sticky and scroll wraps*/
-#main main > *:not(:last-child) {
+#main .wrapper > *:not(:last-child) {
   padding-left: 25px;
 }
 
@@ -157,6 +159,7 @@ export default {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* CSS rules for tablets */
+  
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -220,6 +223,15 @@ export default {
   .theme-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px 5px var(--shadow-color);
+  }
+}
+
+@media (orientation: landscape) {
+  #main {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 </style>

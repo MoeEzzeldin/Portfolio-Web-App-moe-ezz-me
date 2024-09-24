@@ -26,7 +26,7 @@
         </li>
       </ul>
     </nav>
-    <footer class="footer">
+    <div class="footer">
       <!-- Links and Icons for CONTACT -->
       <div class="icons">
         <a href="https://github.com/MoeEzzeldin" target="_blank">
@@ -45,7 +45,7 @@
       <div class="copy">
         <p>© 2024 Moe Ezzeldin. All rights reserved.</p>
       </div>
-    </footer>
+    </div>
   </main>
 </template>
 
@@ -74,6 +74,7 @@ export default {
   grid-template-rows: 1fr 1fr 1fr;
   justify-content: space-between;
   height: 95vh;
+  gap: 10px;
 }
 
 main .header {
@@ -174,22 +175,22 @@ main .holder:hover a {
   background-clip: text;
 }
 
-footer {
+.footer {
   position: relative;
   align-self: end;
   padding-bottom: 50px;
 }
 
-footer .icons {
+.footer .icons {
   display: flex;
   justify-content: space-evenly;
 }
 
-footer .copy {
+.footer .copy {
   display: none;
 }
 
-footer a img {
+.footer a img {
   font-weight: 400;
   font-style: normal;
   height: 50px;
@@ -200,7 +201,7 @@ footer a img {
     transform 0.3s ease,
     box-shaodw 0.3s ease;
 }
-footer a img:hover {
+.footer a img:hover {
   transform: scale(1.1);
 }
 
@@ -213,7 +214,7 @@ footer a img:hover {
   }
 
 
-  footer {
+  .footer {
     height: 150px;
     display: flex;
     flex-wrap: wrap;
@@ -221,11 +222,11 @@ footer a img:hover {
     padding: 0;
   }
 
-  footer .icons {
+  .footer .icons {
     width: 100%;
     justify-content: space-around;
   }
-  footer .copy {
+  .footer .copy {
     display:block;
   }
 }
