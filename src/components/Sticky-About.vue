@@ -185,8 +185,9 @@ main .holder:hover a {
 
 .footer .icons {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 
 .footer .copy {
@@ -198,7 +199,6 @@ main .holder:hover a {
   font-style: normal;
   height: 35px;
   width: 35px;
-  filter: drop-shadow(0px 5px 10px var(--shadow-color));
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
@@ -206,6 +206,8 @@ main .holder:hover a {
 
 .footer a img:hover {
   transform: scale(1.1);
+  transform: translateY(-5px);
+  filter: drop-shadow(0px 5px 10px 10px var(--shadow-color));
 }
 
 @media (min-width: 1200px) {
@@ -227,7 +229,8 @@ main .holder:hover a {
 
   .footer .icons {
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50px;
   }
   .footer .copy {
     display:block;
