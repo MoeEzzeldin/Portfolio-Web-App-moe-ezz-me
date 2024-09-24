@@ -73,7 +73,7 @@ export default {
   display: grid;
   grid-template-rows: 1fr .5fr .5fr;
   justify-content: space-between;
-  height: 100vh;
+  height: 95vh;
   gap: 25px;
 }
 .main .nav, .main .greeting  {
