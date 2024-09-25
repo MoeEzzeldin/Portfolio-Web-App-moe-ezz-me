@@ -2,26 +2,26 @@
   <!-- I want this png to also expand the background color@click -->
   <img class="theme-btn" @click="toggleTheme" :src="icons.png" alt="dark-light" />
   <!-- im adding wrapper to make main fit 80vw in mobile views -->
-   <div class="container">
-     <main id="main" class="wrapper">
-       <!-- my info / Pic -->
-       <div id="sticky">
-         <Sticky-About :theme :icons />
-       </div>
-       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
-       <div id="scroll">
-         <div id="about">
-           <ElPitch />
-         </div>
-         <div id="experience">
-           <Experience :expo :arrow />
-         </div>
-         <div id="projects">
-           <Projects :expo />
-         </div>
-       </div>
-     </main>
-   </div>
+  <div class="container">
+    <main id="main" class="wrapper">
+      <!-- my info / Pic -->
+      <div id="sticky">
+        <Sticky-About :theme :icons />
+      </div>
+      <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
+      <div id="scroll">
+        <div id="about">
+          <ElPitch />
+        </div>
+        <div id="experience">
+          <Experience :expo :arrow />
+        </div>
+        <div id="projects">
+          <Projects :expo />
+        </div>
+      </div>
+    </main>
+  </div>
 </template>
 <script>
 import StickyAbout from './components/Sticky-About.vue'
@@ -46,6 +46,7 @@ import phoneDark from '@/assets/phone-d.png'
 
 import expo from '@/assets/export.png'
 import arrow from '@/assets/right-arrow.png'
+import ResumeService from './Services/ResumeService'
 
 export default {
   components: {
@@ -65,13 +66,16 @@ export default {
         linkedIn: localStorage.getItem('linkedIn') || inLight,
         gmail: localStorage.getItem('gmail') || mailLight,
         phone: localStorage.getItem('phone') || phoneLight
-      }
+      },
+      myData: ''
     }
   },
   mounted() {
     // Apply the saved theme or the default when the component is mounted
     document.documentElement.setAttribute('data-theme', this.theme)
+    this.getProfile()
   },
+
   methods: {
     toggleTheme() {
       this.theme = this.theme === 'light' ? 'dark' : 'light'
@@ -108,6 +112,15 @@ export default {
     },
     getPhonePng() {
       return this.theme === 'light' ? phoneLight : phoneDark
+    },
+    getProfile() {
+      ResumeService.resume()
+        .then((response) => {
+          console.log(response.data); // Logs the profile data
+        })
+        .catch((error) => {
+          console.error("Error retrieving profile:", error); // Handles errors properly
+        });
     }
   }
 }
@@ -115,12 +128,11 @@ export default {
 
 <style scoped>
 /* Mobile settings */
-.container{
+.container {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   justify-content: center;
-  
 }
 #main {
   display: grid;
@@ -129,8 +141,6 @@ export default {
   justify-content: space-between;
   gap: 2rem;
 }
-
-
 
 #scroll {
   display: flex;
@@ -167,7 +177,6 @@ export default {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* CSS rules for tablets */
-  
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -178,11 +187,11 @@ export default {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   /* CSS rules for desktops */
-  .container{
-  display: flex;
-  align-items:center;
-  justify-content: center;
-}
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   #main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -190,7 +199,7 @@ export default {
     gap: 3rem;
     width: 90%;
   }
- 
+
   #sticky,
   #scroll {
     top: 45px;
@@ -206,8 +215,6 @@ export default {
     gap: 1rem;
     position: relative;
   }
-
-
 
   .theme-btn {
     height: 40px;
@@ -233,5 +240,4 @@ export default {
     box-shadow: 0 0 10px 5px var(--shadow-color);
   }
 }
-
 </style>
