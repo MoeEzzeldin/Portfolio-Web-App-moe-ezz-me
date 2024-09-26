@@ -6,7 +6,7 @@
     <main id="main" class="wrapper">
       <!-- my info / Pic -->
       <div id="sticky">
-        <Sticky-About :myData :theme :icons />
+        <Sticky-About :theme :icons />
       </div>
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
@@ -47,7 +47,6 @@ import phoneDark from '@/assets/phone-d.png'
 
 import expo from '@/assets/export.png'
 import arrow from '@/assets/right-arrow.png'
-import ResumeService from './Services/ResumeService'
 
 export default {
   components: {
@@ -68,7 +67,6 @@ export default {
         gmail: localStorage.getItem('gmail') || mailLight,
         phone: localStorage.getItem('phone') || phoneLight
       },
-      myData: {},
     }
   },
 
@@ -109,20 +107,10 @@ export default {
     getPhonePng() {
       return this.theme === 'light' ? phoneLight : phoneDark
     },
-    getProfile() {
-      ResumeService.resume()
-        .then((response) => {
-          this.myData = response.data;
-          console.log(this.myData);
-        })
-        .catch((error) => {
-          console.error("Error retrieving profile:", error); // Handles errors properly
-        });
-    }
+
   },
   mounted() {
     // Apply the saved theme or the default when the component is mounted
-    this.getProfile()
     document.documentElement.setAttribute('data-theme', this.theme)
   },
 }
