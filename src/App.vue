@@ -6,7 +6,7 @@
     <main id="main" class="wrapper">
       <!-- my info / Pic -->
       <div id="sticky">
-        <Sticky-About :theme :icons />
+        <Sticky-About :myData :theme :icons />
       </div>
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
@@ -22,6 +22,7 @@
       </div>
     </main>
   </div>
+
 </template>
 <script>
 import StickyAbout from './components/Sticky-About.vue'
@@ -67,13 +68,8 @@ export default {
         gmail: localStorage.getItem('gmail') || mailLight,
         phone: localStorage.getItem('phone') || phoneLight
       },
-      myData: ''
+      myData: {},
     }
-  },
-  mounted() {
-    // Apply the saved theme or the default when the component is mounted
-    document.documentElement.setAttribute('data-theme', this.theme)
-    this.getProfile()
   },
 
   methods: {
@@ -116,13 +112,19 @@ export default {
     getProfile() {
       ResumeService.resume()
         .then((response) => {
-          console.log(response.data); // Logs the profile data
+          this.myData = response.data;
+          console.log(this.myData);
         })
         .catch((error) => {
           console.error("Error retrieving profile:", error); // Handles errors properly
         });
     }
-  }
+  },
+  mounted() {
+    // Apply the saved theme or the default when the component is mounted
+    this.getProfile()
+    document.documentElement.setAttribute('data-theme', this.theme)
+  },
 }
 </script>
 
@@ -168,7 +170,10 @@ export default {
   border-radius: 100%;
   z-index: 100;
 }
-
+#loading {
+  height: 100vh;
+  font: red 26px;
+}
 .theme-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 10px 5px var(--shadow-color);

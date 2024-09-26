@@ -3,7 +3,7 @@
     <section class="greeting">
       <div class="header">
         <h3 class="greet">Hi, my name is...</h3>
-        <h1 class="name">Moe Ezzeldin</h1>
+        <h1 class="name">name{{myData.name}}</h1>
         <h2 class="whomi">Junior Developer && Cloud Eng</h2>
         <p class="intro">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eligendi dolorem
@@ -58,6 +58,10 @@ export default {
       required: true
     },
     icons: {
+      type: Object,
+      required: true
+    },
+    myData: {
       type: Object,
       required: true
     }
