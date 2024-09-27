@@ -3,7 +3,7 @@
     <section class="greeting">
       <div class="header">
         <h3 class="greet">Hi, my name is...</h3>
-        <h1 class="name">{{myData.name}}</h1>
+        <h1 class="name">{{ myData.name }}</h1>
         <h2 class="whomi">{{ myData.summary }}</h2>
         <p class="intro">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eligendi dolorem
