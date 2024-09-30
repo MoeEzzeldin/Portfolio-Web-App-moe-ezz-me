@@ -1,118 +1,42 @@
 <template>
   <main id="experience">
-    <header>
-      <h2 class="Head">Hi I'am Experience</h2>
-    </header>
-    <section class="card">
-      <img class="expo" :src="expo" alt="png"/>
-      <div class="date"><h4>Feb '23 - Oct '23</h4></div>
-      
-      <div class="wrapper">
-        <div class="title">
-          <h4>Shift Supervisor | Starbucks</h4>
-        </div>
-        
-        <div class="content">
-          <ul class="list">
-            <li class="tag">
-              Promoted to assist the manager in submitting over 500 daily orders in an efficient and
-              timely manner
-            </li>
-            <li class="tag">
-              Arranged daily operation of the team and created reports that was communicated with
-              upper management
-            </li>
-          </ul>
-        </div>
-        <div class="skills">
-          <ul class="list">
-            <li class="tag skill">Custommer Service</li>
-            <li class="tag skill">Team Building</li>
-            <li class="tag skill">Fast phased Env</li>
-            
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="card">
-      <img class="expo" :src="expo" alt="png"/>
-      <div class="date"><h4>Feb '23 - Oct '23</h4></div>
-      
-      <div class="wrapper">
-        <div class="title">
-          <h4>Shift Supervisor | Starbucks</h4>
-        </div>
-        
-        <div class="content">
-          <ul class="list">
-            <li class="tag">
-              Promoted to assist the manager in submitting over 500 daily orders in an efficient and
-              timely manner
-            </li>
-            <li class="tag">
-              Arranged daily operation of the team and created reports that was communicated with
-              upper management
-            </li>
-          </ul>
-        </div>
-        <div class="skills">
-          <ul class="list">
-            <li class="tag skill">Custommer Service</li>
-            <li class="tag skill">Team Building</li>
-            <li class="tag skill">Fast phased Env</li>
-            
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="card">
-      <img class="expo" :src="expo" alt="png"/>
-      <div class="date"><h4>Feb '23 - Oct '23</h4></div>
-      
-      <div class="wrapper">
-        <div class="title">
-          <h4>Shift Supervisor | Starbucks</h4>
-        </div>
-        
-        <div class="content">
-          <ul class="list">
-            <li class="tag">
-              Promoted to assist the manager in submitting over 500 daily orders in an efficient and
-              timely manner
-            </li>
-            <li class="tag">
-              Arranged daily operation of the team and created reports that was communicated with
-              upper management
-            </li>
-          </ul>
-        </div>
-        <div class="skills">
-          <ul class="list">
-            <li class="tag skill">Custommer Service</li>
-            <li class="tag skill">Team Building</li>
-            <li class="tag skill">Fast phased Env</li>
-            
-          </ul>
-        </div>
-      </div>
-    </section>
 
+    <section class="card">
+      <div class="expo">
+        <img class="expo" :src="expo" alt="png"/>
+      </div>
+      <div class="date"><h4>{{item.startDate}} - {{ item.endDate }}</h4></div>
+      
+      <div class="wrapper">
+        <div class="title">
+          <h4>{{ item.position }} | {{item.name}}</h4>
+        </div>
+        
+        <div class="content">
+          <ul class="list">
+            <li class="tag" 
+            v-for="(point, index) in item.summary"
+            :key="index">
+            {{ point }}
+          </li>
+          </ul>
+        </div>
+        <div class="skills">
+          <ul class="list">
+            <li class="tag skill" 
+            v-for="(skill, index) in item.skills"
+            :key="index"> {{ skill }} </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
 <script>
 export default {
   name: 'My-Experience',
-  props: {
-    expo: {
-      type: String,
-      required: true
-    },
-    arrow: {
-      type: String,
-      required: true
-    }
-  },
+  props: ['expo', 'item'],
   data() {
     return {}
   },

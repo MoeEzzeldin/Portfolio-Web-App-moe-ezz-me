@@ -1,0 +1,158 @@
+{
+    "basics": {
+      "name": "Moe Ezzeldin",
+      "label": "Software Developer",
+      "image": "",
+      "email": "Ezzeldin.Mo3@gmail.com",
+      "phone": "(614) 816-9143",
+      "url": "https://Moe-Ezz.me",
+      "summary": "A summary of Moe Doe…",
+      "location": {
+        "address": "666 providance ave B",
+        "postalCode": "OH 43214",
+        "city": "Columbus",
+        "countryCode": "US",
+        "region": "Ohio"
+      },
+      "profiles": [{
+        "network": "github",
+        "username": "MoeEzzeldin",
+        "url": "https://github.com/MoeEzzeldin"
+      },
+      {
+        "network": "linkedIn",
+        "username": "MoeEzzeldin",
+        "url": "https://www.linkedin.com/in/moe-ezz-columbus-ohio/"
+      }]
+    },
+    "work": [{
+      "name": "Egyptian Armed Forces",
+      "position": "Corporal",
+      "url": "https://www.mod.gov.eg/ModWebSite/Default.aspx",
+      "startDate": "Feb '16",
+      "endDate": "May '18",
+      "summary": ["Supported the training office by providing technical support, including troubleshooting and fixing ad-hoc hardware and software issues for the center’s PCs, printers, and scanners",
+                  "Managed and continuously updated comprehensive training records for 3,000 new soldiers every 12 weeks",
+                  "Facilitated clear and responsive communication between officers, ensuring prompt resolution of 20-30 inquiries each day"
+                ],
+      "highlights": [
+        "Promoted To Corporal for ....."
+      ]
+    },
+    {
+      "name": "",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    },
+    {
+      "name": "",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    }],
+    "volunteer": [{
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }],
+    "education": [{
+      "institution": "University",
+      "url": "https://institution.com/",
+      "area": "Software Development",
+      "studyType": "Bachelor",
+      "startDate": "2011-01-01",
+      "endDate": "2013-01-01",
+      "score": "4.0",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    }],
+    "awards": [{
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }],
+    "certificates": [{
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }],
+    "publications": [{
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }],
+    "skills": [{
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": [
+        "bash",
+        "WSL",
+        "C#",
+        "ASP.NET",
+        "MVC",
+        "MS SQL",
+        "DynamoDB",
+        "Postman",
+        "JavaScript",
+        "Vue.JS",
+        "MVVM",
+        "HTML5",
+        "CSS",
+        "Agile",
+        "CSS",
+        "Amazon Web Services",
+        "Deployment"
+      ]
+    }],
+    "languages": [{
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Arabic",
+      "fluency": "Native speaker"
+    }],
+    "interests": [{
+      "name": "Music",
+      "keywords": [
+        "Guitar",
+        "Drums"
+      ]
+    }],
+    "references": [{
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }],
+    "projects": [{
+      "name": "Ecommerce Web Application",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "Description...",
+      "highlights": [
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    }]
+  }

@@ -5,16 +5,68 @@
   <div class="container">
     <main id="main" class="wrapper">
       <!-- my info / Pic -->
-      <div id="sticky">
-        <Sticky-About :theme :icons />
+      <div v-if="myData" id="sticky">
+        <Sticky-About :myData="this.myData" :theme :icons />
       </div>
+      <div class="sticky" v-else>
+        <div class="loader loader--style7" title="6">
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="24px"
+            height="30px"
+            viewBox="0 0 24 30"
+            style="enable-background: new 0 0 50 50"
+            xml:space="preserve"
+          >
+            <rect x="0" y="0" widt="4" height="20" fill="#333">
+              <animate
+                attributeName="opacity"
+                attributeType="XML"
+                values="1; .2; 1"
+                begin="0s"
+                dur="0.6s"
+                repeatCount="indefinite"
+              />
+            </rect>
+            <rect x="7" y="0" width="4" height="20" fill="#333">
+              <animate
+                attributeName="opacity"
+                attributeType="XML"
+                values="1; .2; 1"
+                begin="0.2s"
+                dur="0.6s"
+                repeatCount="indefinite"
+              />
+            </rect>
+            <rect x="14" y="0" width="4" height="20" fill="#333">
+              <animate
+                attributeName="opacity"
+                attributeType="XML"
+                values="1; .2; 1"
+                begin="0.4s"
+                dur="0.6s"
+                repeatCount="indefinite"
+              />
+            </rect>
+          </svg>
+        </div>
+      </div> 
+
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
         <div id="about">
-          <ElPitch />
+          <ElPitch :myData="this.myData" />
         </div>
         <div id="experience">
-          <Experience :expo :arrow />
+          <Experience v-for="(item, index) in myData.work"
+                      :key="index"
+                      :item="item"
+                      :expo />
         </div>
         <div id="projects">
           <Projects :expo />
@@ -22,7 +74,6 @@
       </div>
     </main>
   </div>
-
 </template>
 <script>
 import StickyAbout from './components/Sticky-About.vue'
@@ -46,7 +97,8 @@ import phoneLight from '@/assets/phone.png'
 import phoneDark from '@/assets/phone-d.png'
 
 import expo from '@/assets/export.png'
-import arrow from '@/assets/right-arrow.png'
+import ResumeService from './Services/ResumeService'
+import { ref } from 'vue' 
 
 export default {
   components: {
@@ -57,7 +109,6 @@ export default {
   },
   data() {
     return {
-      arrow: arrow,
       expo: expo,
       theme: localStorage.getItem('theme') || 'light',
       icons: {
@@ -65,12 +116,24 @@ export default {
         gitHub: localStorage.getItem('gitHub') || gitLight,
         linkedIn: localStorage.getItem('linkedIn') || inLight,
         gmail: localStorage.getItem('gmail') || mailLight,
-        phone: localStorage.getItem('phone') || phoneLight
+        phone: localStorage.getItem('phone') || phoneLight,
       },
+      myData: ref({}),
     }
   },
 
   methods: {
+    getProfile() {
+      ResumeService.resume()
+        .then((response) => {
+          const data = response.data;
+          this.myData = data;
+          console.log(this.myData);
+        })
+        .catch((error) => {
+          console.error('Error retrieving profile:', error)
+        })
+    },
     toggleTheme() {
       this.theme = this.theme === 'light' ? 'dark' : 'light'
       this.icons.png = this.getThemePng() === switchLight ? switchDark : switchLight
@@ -106,13 +169,13 @@ export default {
     },
     getPhonePng() {
       return this.theme === 'light' ? phoneLight : phoneDark
-    },
-
+    }
   },
-  mounted() {
-    // Apply the saved theme or the default when the component is mounted
+  mounted() {},
+  created() {
     document.documentElement.setAttribute('data-theme', this.theme)
-  },
+    this.getProfile()
+  }
 }
 </script>
 

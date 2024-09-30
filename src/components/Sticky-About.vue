@@ -3,13 +3,10 @@
     <section class="greeting">
       <div class="header">
         <h3 class="greet">Hi, my name is...</h3>
-        <h1 class="name">{{ myData.name }}</h1>
-        <h2 class="whomi">{{ myData.summary }}</h2>
+        <h1 class="name">{{ myData.basics.name }}</h1>
+        <h2 class="whomi">{{ myData.basics.label }}</h2>
         <p class="intro">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eligendi dolorem
-          aspernatur! Accusantium a vel in atque laborum dolor facilis eaque fugiat accusamus, sint
-          distinctio harum placeat suscipit molestiae ut!
-          <!-- {{ myData }} -->
+          {{ myData.basics.summary }}
         </p>
       </div>
     </section>
@@ -51,40 +48,29 @@
 </template>
 
 <script>
-import ResumeService from '@/Services/ResumeService';
 
 export default {
   name: 'Sticky-About',
-  props: {
-    theme: {
-      type: String,
-      required: true
-    },
-    icons: {
-      type: Object,
-      required: true
-    },
-  },
+  props: ['theme', 'icons', 'myData'],
+  // props: {
+  //   theme: {
+  //     type: String,
+  //     required: true
+  //   },
+  //   icons: {
+  //     type: Object,
+  //     required: true
+  //   },
+  //   myData: {
+  //     type: Object,
+  //     required: true
+  //   }
+  // },
   data() {
     return {
-      myData: {},
     }
   },
-  methods: {
-    getProfile() {
-      ResumeService.resume()
-        .then((response) => {
-          this.myData = JSON.parse(response.data.body);
-          console.log(this.myData);
-        })
-        .catch((error) => {
-          console.error("Error retrieving profile:", error);
-        });
-    }
-  },
-  mounted() {
-    this.getProfile()
-  },
+
 }
 </script>
 
