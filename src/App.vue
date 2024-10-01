@@ -192,14 +192,14 @@ export default {
   grid-template-columns: 1fr;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 #scroll {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: 4rem;
   margin: 0 15px;
 }
 

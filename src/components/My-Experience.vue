@@ -2,14 +2,14 @@
   <main id="experience">
 
     <section class="card">
-      <div class="expo">
+      <a :href="item.url" target="_blank" class="expo">
         <img class="expo" :src="expo" alt="png"/>
-      </div>
+      </a>
       <div class="date"><h4>{{item.startDate}} - {{ item.endDate }}</h4></div>
       
       <div class="wrapper">
         <div class="title">
-          <h4>{{ item.position }} | {{item.name}}</h4>
+          <h4>{{ item.position }} &nbsp; | &nbsp;{{item.name}}</h4>
         </div>
         
         <div class="content">
@@ -62,6 +62,7 @@ export default {
   transition: all 0.5s ease; /* Smooth transition for background color and border-radius */
   overflow: hidden;
   border-radius: 8px;
+  margin-bottom: 2rem;
 }
 .card:hover {
   background-color: var(--card-background);
@@ -87,11 +88,11 @@ export default {
   right: 5px;
   cursor: pointer;
   filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(0.8);
-  opacity: 1;
+  opacity: 0;
   transition: all 0.3s ease;
 }
 .card:hover .expo {
-  /* opacity: 1; */
+  opacity: 1;
   transition: all 0.3s ease;
 }
 

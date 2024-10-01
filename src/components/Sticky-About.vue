@@ -52,20 +52,7 @@
 export default {
   name: 'Sticky-About',
   props: ['theme', 'icons', 'myData'],
-  // props: {
-  //   theme: {
-  //     type: String,
-  //     required: true
-  //   },
-  //   icons: {
-  //     type: Object,
-  //     required: true
-  //   },
-  //   myData: {
-  //     type: Object,
-  //     required: true
-  //   }
-  // },
+
   data() {
     return {
     }
@@ -78,10 +65,14 @@ export default {
 .main{
   display: grid;
   grid-template-rows: 1fr .5fr .5fr;
-  justify-content: space-between;
-  height: 95vh;
+  height: 100vh;
   gap: 4rem;
 }
+/* display: grid;
+    grid-template-rows: 1fr .5fr .5fr;
+    height: 88vh;    
+    gap: 4rem; */
+
 .main >*:not(:last-child) {
   margin-left: 25px;
 }
@@ -186,14 +177,14 @@ main .holder:hover a {
 
 .footer {
   position: relative;
-  align-self: end;
+  align-self: center;
 }
 
 .footer .icons {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   gap: 30px;
+  
 }
 
 .footer .copy {
@@ -219,9 +210,9 @@ main .holder:hover a {
 @media (min-width: 1200px) {
   main .main {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 40px;
-    height: 88vh;
+    grid-template-rows: 1fr .5fr .5fr;
+    height: 88vh;    
+    gap: 4rem;
   }
 
 
@@ -235,7 +226,6 @@ main .holder:hover a {
 
   .footer .icons {
     width: 100%;
-    justify-content: center;
     gap: 50px;
   }
   .footer .copy {

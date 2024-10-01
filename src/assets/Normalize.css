@@ -119,8 +119,12 @@ a {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  color: #4caf50;
+  color: var(--card-title);
   letter-spacing: 1.5px;
+  text-decoration: none;
+}
+a:hover {
+  color: #18ffff;
 }
 
 /**
