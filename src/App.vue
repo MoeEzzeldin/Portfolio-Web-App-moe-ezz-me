@@ -63,10 +63,12 @@
           <ElPitch :myData="this.myData" />
         </div>
         <div id="experience">
+          <h1>Experience</h1>
           <Experience v-for="(item, index) in myData.work"
                       :key="index"
                       :item="item"
-                      :expo />
+                      :expo
+                      :promoted />
         </div>
         <div id="projects">
           <Projects :expo />
@@ -97,6 +99,7 @@ import phoneLight from '@/assets/phone.png'
 import phoneDark from '@/assets/phone-d.png'
 
 import expo from '@/assets/export.png'
+import promoted from '@/assets/promoted.png'
 import ResumeService from './Services/ResumeService'
 import { ref } from 'vue' 
 
@@ -110,6 +113,7 @@ export default {
   data() {
     return {
       expo: expo,
+      promoted: promoted,
       theme: localStorage.getItem('theme') || 'light',
       icons: {
         png: localStorage.getItem('png') || switchLight,

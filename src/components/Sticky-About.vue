@@ -242,4 +242,10 @@ main .holder:hover a {
     gap: 2rem;
   }
 }
+@media (min-width: 1440px) {
+  body {
+    transform: scale(1.05); /* Scale up by 5% */
+    transform-origin: top left; /* Set the scaling origin */
+  }
+}
 </style>
