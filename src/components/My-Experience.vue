@@ -77,6 +77,8 @@ export default {
 .card .date {
   transition: all 0.5s ease-out;
   padding-right: 2rem;
+  display: flex;
+  align-items: center
 }
 
 
@@ -127,7 +129,7 @@ export default {
 }
 
 .skills .list .tag-skill {
-  color: var(--card-title);
+  color: var(--text-color);
   background-color: var(--tag-color);
   border-radius: 25px;
   height: 30px;
@@ -136,11 +138,13 @@ export default {
   justify-content: center;
   padding: 0 10px;
   font-size: var(--font-small);
+
 }
 
 .card:hover .tag-skill {
   transition: all 1s ease-in;
-  color: rgb(249, 83, 0);
+  color: var(--card-title);
+
 }
 
  

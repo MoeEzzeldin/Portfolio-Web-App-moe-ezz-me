@@ -98,7 +98,7 @@ main .greet {
 main .name {
   font-weight: 700;
   font-style: normal;
-  font-size: 3rem;
+  font-size: 2.8rem;
   line-height: 1;
   margin: 0;
   color: var(--heading-color);
@@ -106,7 +106,7 @@ main .name {
 }
 
 main .whomi {
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   background: linear-gradient(to right, rgb(255, 106, 0), blue);
   -webkit-background-clip: text;
@@ -114,8 +114,9 @@ main .whomi {
 }
 
 main .intro {
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
+  font-size: 1.2rem;
   /* max-width: 680px; */
 }
 
@@ -214,7 +215,9 @@ main .holder:hover a {
     height: 88vh;    
     gap: 4rem;
   }
-
+.main .name {
+  font-size: 4rem;
+}
 
   .footer {
     height: 150px;

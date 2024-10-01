@@ -44,6 +44,7 @@ main {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-style: normal;
+  font-size: 1.2rem;
 }
 
 p {
@@ -56,7 +57,6 @@ p {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-style: normal;
-    height: 100vh;
   }
 
   p {
@@ -68,10 +68,5 @@ p {
     padding-top: 2rem;
   }
 }
-@media (min-width: 1440px) {
-  body {
-    transform: scale(1.05); /* Scale up by 5% */
-    transform-origin: top left; /* Set the scaling origin */
-  }
-}
+
 </style>

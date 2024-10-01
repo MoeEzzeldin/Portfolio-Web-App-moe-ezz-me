@@ -3,10 +3,10 @@
 :root {
   --background-color: #d4eeff; /* Light background */
   --card-background: #c3e8ff; /* Lighter card background */
-  --card-title:#337e55;
+  --card-title: #337e55; /* Card title color */
   --accent-color: #5d546f; /* Darker surface as accent */
-  --text-color: #170e30; /* Dark text for readability */
-  --heading-color: #2d2444; /* Darker heading color */
+  --text-color: #2d2444; /* Updated dark text for readability */
+  --heading-color: #2d2444; /* Heading color remains unchanged */
   --hover-color: #766e86; /* Darker hover effect */
   --border-color: #2d2444; /* Dark surface for subtle borders */
   --button-color: #453c59; /* Surface color for buttons */
@@ -17,16 +17,16 @@
 
 /* Dark Mode */
 [data-theme='dark'] {
-  --background-color: #000000;
-  --card-background: #1b0029;
-  --card-title:#57D7D3;
-  --text-color: #c7e6ff;
-  --heading-color: #f5f5f5;
-  --accent-color: #18ffff;
-  --hover-color: #8e24aa;
+  --background-color: #000000; /* Dark background */
+  --card-background: #1b0029; /* Darker card background */
+  --card-title: #57D7D3; /* Card title color */
+  --text-color: #e0e0e0; /* Light gray for body text */
+  --heading-color: #f5f5f5; /* Heading color remains unchanged */
+  --accent-color: #18ffff; /* Bright accent color */
+  --hover-color: #8e24aa; /* Darker hover effect */
   --border-color: #ccebff; /* Light primary color for borders */
-  --button-color: #c3e8ff; /* Light but noticeable button color */
-  --input-color: #5d546f; /* Input color that's a little lighter than the card */
+  --button-color: #5d546f; /* Button color for better contrast */
+  --input-color: #453c59; /* Darker input color */
   transition: background-color 0.5s ease;
 }
 
@@ -39,14 +39,7 @@
   --secondary-font: '';
 }
 
-[data-theme='dark'] {
-  --font-small: 12px;
-  --font-medium: 16px;
-  --font-large: 20px;
-  --font-xlarge: 24px;
-  --primary-font: 'Poppins', sans-serif;
-  --secondary-font: '';
-}
+
 
 html {
   -webkit-text-size-adjust: 100%; /* 2 */
