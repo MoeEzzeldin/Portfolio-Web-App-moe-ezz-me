@@ -1,5 +1,4 @@
 <template>
-
   <!-- I want this png to also expand the background color@click -->
   <img class="theme-btn" @click="toggleTheme" :src="icons.png" alt="dark-light" />
   <!-- im adding wrapper to make main fit 80vw in mobile views -->
@@ -9,8 +8,6 @@
       <div id="sticky">
         <Sticky-About :myData="this.myData" :theme :icons />
       </div>
-
-
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
         <div id="about">
@@ -18,14 +15,22 @@
         </div>
         <div id="experience">
           <h1>Experience</h1>
-          <Experience v-for="(item, index) in myData.work"
-                      :key="index"
-                      :item="item"
-                      :expo
-                      :promoted />
+          <Experience
+            v-for="(item, index) in myData.work"
+            :key="index"
+            :item="item"
+            :expo
+            :promoted
+          />
         </div>
         <div id="projects">
-          <Projects :expo />
+          <h1>Projects</h1>
+          <Projects
+          v-for="(item, index) in myData.projects"
+          :key="index"
+          :item="item"
+          :expo
+          />
         </div>
       </div>
     </main>
@@ -55,14 +60,14 @@ import phoneDark from '@/assets/phone-d.png'
 import expo from '@/assets/export.png'
 import promoted from '@/assets/promoted.png'
 import ResumeService from './Services/ResumeService'
-import { ref } from 'vue' 
+import { ref } from 'vue'
 
 export default {
   components: {
     StickyAbout,
     ElPitch,
     Experience,
-    Projects
+    Projects,
   },
   data() {
     return {
@@ -74,9 +79,9 @@ export default {
         gitHub: localStorage.getItem('gitHub') || gitLight,
         linkedIn: localStorage.getItem('linkedIn') || inLight,
         gmail: localStorage.getItem('gmail') || mailLight,
-        phone: localStorage.getItem('phone') || phoneLight,
+        phone: localStorage.getItem('phone') || phoneLight
       },
-      myData: ref({}),
+      myData: ref({})
     }
   },
 
@@ -84,9 +89,9 @@ export default {
     getProfile() {
       ResumeService.resume()
         .then((response) => {
-          const data = response.data;
-          this.myData = data;
-          console.log(this.myData);
+          const data = response.data
+          this.myData = data
+          console.log(this.myData)
         })
         .catch((error) => {
           console.error('Error retrieving profile:', error)
@@ -192,13 +197,11 @@ export default {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* CSS rules for tablets */
-
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
-  
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -257,8 +260,4 @@ export default {
     box-shadow: 0 0 10px 5px var(--shadow-color);
   }
 }
-
-
-
-
 </style>

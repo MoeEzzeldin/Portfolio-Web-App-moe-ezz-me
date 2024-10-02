@@ -3,9 +3,10 @@
     <section class="greeting">
       <div class="header">
         <h3 class="greet">Hi, my name is...</h3>
-        <h1 class="name">{{ myData.basics.name }}</h1>
-        <h2 class="whomi">{{ myData.basics.label }}</h2>
-        <p class="intro">
+        <!-- Use v-if to check if myData and myData.basics exist -->
+        <h1 class="name" v-if="myData.basics">{{ myData.basics.name }}</h1>
+        <h2 class="whomi" v-if="myData.basics">{{ myData.basics.label }}</h2>
+        <p class="intro" v-if="myData.basics">
           {{ myData.basics.summary }}
         </p>
       </div>

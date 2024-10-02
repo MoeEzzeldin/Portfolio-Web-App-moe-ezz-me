@@ -129,7 +129,7 @@ export default {
 }
 
 .skills .list .tag-skill {
-  color: var(--text-color);
+  color: var(--card-title);
   background-color: var(--tag-color);
   border-radius: 25px;
   height: 30px;
@@ -138,13 +138,11 @@ export default {
   justify-content: center;
   padding: 0 10px;
   font-size: var(--font-small);
-
 }
 
 .card:hover .tag-skill {
   transition: all 1s ease-in;
   color: var(--card-title);
-
 }
 
  
