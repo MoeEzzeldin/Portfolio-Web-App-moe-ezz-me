@@ -4,7 +4,7 @@
         <a :href="item.url" target="_blank" class="expo">
         <img class="expo" :src="expo" alt="png" />
       </a>
-        <div class="img"><img src="" alt=""></div>
+        <div class="img"><img :src="item.img" alt=""></div>
         <div class="wrapper">
           <div class="title">
             <h4>{{ item.name }}</h4>
@@ -87,12 +87,23 @@
     opacity: 0;
     transition: all 0.3s ease;
   }
-  .card:hover .expo {
+  .card:hover .expo, .card:hover .img img{
     opacity: 1;
     transition: all 0.3s ease;
   }
-  
-  
+  .card .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card .img img{
+    height: 150px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    border-radius: 5px;
+    opacity: .5;
+    transition: all 0.3s ease;
+
+  }
   .card .date {
     transition: all 0.5s ease-out;
     text-align: center;
