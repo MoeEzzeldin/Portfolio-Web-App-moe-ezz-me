@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: 'Temp-Project',
+  name: 'my-Project',
   props: ['expo', 'item'],
   data() {
     return {
