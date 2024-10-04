@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: 'my-Project',
+  name: 'My-Project',
   props: ['expo', 'item'],
   data() {
     return {
