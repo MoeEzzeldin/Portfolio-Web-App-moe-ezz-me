@@ -208,7 +208,10 @@ main .holder:hover a {
   transform: translateY(-5px);
   filter: drop-shadow(0px 5px 10px 10px var(--shadow-color));
 }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* CSS rules for tablets */
 
+}
 @media (min-width: 1200px) {
   main .main {
     display: grid;
@@ -239,7 +242,6 @@ main .holder:hover a {
 
 @media (orientation: landscape) {
   .main {
-    height: auto;
     gap: 2rem;
   }
   #scroll {

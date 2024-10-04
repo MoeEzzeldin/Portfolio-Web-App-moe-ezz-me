@@ -40,7 +40,8 @@
 import StickyAbout from './components/Sticky-About.vue'
 import ElPitch from './components/El-Pitch.vue'
 import Experience from './components/My-Experience.vue'
-import Projects from './components/my-Project.vue'
+import Projects from './components/My-Project.vue'
+
 import switchLight from '@/assets/darkpng.png'
 import switchDark from '@/assets/lightpng.png'
 
@@ -66,8 +67,7 @@ export default {
     StickyAbout,
     ElPitch,
     Experience,
-    Projects,
-
+    Projects
   },
   data() {
     return {

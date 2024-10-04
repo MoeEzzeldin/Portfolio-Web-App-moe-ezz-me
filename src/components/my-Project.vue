@@ -72,6 +72,8 @@ export default {
   z-index: 2;
   transition: all 0.5s ease-out;
   border-radius: 8px;
+  box-shadow: 0 0 10px var(--shadow-color);
+
 }
 .card:hover .background-img {
   opacity: .3;
