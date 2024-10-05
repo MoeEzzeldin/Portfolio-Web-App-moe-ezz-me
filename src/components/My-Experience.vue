@@ -1,6 +1,6 @@
 <template>
   <main id="experience">
-    <section class="card">
+    <section class="card hover">
       <a :href="item.url" target="_blank" class="expo">
         <img class="expo" :src="expo" alt="png" />
       </a>
@@ -37,7 +37,24 @@ export default {
   props: ['expo', 'item', 'promoted'],
   data() {
     return {
+      hiddenElements: document.querySelectorAll('.hover'),
+      observer: null,
     }
+  },
+  mounted() {
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+
+    document.querySelectorAll('.hover').forEach((section) => {
+      this.observer.observe(section);
+    });
   },
 
 
@@ -45,7 +62,13 @@ export default {
 </script>
 
 <style scoped>
-
+.hover {
+  opacity: 1;
+  transition: 1s ease-in;
+  background-color: var(--card-background);
+  backdrop-filter: blur(25px);
+  box-shadow: var(--shadow);
+}
 #experience .card {
   position: relative;
   padding: 1rem;
@@ -60,7 +83,6 @@ export default {
   box-shadow: var(--shadow);
   border-top: 1px solid var(--card-title);
   border-left: 1px solid var(--card-title);
-
 }
 .card .wrapper {
   display: flex;
@@ -154,7 +176,10 @@ export default {
   color: var(--card-title);
 }
 
- 
+@media (min-width: 1200px){
+  .hover {
+  }
+}
 @media (min-width: 1440px) {
   body {
     transform: scale(1.05); /* Scale up by 5% */

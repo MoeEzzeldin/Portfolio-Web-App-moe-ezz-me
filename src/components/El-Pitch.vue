@@ -45,6 +45,7 @@ main {
   font-weight: 500;
   font-style: normal;
   font-size: 1.2rem;
+  height: 100vh;
 }
 
 p {

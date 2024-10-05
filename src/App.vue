@@ -1,11 +1,11 @@
 <template>
   <!-- I want this png to also expand the background color@click -->
   <div class="switch">
-  <div class="switch__1">
-        <input id="switch-1" type="checkbox" @click="toggleTheme">
-        <label for="switch-1"></label>
-      </div>
+    <div class="switch__1">
+      <input id="switch-1" type="checkbox" @click="toggleTheme" />
+      <label for="switch-1"></label>
     </div>
+  </div>
   <!-- im adding wrapper to make main fit 80vw in mobile views -->
   <div class="container">
     <main id="main" class="wrapper">
@@ -15,10 +15,10 @@
       </div>
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
-        <div id="about">
+        <div id="about" class="hidden">
           <ElPitch :myData="this.myData" />
         </div>
-        <div id="experience">
+        <div id="experience" class="hidden">
           <h1>Experience</h1>
           <Experience
             v-for="(item, index) in myData.work"
@@ -28,14 +28,9 @@
             :promoted
           />
         </div>
-        <div id="projects">
+        <div id="projects" class="hidden">
           <h1>Projects</h1>
-          <MyProjects
-          v-for="(item, index) in myData.projects"
-          :key="index"
-          :item="item"
-          :expo
-          />
+          <MyProjects v-for="(item, index) in myData.projects" :key="index" :item="item" :expo />
         </div>
       </div>
     </main>
@@ -86,7 +81,9 @@ export default {
         gmail: localStorage.getItem('gmail') || mailLight,
         phone: localStorage.getItem('phone') || phoneLight
       },
-      myData: ref({})
+      myData: ref({}),
+      hiddenElements: document.querySelectorAll('.hidden'),
+      observer: null
     }
   },
 
@@ -138,17 +135,39 @@ export default {
       return this.theme === 'light' ? phoneLight : phoneDark
     }
   },
-  mounted() {},
   created() {
     document.documentElement.setAttribute('data-theme', this.theme)
     this.getProfile()
-  }
+  },
+  mounted() {
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+
+    document.querySelectorAll('.hidden').forEach((section) => {
+      this.observer.observe(section);
+    });
+  },
 }
 </script>
 
 <style scoped>
 /* Mobile settings */
 
+.hidden {
+  opacity: 0;
+  transition: 1s ease-in;
+}
+.show {
+  opacity: 1;
+  transition: 1s ease-in;
+}
 .container {
   display: grid;
   grid-template-columns: 1fr;
@@ -172,9 +191,7 @@ export default {
 }
 
 .theme-btn {
-
   /* fix effect */
-
 }
 #loading {
   height: 100vh;
@@ -209,7 +226,9 @@ export default {
   align-items: center;
   width: 100%;
   height: 2.5rem;
-  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+  box-shadow:
+    0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
   background: rgba(255, 255, 255, 0);
   position: relative;
   cursor: pointer;
@@ -217,7 +236,7 @@ export default {
 }
 
 .switch__1 label::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0.4rem;
   width: 2rem;
@@ -228,11 +247,16 @@ export default {
 }
 
 .switch__1 label::before {
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(270deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  background: linear-gradient(
+    270deg,
+    var(--primary-dark) 0%,
+    var(--primary) 50%,
+    var(--primary-light) 100%
+  );
   opacity: 0;
   transition: all 0.4s ease;
 }
@@ -245,6 +269,7 @@ export default {
   left: 55%;
   background: var(--greyLight-1);
 }
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* CSS rules for tablets */
@@ -286,8 +311,5 @@ export default {
     gap: 1rem;
     position: relative;
   }
-
-
 }
-
 </style>
