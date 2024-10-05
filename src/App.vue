@@ -45,7 +45,7 @@
 import StickyAbout from './components/Sticky-About.vue'
 import ElPitch from './components/El-Pitch.vue'
 import Experience from './components/My-Experience.vue'
-import MyProjects from './components/My-Project.vue'
+import MyProjects from './components/My-Projects.vue'
 
 import switchLight from '@/assets/darkpng.png'
 import switchDark from '@/assets/lightpng.png'
