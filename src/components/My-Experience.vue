@@ -52,19 +52,22 @@ export default {
   transition: all 0.5s ease; /* Smooth transition for background color and border-radius */
   overflow: hidden;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
  .card:hover {
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
   box-shadow: var(--shadow);
   border-top: 1px solid var(--card-title);
+  border-left: 1px solid var(--card-title);
+
 }
 .card .wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding-top: 20px;
+  justify-content: center;
 }
  .card:hover .title {
   transform: translateY(-5px);
@@ -125,10 +128,14 @@ export default {
 .card .list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
   list-style: none;
   padding: 0;
   gap: 10px;
 }
+
+
 
 .skills .list .tag-skill {
   color: var(--card-title);

@@ -47,7 +47,7 @@ inset -.2rem -.2rem .5rem var(--white);
   --background-color: #121212; /* Dark background */
   --card-background: #121212; /* Darker card background */
   --card-title: #57D7D3; /* Card title color */
-  --text-color: #e0e0e0; /* Light gray for body text */
+  --text-color: #E4EBF5; /* Light gray for body text */
   --heading-color: #f5f5f5; /* Heading color remains unchanged */
   --accent-color: #18ffff; /* Bright accent color */
   --hover-color: #8e24aa; /* Darker hover effect */

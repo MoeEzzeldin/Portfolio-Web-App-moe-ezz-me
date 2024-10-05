@@ -45,10 +45,7 @@ export default {
 </script>
 
 <style scoped>
-#project {
-  position: sticky;
-  top: 0;
-}
+
 
  .card {
   position: relative;
@@ -56,7 +53,7 @@ export default {
   transition: all 0.5s ease;
   overflow: hidden;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   box-shadow: var(--shadow);
 
 }
@@ -72,7 +69,7 @@ export default {
   z-index: 2;
   transition: all 0.5s ease-out;
   border-radius: 8px;
-}
+  filter: grayscale(0.5); }
 .card:hover .background-img {
   opacity: .3;
   filter: blur(10px);
@@ -85,9 +82,9 @@ export default {
   backdrop-filter: blur(25px);
   box-shadow: var(--shadow);
   border-top: 1px solid var(--card-title);
-
+  border-left: 1px solid var(--card-title);
 }
-.card .wrapper {
+.card  {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +93,6 @@ export default {
 
 }
  .card:hover .title {
-  transform: translateY(-5px);
   color: var(--card-title);
 }
 
@@ -119,8 +115,8 @@ export default {
 }
 
  .card:hover .date h4 {
-  transform: translateY(-5px);
   opacity: 1;
+  color: var(--card-title);
 }
 .card .expo {
   position: absolute;
@@ -141,12 +137,13 @@ export default {
 
 
 
-.card .wrapper .title {
+.card .title {
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s ease;
+
 }
 
 
