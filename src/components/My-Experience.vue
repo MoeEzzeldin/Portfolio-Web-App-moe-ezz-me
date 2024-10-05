@@ -58,6 +58,7 @@ export default {
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
   box-shadow: var(--shadow);
+  border-top: 1px solid var(--card-title);
 }
 .card .wrapper {
   display: flex;
