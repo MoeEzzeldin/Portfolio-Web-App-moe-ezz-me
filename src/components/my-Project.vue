@@ -4,7 +4,6 @@
       <a :href="item.url" target="_blank" class="expo">
         <img class="expo" :src="expo" alt="png" />
       </a>
-      <div class="wrapper">
         <div class="background-img" :style="{ backgroundImage: 'url(' + item.img + ')' }"></div>
 
         <div class="title">
@@ -28,7 +27,6 @@
             </li>
           </ul>
         </div>
-      </div>
     </section>
   </main>
 </template>
@@ -59,6 +57,8 @@ export default {
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+
 }
 .background-img {
   position: absolute;
@@ -72,8 +72,6 @@ export default {
   z-index: 2;
   transition: all 0.5s ease-out;
   border-radius: 8px;
-  box-shadow: 0 0 10px var(--shadow-color);
-
 }
 .card:hover .background-img {
   opacity: .3;

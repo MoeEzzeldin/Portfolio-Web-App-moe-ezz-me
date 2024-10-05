@@ -1,6 +1,11 @@
 <template>
   <!-- I want this png to also expand the background color@click -->
-  <img class="theme-btn" @click="toggleTheme" :src="icons.png" alt="dark-light" />
+  <div class="switch">
+  <div class="switch__1">
+        <input id="switch-1" type="checkbox" @click="toggleTheme">
+        <label for="switch-1"></label>
+      </div>
+    </div>
   <!-- im adding wrapper to make main fit 80vw in mobile views -->
   <div class="container">
     <main id="main" class="wrapper">
@@ -168,22 +173,9 @@ export default {
 }
 
 .theme-btn {
-  height: 40px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
+
   /* fix effect */
-  transition:
-    opacity 0.3s ease,
-    height 0.3s ease;
-  box-shadow:
-    0 0 5px var(--hover-color),
-    0 0 5px rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 5px var(--hover-color);
-  transition: box-shadow 0.3s ease;
-  border-radius: 100%;
-  z-index: 100;
+
 }
 #loading {
   height: 100vh;
@@ -194,6 +186,66 @@ export default {
   box-shadow: 0 0 10px 5px var(--shadow-color);
 }
 
+.switch {
+  grid-column: 1 / 2;
+  display: grid;
+  grid-gap: 3rem;
+  justify-self: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch__1 {
+  width: 5rem;
+}
+
+.switch__1 label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+  cursor: pointer;
+  border-radius: 1.6rem;
+}
+
+.switch__1 label::after {
+  content: "";
+  position: absolute;
+  left: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--greyDark);
+  transition: all 0.4s ease;
+}
+
+.switch__1 label::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(270deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.switch input:checked ~ label::before {
+  opacity: 1;
+}
+
+.switch input:checked ~ label::after {
+  left: 55%;
+  background: var(--greyLight-1);
+}
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* CSS rules for tablets */
@@ -236,28 +288,7 @@ export default {
     position: relative;
   }
 
-  .theme-btn {
-    height: 40px;
-    position: fixed;
-    right: 15px;
-    top: 15px;
-    cursor: pointer;
-    /* fix effect */
-    transition:
-      opacity 0.3s ease,
-      height 0.3s ease;
-    box-shadow:
-      0 0 5px var(--hover-color),
-      0 0 5px rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 5px var(--hover-color);
-    transition: box-shadow 0.3s ease;
-    border-radius: 100%;
-    z-index: 100;
-  }
 
-  .theme-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px 5px var(--shadow-color);
-  }
 }
+
 </style>

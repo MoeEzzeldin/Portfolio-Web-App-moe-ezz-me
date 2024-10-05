@@ -1,8 +1,21 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Color Palette */
+
+/* 
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+*/
+
+
 :root {
-  --background-color: #d4eeff; /* Light background */
-  --card-background: #c3e8ff; /* Lighter card background */
+  --background-color: #E4EBF5; /* Light background */
+  --card-background: #E4EBF5; /* Lighter card background */
   --card-title: #337e55; /* Card title color */
   --accent-color: #5d546f; /* Darker surface as accent */
   --text-color: #2d2444; /* Updated dark text for readability */
@@ -13,12 +26,26 @@
   --input-color: #b9e4ff; /* Light input background */
   --shadow-color: rgba(23, 14, 48, 0.2); /* Drop Shadow */
   --tag-color: rgba(86, 216, 212, 0.2);
+  --shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
+  --inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+inset -.2rem -.2rem .5rem var(--white);
+--primary-light: #8abdff;
+--primary: #6d5dfc;
+--primary-dark: #5b0eeb;
+
+--white: #FFFFFF;
+--greyLight-1: #E4EBF5;
+--greyLight-2: #c8d0e7;
+--greyLight-3: #bec8e4;
+--greyDark: #9baacf;
 }
+
+
 
 /* Dark Mode */
 [data-theme='dark'] {
-  --background-color: #000000; /* Dark background */
-  --card-background: #1b0029; /* Darker card background */
+  --background-color: #121212; /* Dark background */
+  --card-background: #121212; /* Darker card background */
   --card-title: #57D7D3; /* Card title color */
   --text-color: #e0e0e0; /* Light gray for body text */
   --heading-color: #f5f5f5; /* Heading color remains unchanged */
@@ -27,10 +54,21 @@
   --border-color: #ccebff; /* Light primary color for borders */
   --button-color: #5d546f; /* Button color for better contrast */
   --input-color: #453c59; /* Darker input color */
-  --shadow-color:0 4px 6px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6) /* Drop Shadow */
+  --shadow-color:0 4px 6px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6) Drop Shadow
+  --shadow: .3rem .3rem .6rem rgba(0, 0, 0, 0.6), -.2rem -.2rem .5rem rgba(255, 255, 255, 0.1);
+  --inner-shadow: inset .2rem .2rem .5rem rgba(0, 0, 0, 0.6), inset -.2rem -.2rem .5rem rgba(255, 255, 255, 0.1);
 
-  transition: background-color 0.5s ease;
+  --primary-light: #637da7; /* Muted version of light blue */
+  --primary: #3d3f9a; /* Darker version of primary */
+  --primary-dark: #2c2771; /* Even darker version for dark mode */
+
+  --white: #121212; /* Near-black for background or text */
+  --greyLight-1: #1e1e1e; /* Dark grey */
+  --greyLight-2: #2a2a2a; /* Darker grey */
+  --greyLight-3: #3a3a3a; /* Lighter grey for elements */
+  --greyDark: #6e6e6e; /* Medium grey for text/icons */
 }
+
 
 :root {
   --font-small: 12px;

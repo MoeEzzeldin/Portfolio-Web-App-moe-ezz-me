@@ -57,7 +57,7 @@ export default {
  .card:hover {
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
-  box-shadow: 0 0 10px var(--shadow-color);
+  box-shadow: var(--shadow);
 }
 .card .wrapper {
   display: flex;
@@ -76,9 +76,9 @@ export default {
 }
 .card .date {
   transition: all 0.5s ease-out;
-  padding-right: 2rem;
+  padding-right: 1rem;
   display: flex;
-  align-items: center
+  align-items: end;
 }
 
 
@@ -91,6 +91,7 @@ export default {
  .card:hover .date h4 {
   transform: translateY(-5px);
   opacity: 1;
+  color: var(--card-title);
 }
 .card .expo {
   position: absolute;
