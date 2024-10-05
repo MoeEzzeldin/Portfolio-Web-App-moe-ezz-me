@@ -30,7 +30,7 @@
         </div>
         <div id="projects">
           <h1>Projects</h1>
-          <Projects
+          <MyProjects
           v-for="(item, index) in myData.projects"
           :key="index"
           :item="item"
@@ -45,7 +45,7 @@
 import StickyAbout from './components/Sticky-About.vue'
 import ElPitch from './components/El-Pitch.vue'
 import Experience from './components/My-Experience.vue'
-import Projects from './components/My-Project.vue'
+import MyProjects from './components/My-Project.vue'
 
 import switchLight from '@/assets/darkpng.png'
 import switchDark from '@/assets/lightpng.png'
@@ -72,7 +72,7 @@ export default {
     StickyAbout,
     ElPitch,
     Experience,
-    Projects
+    MyProjects
   },
   data() {
     return {
@@ -104,7 +104,6 @@ export default {
     },
     toggleTheme() {
       this.theme = this.theme === 'light' ? 'dark' : 'light'
-      this.icons.png = this.getThemePng() === switchLight ? switchDark : switchLight
       this.icons.gitHub = this.getGitPng()
       this.icons.linkedIn = this.getInPng()
       this.icons.gmail = this.getGmailPng()

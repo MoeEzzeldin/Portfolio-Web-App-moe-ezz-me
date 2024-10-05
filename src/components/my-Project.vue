@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: 'My-Project',
+  name: 'MyProjects',
   props: ['expo', 'item'],
   data() {
     return {
