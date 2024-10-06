@@ -1,8 +1,8 @@
 <template>
   <!-- I want this png to also expand the background color@click -->
-  <div class="switch">
+  <div :class="['switch', { 'switch-on': isSwitchOn }]">
     <div class="switch__1">
-      <input id="switch-1" type="checkbox" @click="toggleTheme" />
+      <input id="switch-1" type="checkbox" v-model="isSwitchOn" @click="toggleTheme" />
       <label for="switch-1"></label>
     </div>
   </div>
@@ -42,9 +42,6 @@ import ElPitch from './components/El-Pitch.vue'
 import Experience from './components/My-Experience.vue'
 import MyProjects from './components/My-Projects.vue'
 
-import switchLight from '@/assets/darkpng.png'
-import switchDark from '@/assets/lightpng.png'
-
 import gitLight from '@/assets/github.png'
 import gitDark from '@/assets/github-d.png'
 
@@ -71,16 +68,16 @@ export default {
   },
   data() {
     return {
-      expo: expo,
-      promoted: promoted,
       theme: localStorage.getItem('theme') || 'light',
+      isSwitchOn: localStorage.getItem('isSwitchOn')  === true,
       icons: {
-        png: localStorage.getItem('png') || switchLight,
         gitHub: localStorage.getItem('gitHub') || gitLight,
         linkedIn: localStorage.getItem('linkedIn') || inLight,
         gmail: localStorage.getItem('gmail') || mailLight,
         phone: localStorage.getItem('phone') || phoneLight
       },
+      expo: expo,
+      promoted: promoted,
       myData: ref({}),
       hiddenElements: document.querySelectorAll('.hidden'),
       observer: null
@@ -105,6 +102,7 @@ export default {
       this.icons.linkedIn = this.getInPng()
       this.icons.gmail = this.getGmailPng()
       this.icons.phone = this.getPhonePng()
+      this.isSwitchOn = !this.isSwitchOn
       this.setDocToCurrent()
       this.setLocalStorage()
     },
@@ -113,14 +111,11 @@ export default {
     },
     setLocalStorage() {
       localStorage.setItem('theme', this.theme)
-      localStorage.setItem('png', this.icons.png)
+      localStorage.setItem('isSwitchOn', this.isSwitchOn)
       localStorage.setItem('gitHub', this.icons.gitHub)
       localStorage.setItem('linkedIn', this.icons.linkedIn)
       localStorage.setItem('gmail', this.icons.gmail)
       localStorage.setItem('phone', this.icons.phone)
-    },
-    getThemePng() {
-      return this.theme === 'light' ? switchDark : switchLight
     },
     getGitPng() {
       return this.theme === 'light' ? gitLight : gitDark
@@ -133,6 +128,9 @@ export default {
     },
     getPhonePng() {
       return this.theme === 'light' ? phoneLight : phoneDark
+    },
+    getSwitch() {
+      return this.isSwitchOn === true ? true : false
     }
   },
   created() {
@@ -190,17 +188,12 @@ export default {
   margin: 0 15px;
 }
 
-.theme-btn {
-  /* fix effect */
-}
+
 #loading {
   height: 100vh;
   font: red 26px;
 }
-.theme-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px 5px var(--shadow-color);
-}
+
 
 .switch {
   grid-column: 1 / 2;
@@ -228,11 +221,13 @@ export default {
   height: 2.5rem;
   box-shadow:
     0.3rem 0.3rem 0.6rem var(--greyLight-2),
-    -0.2rem -0.2rem 0.5rem var(--white);
+    -0.2rem -0.2rem 0.5rem var(--white),
+    var(--inner-shadow);
   background: rgba(255, 255, 255, 0);
   position: relative;
   cursor: pointer;
   border-radius: 1.6rem;
+  /* box-shadow: var(--inner-shadow); */
 }
 
 .switch__1 label::after {
@@ -251,12 +246,7 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(
-    270deg,
-    var(--primary-dark) 0%,
-    var(--primary) 50%,
-    var(--primary-light) 100%
-  );
+
   opacity: 0;
   transition: all 0.4s ease;
 }

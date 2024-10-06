@@ -67,12 +67,13 @@ export default {
   transition: 1s ease-in;
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
-  box-shadow: var(--shadow);
+  box-shadow: var(--inner-shadow);
+
 }
 #experience .card {
   position: relative;
   padding: 1rem;
-  transition: all 0.5s ease; /* Smooth transition for background color and border-radius */
+  transition: all 1s ease; /* Smooth transition for background color and border-radius */
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 3rem;
@@ -80,9 +81,10 @@ export default {
  .card:hover {
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
-  box-shadow: var(--shadow);
-  border-top: 1px solid var(--card-title);
-  border-left: 1px solid var(--card-title);
+  box-shadow: var(--shadow), var(--inner-shadow);
+  transform: scale(20px);
+  /* border-top: 1px solid var(--card-title);
+  border-left: 1px solid var(--card-title); */
 }
 .card .wrapper {
   display: flex;
@@ -93,6 +95,7 @@ export default {
 }
  .card:hover .title {
   transform: translateY(-5px);
+  transition: all 1s ease; /* Smooth transition for background color and border-radius */
   color: var(--card-title);
 }
 
@@ -118,6 +121,8 @@ export default {
   transform: translateY(-5px);
   opacity: 1;
   color: var(--card-title);
+  transition: all 1s ease; /* Smooth transition for background color and border-radius */
+
 }
 .card .expo {
   position: absolute;
