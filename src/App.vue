@@ -69,7 +69,7 @@ export default {
   data() {
     return {
       theme: localStorage.getItem('theme') || 'light',
-      isSwitchOn: localStorage.getItem('isSwitchOn')  === true,
+      isSwitchOn: localStorage.getItem('isSwitchOn') === true,
       icons: {
         gitHub: localStorage.getItem('gitHub') || gitLight,
         linkedIn: localStorage.getItem('linkedIn') || inLight,
@@ -79,6 +79,7 @@ export default {
       expo: expo,
       promoted: promoted,
       myData: ref({}),
+      myExperience: [],
       hiddenElements: document.querySelectorAll('.hidden'),
       observer: null
     }
@@ -141,17 +142,17 @@ export default {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          entry.target.classList.add('show')
         } else {
-          entry.target.classList.remove('show');
+          entry.target.classList.remove('show')
         }
-      });
-    });
+      })
+    })
 
     document.querySelectorAll('.hidden').forEach((section) => {
-      this.observer.observe(section);
-    });
-  },
+      this.observer.observe(section)
+    })
+  }
 }
 </script>
 
@@ -188,12 +189,10 @@ export default {
   margin: 0 15px;
 }
 
-
 #loading {
   height: 100vh;
   font: red 26px;
 }
-
 
 .switch {
   grid-column: 1 / 2;
@@ -301,5 +300,6 @@ export default {
     gap: 1rem;
     position: relative;
   }
+  
 }
 </style>

@@ -62,14 +62,13 @@ export default {
 </script>
 
 <style scoped>
-.hover {
-  opacity: 1;
-  transition: 1s ease-in;
-  background-color: var(--card-background);
-  backdrop-filter: blur(25px);
-  box-shadow: var(--inner-shadow);
-
-}
+/* #experience {
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1;
+} */
 #experience .card {
   position: relative;
   padding: 1rem;
@@ -77,14 +76,14 @@ export default {
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 3rem;
+  box-shadow: var(--inner-shadow);
 }
- .card:hover {
+#experience .card:hover {
+  opacity: 1;
+  transition: all 1s ease-in;
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
-  box-shadow: var(--shadow), var(--inner-shadow);
-  transition: all 1s ease;
-  /* border-top: 1px solid var(--card-title);
-  border-left: 1px solid var(--card-title); */
+  box-shadow: var(--shadow);
 }
 .card .wrapper {
   display: flex;
@@ -100,8 +99,7 @@ export default {
 }
 
 .card .promoted {
-  height: 40px;
-  
+  height: 30px;
 }
 .card .date {
   transition: all 0.5s ease-out;

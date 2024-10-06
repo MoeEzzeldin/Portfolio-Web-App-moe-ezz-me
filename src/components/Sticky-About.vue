@@ -38,7 +38,7 @@
           <i class="fi fi-sc-envelope"></i>
         </a>
         <a href="'tel:'+16148169143">
-          <i class="fi fi-br-phone-flip"></i>
+          <i class="fi fi-ss-phone-flip"></i>
         </a>
       </div>
       <div class="copy">
@@ -69,10 +69,7 @@ export default {
   height: 100vh;
   gap: 4rem;
 }
-/* display: grid;
-    grid-template-rows: 1fr .5fr .5fr;
-    height: 88vh;    
-    gap: 4rem; */
+
 
 .main >*:not(:last-child) {
   margin-left: 25px;
@@ -84,11 +81,8 @@ main .header {
   justify-content: space-evenly;
   gap: 1rem;
 }
-i {
-  color: var(--text-color);
-  font-size: 3rem;
-  text-shadow:var(--inner-shadow);
-}
+
+
 main .greet {
   /* font-family: 'Pixelify Sans', sans-serif; */
   font-optical-sizing: auto;
@@ -197,21 +191,18 @@ main .holder:hover a {
   display: none;
 }
 
-.footer a img {
-  font-weight: 400;
-  font-style: normal;
-  height: 35px;
-  width: 35px;
+
+.footer i {
+  color: var(--text-color);
+  font-size: 2.5rem;
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
 }
 
-.footer a img:hover {
-  transform: scale(1.1);
-  transform: translateY(-5px);
-  filter: drop-shadow(0px 5px 10px 10px var(--shadow-color));
-}
+/* .footer i:hover {
+  text-shadow: var(--shadow);
+} */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
 

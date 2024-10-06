@@ -54,6 +54,7 @@ export default {
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 3rem;
+  box-shadow: var(--inner-shadow);
 }
 
 .background-img {
@@ -70,7 +71,6 @@ export default {
   border-radius: 8px;
   filter: grayscale(0.5);
   box-shadow: var(--inner-shadow), var(--shadow);
-
  }
 .card:hover .background-img {
   opacity: 0.2;
