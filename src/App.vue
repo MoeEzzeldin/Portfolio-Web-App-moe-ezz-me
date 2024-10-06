@@ -167,8 +167,7 @@ export default {
   transition: 1s ease-in;
 }
 .container {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -178,6 +177,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
+  width: 90%;
 }
 
 #scroll {

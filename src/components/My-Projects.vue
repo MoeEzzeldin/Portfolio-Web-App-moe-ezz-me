@@ -54,8 +54,7 @@ export default {
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 3rem;
-  box-shadow: var(--shadow);
-
+  
 }
 .background-img {
   position: absolute;
@@ -69,7 +68,10 @@ export default {
   z-index: 2;
   transition: all 0.5s ease-out;
   border-radius: 8px;
-  filter: grayscale(0.5); }
+  filter: grayscale(0.5);
+  box-shadow: var(--inner-shadow), var(--shadow);
+
+ }
 .card:hover .background-img {
   opacity: .3;
   filter: blur(10px);
@@ -81,8 +83,8 @@ export default {
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
   box-shadow: var(--shadow);
-  border-top: 1px solid var(--card-title);
-  border-left: 1px solid var(--card-title);
+  /* border-top: 1px solid var(--card-title);
+  border-left: 1px solid var(--card-title); */
 }
 .card  {
   position: relative;
