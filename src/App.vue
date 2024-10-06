@@ -7,7 +7,7 @@
     </div>
   </div>
   <!-- im adding wrapper to make main fit 80vw in mobile views -->
-  <div class="container">
+  <div class="container"  v-if="myData">
     <main id="main" class="wrapper">
       <!-- my info / Pic -->
       <div id="sticky">
@@ -16,7 +16,7 @@
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
         <div id="about" class="hidden">
-          <ElPitch :myData="this.myData" />
+          <ElPitch/>
         </div>
         <div id="experience" class="hidden">
           <h1>Experience</h1>
@@ -35,7 +35,14 @@
       </div>
     </main>
   </div>
+  <div class="load" v-else>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+  </div>
 </template>
+
 <script>
 import StickyAbout from './components/Sticky-About.vue'
 import ElPitch from './components/El-Pitch.vue'
@@ -81,7 +88,7 @@ export default {
       myData: ref({}),
       myExperience: [],
       hiddenElements: document.querySelectorAll('.hidden'),
-      observer: null
+      observer: null,
     }
   },
 
@@ -132,26 +139,27 @@ export default {
     },
     getSwitch() {
       return this.isSwitchOn === true ? true : false
-    }
+    },
   },
   created() {
-    document.documentElement.setAttribute('data-theme', this.theme)
+
+    this.setDocToCurrent()
     this.getProfile()
   },
   mounted() {
     this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show')
-        } else {
-          entry.target.classList.remove('show')
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show')
+          } else {
+            entry.target.classList.remove('show')
+          }
+        })
       })
-    })
 
-    document.querySelectorAll('.hidden').forEach((section) => {
-      this.observer.observe(section)
-    })
+      document.querySelectorAll('.hidden').forEach((section) => {
+        this.observer.observe(section)
+      })
   }
 }
 </script>
@@ -300,6 +308,59 @@ export default {
     gap: 1rem;
     position: relative;
   }
-  
+  body {
+    background: #ecf0f1;
+  }
+
+  .load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*change these sizes to fit into your project*/
+    width: 100px;
+    height: 100px;
+  }
+  .load hr {
+    border: 0;
+    margin: 0;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    border-radius: 50%;
+    animation: spin 2s ease infinite;
+  }
+
+  .load :first-child {
+    background: #19a68c;
+    animation-delay: -1.5s;
+  }
+  .load :nth-child(2) {
+    background: #f63d3a;
+    animation-delay: -1s;
+  }
+  .load :nth-child(3) {
+    background: #fda543;
+    animation-delay: -0.5s;
+  }
+  .load :last-child {
+    background: #193b48;
+  }
+
+  @keyframes spin {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translate(160%);
+    }
+    50% {
+      transform: translate(160%, 160%);
+    }
+    75% {
+      transform: translate(0, 160%);
+    }
+  }
 }
 </style>

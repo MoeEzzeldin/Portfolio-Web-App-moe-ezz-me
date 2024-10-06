@@ -2,314 +2,343 @@
   "pk": "resume",
   "sk": "info",
   "awards": [
-    {
-      "awarder": "Company",
-      "date": "2014-11-01",
-      "summary": "There is no spoon.",
-      "title": "Award"
-    }
+   {
+    "awarder": "Company",
+    "date": "2014-11-01",
+    "summary": "There is no spoon.",
+    "title": "Award"
+   }
   ],
   "basics": {
-    "email": "Ezzeldin.Mo3@gmail.com",
-    "image": "",
-    "label": "Software Developer",
-    "location": {
-      "address": "666 providance ave B",
-      "city": "Columbus",
-      "countryCode": "US",
-      "postalCode": "OH 43214",
-      "region": "Ohio"
+   "email": "Ezzeldin.Mo3@gmail.com",
+   "image": "",
+   "label": "Software Developer",
+   "location": {
+    "address": "666 providance ave B",
+    "city": "Columbus",
+    "countryCode": "US",
+    "postalCode": "OH 43214",
+    "region": "Ohio"
+   },
+   "name": "Ahmed Ezzeldin",
+   "phone": "(614) 816-9143",
+   "profiles": [
+    {
+     "network": "github",
+     "url": "https://github.com/MoeEzzeldin",
+     "username": "MoeEzzeldin"
     },
-    "name": "Ahmed Ezzeldin",
-    "phone": "(614) 816-9143",
-    "profiles": [
-      {
-        "network": "github",
-        "url": "https://github.com/MoeEzzeldin",
-        "username": "MoeEzzeldin"
-      },
-      {
-        "network": "linkedIn",
-        "url": "https://www.linkedin.com/in/moe-ezz-columbus-ohio/",
-        "username": "MoeEzzeldin"
-      }
-    ],
-    "summary": "I like to build engaging accessible applications",
-    "url": "https://Moe-Ezz.me"
+    {
+     "network": "linkedIn",
+     "url": "https://www.linkedin.com/in/moe-ezz-columbus-ohio/",
+     "username": "MoeEzzeldin"
+    }
+   ],
+   "summary": "I enjoy building engaging accessible applications",
+   "url": "https://Moe-Ezz.me"
   },
   "certificates": [
-    {
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "name": "Certificate",
-      "url": "https://certificate.com"
-    },
-    {
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "name": "Certificate",
-      "url": "https://certificate.com"
-    }
+   {
+    "date": "2021-11-07",
+    "issuer": "Company",
+    "name": "Certificate",
+    "url": "https://certificate.com"
+   },
+   {
+    "date": "2021-11-07",
+    "issuer": "Company",
+    "name": "Certificate",
+    "url": "https://certificate.com"
+   }
   ],
   "education": [
-    {
-      "name": "Banba Kaden",
-      "area": "Electronics and Computer Science",
-      "description": "Electronics and Computer Science",
-      "summary": [
-        "3 years diploma targeted mid ~ advanced level build and repair electrical boards and computer science."
-      ],
-      "endDate": "May'13",
-      "institution": "High School",
-      "location": "Cairo, Egypt",
-      "startDate": "Aug'09",
-      "studyType": "Diploma",
-      "url": ""
-    },
-    {
-      "name": "Egypt Future Work Digital (FWD)",
-      "area": "Front-End",
-      "description": "6-month virtual program providing learners with an integrated and upskilling experience through Udacity online learning classroom",
-      "summary": [
-        "learned HTML5 and CSS. during the course I built a landing page and a digital pricing card."
-      ],
-      "endDate": "Dec'23",
-      "institution": "Udacity",
-      "location": "Remote",
-      "startDate": "Jun'23",
-      "studyType": "Certificate",
-      "url": "https://egfwd.com/"
-    },
-    {
-      "name": "Tech Elevator",
-      "area": "Software Development",
-      "summary": [
-        "14-week full-stack coding bootcamp learning how to create dynamic web-based software systems using .NET/C# through 800+ hours of development education and application."
-      ],
-      "endDate": "Apr'24",
-      "institution": "Full-Stack Coding Bootcamp",
-      "score": "Graduated",
-      "startDate": "Jan'24",
-      "studyType": "Certificate",
-      "url": "https://www.techelevator.com/"
-    }
+   {
+    "area": "Electronics and Computer Science",
+    "description": "Electronics and Computer Science",
+    "endDate": "May'13",
+    "institution": "High School",
+    "location": "Cairo, Egypt",
+    "name": "Banba Kaden",
+    "startDate": "Aug'09",
+    "studyType": "Diploma",
+    "summary": [
+     "3 years diploma targeted mid ~ advanced level build and repair electrical boards and computer science."
+    ],
+    "url": ""
+   },
+   {
+    "area": "Front-End",
+    "description": "6-month virtual program providing learners with an integrated and upskilling experience through Udacity online learning classroom",
+    "endDate": "Dec'23",
+    "institution": "Udacity",
+    "location": "Remote",
+    "name": "Egypt Future Work Digital (FWD)",
+    "startDate": "Jun'23",
+    "studyType": "Certificate",
+    "summary": [
+     "learned HTML5 and CSS. during the course I built a landing page and a digital pricing card."
+    ],
+    "url": "https://egfwd.com/"
+   },
+   {
+    "area": "Software Development",
+    "endDate": "Apr'24",
+    "institution": "Full-Stack Coding Bootcamp",
+    "name": "Tech Elevator",
+    "score": "Graduated",
+    "startDate": "Jan'24",
+    "studyType": "Certificate",
+    "summary": [
+     "14-week full-stack coding bootcamp learning how to create dynamic web-based software systems using .NET/C# through 800+ hours of development education and application."
+    ],
+    "url": "https://www.techelevator.com/"
+   }
   ],
   "interests": [
-    {
-      "keywords": ["Guitar", "Drums"],
-      "name": "Music"
-    }
+   {
+    "keywords": [
+     "Guitar",
+     "Drums"
+    ],
+    "name": "Music"
+   }
   ],
   "languages": [
-    {
-      "fluency": "Fluent",
-      "language": "English"
-    },
-    {
-      "fluency": "Native speaker",
-      "language": "Arabic"
-    }
+   {
+    "fluency": "Fluent",
+    "language": "English"
+   },
+   {
+    "fluency": "Native speaker",
+    "language": "Arabic"
+   }
   ],
   "projects": [
-    {
-      "description": "Designed and built a portfolio web app utelizing the skills learned form AWS services using DynamoDB to store my resume and Lambda to operate on my Get request sent by Vue.js through AWS APIgateway.",
-      "endDate": "Oct'24",
-      "skills": [
-        "Vue.JS",
-        "MVVM",
-        "HTML5",
-        "CSS",
-        "AWS Services",
-        "Serverless Design"
-      ],
-      "name": "Portfolio Web Application",
-      "startDate": "Sep'24",
-      "url": "https://project.com/",
-      "status": "public"
-    },
-    {
-      "description": "During my AWS course I built and deployed my To Do static web application on AWS cloud Amplify using Vue.js, but focused my practice on using ref, watch, and computed life-hooks utilizing the user's LocalStorage for cach for a quick smooth user experience and responsive design.",
-      "endDate": "Jul'24",
-      "skills": [
-        "Vue.JS",
-        "MVVM",
-        "HTML5",
-        "CSS"
-      ],
-      "name": "To Do Web Application",
-      "startDate": "Jul'24",
-      "url": "https://project.com/",
-      "status": "public"
-    },
-    {
-      "description": "Developing a dynamic full-stack web application using SQL Server, .NET MVC, and Vue.js. Implementing CRUD operations, user authentication, role-based login, and RESTful APIs to deliver efficient data handling. This project integrates MVC and MVVM patterns to create a responsive, secure user experience.",
-      "endDate": "In Progress",
-      "skills": [
-        "SSMS",
-        "C#",
-        "MVC",
-        "ASP.NET",
-        "Postman",
-        "RESTful API",
-        "Vue.JS",
-        "MVVM",
-        "HTML5",
-        "CSS"
-      ],
-      "name": "Ecommerce Web Application",
-      "startDate": "Jun'24",
-      "url": "https://project.com/",
-      "status": "public"
-    },
-    {
-      "description": "Designed and developed a dynamic application that allows the users to find breweries in columbus as well as a login as a brewer with the functionality to add and remove products in and out of your brewery. also built admin view to manage breweries in columbus, create breweries, and assigning brewer a brewery to manage.",
-      "endDate": "Apr'24",
-      "skills": [
-        "SSMS",
-        "C#",
-        "ASP.NET",
-        "Postman",
-        "RESTful API",
-        "Vue.JS",
-        "HTML5",
-        "CSS",
-        "Agile",
-        "Unit Testing"
-      ],
-      "name": "Brewery Finder Web Application",
-      "startDate": "Apr'24",
-      "url": "https://project.com/",
-      "status": "private"
-    },
-    {
-      "description": "Money transfer console app that allows users to load and check their balance, send, recieve transfers as well as seeing their transaction history.",
-      "endDate": "Mar'24",
-      "skills": [
-        "SSMS",
-        "C#",
-        "MVC",
-        "Postman"
-      ],
-      "name": "Tenmo Console Application",
-      "startDate": "Mar'24",
-      "url": "https://project.com/",
-      "status": "private"
-    },
-    {
-      "description": "built a console app using OOP concepts, C#, and file I/O, using StreamReader-StreamWriter to complete user transaction.",
-      "endDate": "Feb'24",
-      "skills": [
-        "File I/O",
-        "C#"
-      ],
-      "name": "Vending Machine Console Application",
-      "startDate": "Feb'24",
-      "url": "https://project.com/",
-      "status": "private"
-    }
+   {
+    "description": "Designed and built a portfolio web app utelizing the skills learned form AWS services using DynamoDB to store my resume and Lambda to operate on my Get request sent by Vue.js through AWS APIgateway.",
+    "endDate": "Oct'24",
+    "img": "https://s3.amazonaws.com/moe-ezz.me/Projects/portfolio.png",
+    "name": "Portfolio Web Application",
+    "skills": [
+     "Vue.JS",
+     "MVVM",
+     "HTML5",
+     "CSS",
+     "AWS Services",
+     "Serverless Design"
+    ],
+    "startDate": "Sep'24",
+    "status": "public",
+    "url": "https://project.com/"
+   },
+   {
+    "description": "During my AWS course I built and deployed my To Do static web application on AWS cloud Amplify using Vue.js, but focused my practice on using ref, watch, and computed life-hooks utilizing the user's LocalStorage for cach for a quick smooth user experience and responsive design.",
+    "endDate": "Jul'24",
+    "img": "https://s3.amazonaws.com/moe-ezz.me/Projects/todo.png",
+    "name": "To Do Web Application",
+    "skills": [
+     "Vue.JS",
+     "MVVM",
+     "HTML5",
+     "CSS",
+     "AWS Amplify"
+    ],
+    "startDate": "Jul'24",
+    "status": "public",
+    "url": "https://main.dkyhz9f1xpbmb.amplifyapp.com/"
+   },
+   {
+    "description": "Developing a dynamic full-stack web application using SQL Server, .NET MVC, and Vue.js. Implementing CRUD operations, user authentication, role-based login, and RESTful APIs to deliver efficient data handling. This project integrates MVC and MVVM patterns to create a responsive, secure user experience.",
+    "endDate": "In Progress",
+    "img": "https://s3.amazonaws.com/moe-ezz.me/Projects/store.png",
+    "name": "Ecommerce Web Application",
+    "skills": [
+     "SSMS",
+     "C#",
+     "MVC",
+     "ASP.NET",
+     "Postman",
+     "RESTful API",
+     "Vue.JS",
+     "MVVM",
+     "HTML5",
+     "CSS"
+    ],
+    "startDate": "Jun'24",
+    "status": "public",
+    "url": "https://project.com/"
+   },
+   {
+    "description": "Designed and developed a dynamic application that allows the users to find breweries in columbus as well as a login as a brewer with the functionality to add and remove products in and out of your brewery. also built admin view to manage breweries in columbus, create breweries, and assigning brewer a brewery to manage.",
+    "endDate": "Apr'24",
+    "img": "https://s3.amazonaws.com/moe-ezz.me/Projects/brewery.png",
+    "name": "Brewery Finder Web Application",
+    "skills": [
+     "SSMS",
+     "C#",
+     "ASP.NET",
+     "Postman",
+     "RESTful API",
+     "Vue.JS",
+     "HTML5",
+     "CSS",
+     "Agile",
+     "Unit Testing"
+    ],
+    "startDate": "Apr'24",
+    "status": "private",
+    "url": "https://project.com/"
+   },
+   {
+    "description": "Money transfer console app that allows users to load and check their balance, send, recieve transfers as well as seeing their transaction history.",
+    "endDate": "Mar'24",
+    "img": "https://s3.amazonaws.com/moe-ezz.me/Projects/tenmo.png",
+    "name": "Tenmo Console Application",
+    "skills": [
+     "SSMS",
+     "C#",
+     "MVC",
+     "Postman"
+    ],
+    "startDate": "Mar'24",
+    "status": "private",
+    "url": "https://project.com/"
+   },
+   {
+    "description": "built a console app using OOP concepts, C#, and file I/O, using StreamReader-StreamWriter to complete user transaction.",
+    "endDate": "Feb'24",
+    "img": "https://s3.amazonaws.com/moe-ezz.me/Projects/candy.png",
+    "name": "Vending Machine Console Application",
+    "skills": [
+     "File I/O",
+     "C#"
+    ],
+    "startDate": "Feb'24",
+    "status": "private",
+    "url": "https://project.com/"
+   }
   ],
   "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "releaseDate": "2014-10-01",
-      "summary": "Description…",
-      "url": "https://publication.com"
-    }
+   {
+    "name": "Publication",
+    "publisher": "Company",
+    "releaseDate": "2014-10-01",
+    "summary": "Description…",
+    "url": "https://publication.com"
+   }
   ],
   "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference…"
-    }
+   {
+    "name": "Jane Doe",
+    "reference": "Reference…"
+   }
   ],
   "skills": [
-    {
-      "keywords": [
-        "bash",
-        "WSL",
-        "C#",
-        "ASP.NET",
-        "MVC",
-        "MS SQL",
-        "DynamoDB",
-        "Postman",
-        "JavaScript",
-        "Vue.JS",
-        "MVVM",
-        "HTML5",
-        "CSS",
-        "Agile",
-        "CSS",
-        "Amazon Web Services",
-        "Deployment"
-      ],
-      "level": "Master",
-      "name": "Web Development"
-    }
+   {
+    "keywords": [
+     "bash",
+     "WSL",
+     "C#",
+     "ASP.NET",
+     "MVC",
+     "MS SQL",
+     "DynamoDB",
+     "Postman",
+     "JavaScript",
+     "Vue.JS",
+     "MVVM",
+     "HTML5",
+     "CSS",
+     "Agile",
+     "CSS",
+     "Amazon Web Services",
+     "Deployment"
+    ],
+    "level": "Master",
+    "name": "Web Development"
+   }
   ],
   "volunteer": [
-    {
-      "endDate": "2013-01-01",
-      "highlights": ["Awarded 'Volunteer of the Month'"],
-      "organization": "Organization",
-      "position": "Volunteer",
-      "startDate": "2012-01-01",
-      "summary": "Description…",
-      "url": "https://organization.com/"
-    }
+   {
+    "endDate": "2013-01-01",
+    "highlights": [
+     "Awarded 'Volunteer of the Month'"
+    ],
+    "organization": "Organization",
+    "position": "Volunteer",
+    "startDate": "2012-01-01",
+    "summary": "Description…",
+    "url": "https://organization.com/"
+   }
   ],
   "work": [
-    {
-      "endDate": "May'18",
-      "name": "Egyptian Armed Forces",
-      "position": "Soldier",
-      "promotion": "Corporal",
-      "skills": ["Problem Solving", "Time Management", "Team Management", "Microsoft Product"],
-      "startDate": "Feb'16",
-      "summary": [
-        "Supported the training office by providing technical support, including troubleshooting and fixing ad-hoc hardware and software issues for the center’s PCs, printers, and scanners",
-        "Managed and continuously updated comprehensive training records for 3,000 new soldiers every 12 weeks",
-        "Facilitated clear and responsive communication between officers, ensuring prompt resolution of 20-30 inquiries each day"
-      ],
-      "url": "https://www.mod.gov.eg/ModWebSite/Default.aspx"
-    },
-    {
-      "endDate": "Aug'21",
-      "name": "Starbucks",
-      "position": "baresta",
-      "promotion": "Shift Lead",
-      "skills": ["Customer Service", "Team Management", "Problem Solving"],
-      "startDate": "Jun'19'",
-      "summary": [
-        "Achieved Partner of the Quarter recognition in November 2019 for outstanding performance, dependability, and friendliness, resulting in increased positive customer reviews",
-        "Earned positive customer reviews & store score went up 32-37 for maintaining a professional attitude"
-      ],
-      "url": "https://www.starbucks.com/"
-    },
-    {
-      "endDate": "Feb'21",
-      "name": "The Ohio State University",
-      "position": "Sales Assistant",
-      "skills": ["Customer Service", "Problem Solving", "Test Skill"],
-      "startDate": "Aug'21",
-      "summary": [
-        "Oversaw operations of EspressOH cafe, supervising 5-7 student employees per shift",
-        "Contributed to a positive team environment by providing timely and concise direction and feedback to 25 employees"
-      ],
-      "url": "https://studentlife.osu.edu/"
-    },
-    {
-      "endDate": "Present",
-      "name": "Starbucks",
-      "position": "Shift Lead",
-      "skills": ["Customer Service", "Problem Solving", "Test Skill"],
-      "startDate": "Feb'23",
-      "summary": [
-        "Hired to assist the manager in submitting over 500 daily orders in an efficient and timely manner",
-        "Planned daily team operations for 5-7 staff members and created reports that were communicated with upper management"
-      ],
-      "url": "https://www.starbucks.com/"
-    }
+   {
+    "endDate": "May'18",
+    "name": "Egyptian Armed Forces",
+    "position": "Soldier",
+    "promotion": "Corporal",
+    "skills": [
+     "Problem Solving",
+     "Time Management",
+     "Team Management",
+     "Microsoft Product"
+    ],
+    "startDate": "Feb'16",
+    "summary": [
+     "Supported the training office by providing technical support, including troubleshooting and fixing ad-hoc hardware and software issues for the center’s PCs, printers, and scanners",
+     "Managed and continuously updated comprehensive training records for 3,000 new soldiers every 12 weeks",
+     "Facilitated clear and responsive communication between officers, ensuring prompt resolution of 20-30 inquiries each day"
+    ],
+    "url": "https://www.mod.gov.eg/ModWebSite/Default.aspx"
+   },
+   {
+    "endDate": "Aug'21",
+    "name": "Starbucks",
+    "position": "Partner",
+    "promotion": "Shift Lead",
+    "skills": [
+     "Customer Service",
+     "Team Management",
+     "Problem Solving"
+    ],
+    "startDate": "Jun'19'",
+    "summary": [
+     "Achieved Partner of the Quarter recognition in November 2019 for outstanding performance, dependability, and friendliness, resulting in increased positive customer reviews",
+     "Earned positive customer reviews & store score went up 32-37 for maintaining a professional attitude"
+    ],
+    "url": "https://www.starbucks.com/"
+   },
+   {
+    "endDate": "Feb'21",
+    "name": "The Ohio State University",
+    "position": "Sales Assistant",
+    "skills": [
+     "Customer Service",
+     "Problem Solving",
+     "Test Skill"
+    ],
+    "startDate": "Aug'21",
+    "summary": [
+     "Oversaw operations of EspressOH cafe, supervising 5-7 student employees per shift",
+     "Contributed to a positive team environment by providing timely and concise direction and feedback to 25 employees"
+    ],
+    "url": "https://studentlife.osu.edu/"
+   },
+   {
+    "endDate": "Present",
+    "name": "Starbucks",
+    "position": "Partner",
+    "skills": [
+     "Customer Service",
+     "Problem Solving",
+     "Test Skill"
+    ],
+    "startDate": "Feb'23",
+    "summary": [
+     "Hired to assist the manager in submitting over 500 daily orders in an efficient and timely manner",
+     "Planned daily team operations for 5-7 staff members and created reports that were communicated with upper management"
+    ],
+    "url": "https://www.starbucks.com/"
+   }
   ]
-}
+ }

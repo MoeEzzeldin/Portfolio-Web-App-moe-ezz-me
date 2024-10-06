@@ -1,27 +1,30 @@
 <template>
-  <main>
     <section id="about">
-      <h3>Elevator pitch</h3>
+      <div class="img">
+        <img src="../assets/moe.jpg" alt="">
+      </div>
       <p>
-        Back in 2010 I was volenteering to teach children of my community the basics of using the
-        internet safely with <a :href="awa" target="_blank">Alwan-Wa-Awtar</a>. I loved the
-        activities I learned from since I was 11 and it was time to pass the flag on to the new
-        generation. I got the opportunity to attend some open source workshops with Deca
-        <a :href="deca" target="_blank">ADEF</a> , including hands on Linux and Ubuntu workshops
-        where I wrote my first lines of calls to ubuntu's terminal. It was a great experience that
-        pushed me to switch my system completely to ubuntu for a couple of years. right after moving
-        to the united states in 2019 is when that spark lit again and I started a cource in HTML5
-        CSS and JS "course name", unfortunately my course stopped right after finishing HTML and
-        CSS, so I decided to take it a step farther and join
-        <a href="https://www.techelevator.com/" target="_blank">Tech Elevator</a>. a game-changer.
-        Over 800+ hours of coding in person with a bunch of brainy pals, I've been soaking up
-        everything like a sponge. my focus these days is to build and deploy applications that would
-        help people manage simple tasks in their daily life using my full stack patterns MVC /MVVM.
-        When im not coding, im usually hangingout with my wife and daughter, playing music, video
-        games or walking my dog and catching pokemons!
+        Technology and computers have been my passion since I was young, but my journey with tech
+        started back in 2010 when I got involved with the Arab Digital Expression Foundation
+        <a :href="deca" target="_blank">(ADEF)</a> and attended workshops on Linux and Ubuntu.
+        Through those courses, I wrote my first lines of command and. After immigrating to the US, I
+        focused on expanding my skills with Microsoft and Adobe apps and gaining leadership skills
+        while working customer service roles. I made wonderful connections and learned a lot about
+        community dynamics, but deep down I knew I wanted to follow my passion into a tech career
+        and start learning to code. After dabbling in HTML, CSS, and JavaScript through a 6-month
+        virtual front-end development program with Egypt Future Work Digital (FWD), I stumbled
+        across Tech Elevator
+        <a href="https://www.techelevator.com/" target="_blank">Tech Elevator</a>. and enrolled for
+        the Spring 2024 in-person Columbus cohort. Participating in Tech Elevator was a
+        game-changer. Not only did I spend 800+ hours coding and learning the languages and
+        frameworks necessary to succeed as a software developer, but I also made lifelong
+        connections and expanded my knowledge base beyond what I would have thought possible in 14
+        weeks. Since graduating in April 2024, my main focus has been learning more about network
+        layers and building a deeper understanding of DevOps for developing accessible scalable
+        applications. When I’m not coding, I’m usually hanging out with my wife and daughter,
+        playing guitar or video games, walking my dog, or catching Pokémon!
       </p>
     </section>
-  </main>
 </template>
 
 <script>
@@ -40,33 +43,36 @@ export default {
 </script>
 
 <style scoped>
-main {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1.2rem;
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  top: 5rem;
+  height: 100vh;
+  font-size: var(--font-large);
+  font-weight: 400;
 }
 
-p {
-  color: var(--text-color);
-  line-height: 2.5;
+.img {
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  height: 20rem;
+  width: 20rem;
+  object-fit: cover;
+  box-shadow: var(--inner-shadow);
+  border-radius: 50%;
+  padding: 10px;
+  filter: grayscale(50px);
 }
 
-@media (min-width: 1200px) {
-  main {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  p {
-    color: var(--text-color);
-    line-height: 2.5;
-    padding: 10px 0 0 30px;
-  }
-  h3 {
-    padding-top: 2rem;
-  }
-}
 
 </style>

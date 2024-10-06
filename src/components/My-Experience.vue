@@ -175,7 +175,6 @@ export default {
 
 .card:hover .tag-skill {
   transition: all 1s ease-in;
-  color: var(--card-title);
 }
 
 @media (min-width: 1200px){

@@ -16,7 +16,7 @@
 :root {
   --background-color: #E4EBF5; /* Light background */
   --card-background: #E4EBF5; /* Lighter card background */
-  --card-title: #5b0eeb; /* Card title color */
+  --card-title: #57D7D3; /* Card title color */
   --accent-color: #5d546f; /* Darker surface as accent */
   --text-color: #2d2444; /* Updated dark text for readability */
   --heading-color: #2d2444; /* Heading color remains unchanged */
@@ -24,8 +24,7 @@
   --border-color: #2d2444; /* Dark surface for subtle borders */
   --button-color: #453c59; /* Surface color for buttons */
   --input-color: #b9e4ff; /* Light input background */
-  --shadow-color: rgba(23, 14, 48, 0.2); /* Drop Shadow */
-  --tag-color: rgba(86, 216, 212, 0.2);
+  --tag-color: rgba(255, 255, 255, 0.682);
   --shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
   --inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
 inset -.2rem -.2rem .5rem var(--white);
@@ -54,7 +53,7 @@ inset -.2rem -.2rem .5rem var(--white);
   --border-color: #ccebff; /* Light primary color for borders */
   --button-color: #5d546f; /* Button color for better contrast */
   --input-color: #453c59; /* Darker input color */
-  --shadow-color:0 4px 6px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6) Drop Shadow
+  --tag-color: rgba(102, 102, 102, 0.3);
   --shadow: .3rem .3rem .6rem rgba(0, 0, 0, 0.6), -.2rem -.2rem .5rem rgba(255, 255, 255, 0.1);
   --inner-shadow: inset .2rem .2rem .5rem rgba(5, 5, 5, 0.6), inset -.2rem -.2rem .5rem rgba(18, 18, 18, 0.8);
 

@@ -101,7 +101,6 @@ main .name {
   line-height: 1;
   margin: 0;
   color: var(--heading-color);
-  text-shadow: -5px -3px 5px var(--shadow-color);
 }
 
 main .whomi {
@@ -200,9 +199,9 @@ main .holder:hover a {
     filter 0.3s ease;
 }
 
-/* .footer i:hover {
+.footer i:hover {
   text-shadow: var(--shadow);
-} */
+}
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
 
