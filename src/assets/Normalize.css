@@ -56,17 +56,17 @@ inset -.2rem -.2rem .5rem var(--white);
   --input-color: #453c59; /* Darker input color */
   --shadow-color:0 4px 6px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6) Drop Shadow
   --shadow: .3rem .3rem .6rem rgba(0, 0, 0, 0.6), -.2rem -.2rem .5rem rgba(255, 255, 255, 0.1);
-  --inner-shadow: inset .2rem .2rem .5rem rgba(0, 0, 0, 0.6), inset -.2rem -.2rem .5rem rgba(0, 0, 0, 0.5);
+  --inner-shadow: inset .2rem .2rem .5rem rgba(0, 0, 0, 0.6), inset -.2rem -.2rem .5rem rgba(18, 18, 18, 0.8);
 
   --primary-light: #637da7; /* Muted version of light blue */
   --primary: #3d3f9a; /* Darker version of primary */
   --primary-dark: #2c2771; /* Even darker version for dark mode */
 
   --white: #121212; /* Near-black for background or text */
-  --greyLight-1: #6e6e6e; /* Dark grey */
+  --greyLight-1: #57D7D3; /* Dark grey */
   --greyLight-2: #2a2a2a; /* Darker grey */
   --greyLight-3: #3a3a3a; /* Lighter grey for elements */
-  --greyDark: #6e6e6e; /* Medium grey for text/icons */
+  --greyDark: #57D7D3; /* Medium grey for text/icons */
 }
 
 

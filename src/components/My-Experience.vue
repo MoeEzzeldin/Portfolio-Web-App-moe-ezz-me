@@ -82,7 +82,7 @@ export default {
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
   box-shadow: var(--shadow), var(--inner-shadow);
-  transform: scale(20px);
+  transition: all 1s ease;
   /* border-top: 1px solid var(--card-title);
   border-left: 1px solid var(--card-title); */
 }
@@ -122,7 +122,6 @@ export default {
   opacity: 1;
   color: var(--card-title);
   transition: all 1s ease; /* Smooth transition for background color and border-radius */
-
 }
 .card .expo {
   position: absolute;

@@ -54,8 +54,8 @@ export default {
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 3rem;
-  
 }
+
 .background-img {
   position: absolute;
   top: 0;
@@ -73,7 +73,7 @@ export default {
 
  }
 .card:hover .background-img {
-  opacity: .3;
+  opacity: 0.2;
   filter: blur(10px);
   transition: all 0.5s ease-out;
   z-index: -1;

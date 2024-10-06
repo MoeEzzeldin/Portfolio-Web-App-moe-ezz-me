@@ -29,16 +29,16 @@
       <!-- Links and Icons for CONTACT -->
       <div class="icons">
         <a href="https://github.com/MoeEzzeldin" target="_blank">
-          <img :src="icons.gitHub" alt="Description of Image 1" />
+          <i class="fi fi-brands-github"></i>
         </a>
         <a href="https://www.linkedin.com/in/moe-ezz-columbus-ohio/" target="_blank">
-          <img :src="icons.linkedIn" alt="" />
+          <i class="fi fi-brands-linkedin"></i>
         </a>
         <a href="mailto:ezzeldin.mo3@gmail.com" target="_blank">
-          <img :src="icons.gmail" alt="" />
+          <i class="fi fi-sc-envelope"></i>
         </a>
         <a href="'tel:'+16148169143">
-          <img :src="icons.phone" alt="phone icon" />
+          <i class="fi fi-br-phone-flip"></i>
         </a>
       </div>
       <div class="copy">
@@ -84,7 +84,11 @@ main .header {
   justify-content: space-evenly;
   gap: 1rem;
 }
-
+i {
+  color: var(--text-color);
+  font-size: 3rem;
+  text-shadow:var(--inner-shadow);
+}
 main .greet {
   /* font-family: 'Pixelify Sans', sans-serif; */
   font-optical-sizing: auto;
