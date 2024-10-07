@@ -71,9 +71,9 @@ export default {
 }
 
 
-.main >*:not(:last-child) {
+/* .main >*:not(:last-child) {
   margin-left: 25px;
-}
+} */
 
 main .header {
   display: flex;

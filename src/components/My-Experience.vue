@@ -72,7 +72,7 @@ export default {
 #experience .card {
   position: relative;
   padding: 1rem;
-  transition: all 1s ease; /* Smooth transition for background color and border-radius */
+  transition: all 0.5s ease;
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 3rem;
@@ -80,7 +80,7 @@ export default {
 }
 #experience .card:hover {
   opacity: 1;
-  transition: all 1s ease-in;
+  transition: all 0.5s ease;
   background-color: var(--card-background);
   backdrop-filter: blur(25px);
   box-shadow: var(--shadow);
@@ -94,7 +94,7 @@ export default {
 }
  .card:hover .title {
   transform: translateY(-5px);
-  transition: all 1s ease; /* Smooth transition for background color and border-radius */
+  transition: all 0.5s ease;
   color: var(--card-title);
 }
 
@@ -102,7 +102,7 @@ export default {
   height: 30px;
 }
 .card .date {
-  transition: all 0.5s ease-out;
+  transition: all 0.5s ease;
   padding-right: 1rem;
   display: flex;
   align-items: end;
@@ -110,7 +110,7 @@ export default {
 
 
 .card .date h4 {
-  transition: 0.5s ease;
+  transition: all 0.5s ease;
   opacity: 0.5;
   font-size: var(--font-small);
 }
@@ -119,7 +119,7 @@ export default {
   transform: translateY(-5px);
   opacity: 1;
   color: var(--card-title);
-  transition: all 1s ease; /* Smooth transition for background color and border-radius */
+  transition: all 0.5s ease;
 }
 .card .expo {
   position: absolute;
@@ -130,11 +130,11 @@ export default {
   cursor: pointer;
   filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(0.8);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .card:hover .expo {
   opacity: 1;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 
@@ -174,17 +174,11 @@ export default {
 }
 
 .card:hover .tag-skill {
-  transition: all 1s ease-in;
+  transition: all 0.5s ease;
 }
 
 @media (min-width: 1200px){
-  .hover {
-  }
+
 }
-@media (min-width: 1440px) {
-  body {
-    transform: scale(1.05); /* Scale up by 5% */
-    transform-origin: top left; /* Set the scaling origin */
-  }
-}
+
 </style>

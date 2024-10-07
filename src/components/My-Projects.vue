@@ -129,12 +129,12 @@ export default {
   cursor: pointer;
   filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(0.8);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   z-index: 100;
 }
 .card:hover .expo {
   opacity: 1;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 
@@ -175,7 +175,7 @@ export default {
 }
 
 .card:hover .tag-skill {
-  transition: all 1s ease-in;
+  transition: all 0.5s ease;
   color: var(--card-title);
 }
 

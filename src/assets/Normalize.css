@@ -24,7 +24,7 @@
   --border-color: #2d2444; /* Dark surface for subtle borders */
   --button-color: #453c59; /* Surface color for buttons */
   --input-color: #b9e4ff; /* Light input background */
-  --tag-color: rgba(255, 255, 255, 0.682);
+  --tag-color: rgb(210, 235, 249);
   --shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
   --inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
 inset -.2rem -.2rem .5rem var(--white);
@@ -53,7 +53,7 @@ inset -.2rem -.2rem .5rem var(--white);
   --border-color: #ccebff; /* Light primary color for borders */
   --button-color: #5d546f; /* Button color for better contrast */
   --input-color: #453c59; /* Darker input color */
-  --tag-color: rgba(102, 102, 102, 0.3);
+  --tag-color: rgba(68, 68, 68, 0.3);
   --shadow: .3rem .3rem .6rem rgba(0, 0, 0, 0.6), -.2rem -.2rem .5rem rgba(255, 255, 255, 0.1);
   --inner-shadow: inset .2rem .2rem .5rem rgba(5, 5, 5, 0.6), inset -.2rem -.2rem .5rem rgba(18, 18, 18, 0.8);
 

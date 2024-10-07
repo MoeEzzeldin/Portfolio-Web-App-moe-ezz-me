@@ -362,5 +362,11 @@ export default {
       transform: translate(0, 160%);
     }
   }
+  @media (min-width: 1440px) {
+  body {
+    transform: scale(1.05); /* Scale up by 5% */
+    transform-origin: top left; /* Set the scaling origin */
+  }
+}
 }
 </style>
