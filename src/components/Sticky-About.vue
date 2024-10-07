@@ -91,7 +91,7 @@ main .greet {
   background: linear-gradient(to right, rgb(255, 106, 0), blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 main .name {

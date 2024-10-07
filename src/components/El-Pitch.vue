@@ -11,7 +11,7 @@
       lines.<br />
       <br />
       After immigrating to the US, I started learning HTML, CSS, and JavaScript with
-      <strong>Egypt Future Work Digital</strong> ( <a href="https://egfwd.com/">FWD</a> ), and enrolled for <a href="https://www.techelevator.com/" target="_blank">Tech Elevator</a> 
+      <strong>Egypt Future Work Digital</strong> (<a href="https://egfwd.com/">FWD</a>), and enrolled for <a href="https://www.techelevator.com/" target="_blank">Tech Elevator</a> 
         in-person Spring 2024 cohort. I spend over 800+ hours coding and learning the languages and frameworks
       necessary for software development. Since graduating in April 2024, my main focus
       has been learning more about network layers and building more understanding of DevOps for

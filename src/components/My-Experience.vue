@@ -6,7 +6,11 @@
       </a>
       <div class="wrapper">
         <div class="title">
-          <h4>{{ item.name }} &nbsp; | &nbsp;{{ item.position }} <img class="promoted" :src="this.promoted" v-show="item.promotion" alt="promoted"> {{ item.promotion ? item.promotion : ""  }}</h4>
+          <h4>
+            {{ item.name }} &nbsp; | &nbsp;{{ item.position }}
+            <img class="promoted" :src="this.promoted" v-show="item.promotion" alt="promoted" />
+            {{ item.promotion ? item.promotion : '' }}
+          </h4>
         </div>
         <div class="date">
           <h4>{{ item.startDate }} - {{ item.endDate }}</h4>
@@ -38,61 +42,49 @@ export default {
   data() {
     return {
       hiddenElements: document.querySelectorAll('.hover'),
-      observer: null,
+      observer: null
     }
   },
   mounted() {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          entry.target.classList.add('show')
         } else {
-          entry.target.classList.remove('show');
+          entry.target.classList.remove('show')
         }
-      });
-    });
+      })
+    })
 
     document.querySelectorAll('.hover').forEach((section) => {
-      this.observer.observe(section);
-    });
-  },
-
-
+      this.observer.observe(section)
+    })
+  }
 }
 </script>
 
 <style scoped>
-/* #experience {
-  position: sticky;
-  top: 0;
-  padding: 20px;
-  border-radius: 8px;
-  z-index: 1;
-} */
 #experience .card {
   position: relative;
   padding: 1rem;
   transition: all 0.5s ease;
-  overflow: hidden;
   border-radius: 8px;
   margin-bottom: 3rem;
   box-shadow: var(--inner-shadow);
 }
 #experience .card:hover {
-  opacity: 1;
   transition: all 0.5s ease;
-  background-color: var(--card-background);
-  backdrop-filter: blur(25px);
   box-shadow: var(--shadow);
 }
 .card .wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 20px;
-  justify-content: center;
+  padding: 1rem;
+  justify-content: left;
+  gap: 1.5rem;
 }
- .card:hover .title {
+
+.card:hover .title {
   transform: translateY(-5px);
   transition: all 0.5s ease;
   color: var(--card-title);
@@ -105,9 +97,9 @@ export default {
   transition: all 0.5s ease;
   padding-right: 1rem;
   display: flex;
-  align-items: end;
+  align-items: center;
+  order: -1;
 }
-
 
 .card .date h4 {
   transition: all 0.5s ease;
@@ -115,7 +107,7 @@ export default {
   font-size: var(--font-small);
 }
 
- .card:hover .date h4 {
+.card:hover .date h4 {
   transform: translateY(-5px);
   opacity: 1;
   color: var(--card-title);
@@ -137,8 +129,6 @@ export default {
   transition: all 0.5s ease;
 }
 
-
-
 .card .wrapper .title {
   display: flex;
   flex-grow: 1;
@@ -146,8 +136,6 @@ export default {
   align-items: center;
   transition: all 0.5s ease;
 }
-
-
 
 .card .list {
   display: flex;
@@ -158,8 +146,6 @@ export default {
   padding: 0;
   gap: 10px;
 }
-
-
 
 .skills .list .tag-skill {
   color: var(--card-title);
@@ -177,8 +163,9 @@ export default {
   transition: all 0.5s ease;
 }
 
-@media (min-width: 1200px){
-
+@media (min-width: 1200px) {
+  .card .date {
+    order: 0;
+  }
 }
-
 </style>

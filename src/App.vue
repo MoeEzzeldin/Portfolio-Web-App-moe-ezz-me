@@ -19,7 +19,6 @@
           <ElPitch/>
         </div>
         <div id="experience" class="hidden">
-          <h1>Experience</h1>
           <Experience
             v-for="(item, index) in myData.work"
             :key="index"
@@ -29,7 +28,6 @@
           />
         </div>
         <div id="projects" class="hidden">
-          <h1>Projects</h1>
           <MyProjects v-for="(item, index) in myData.projects" :key="index" :item="item" :expo />
         </div>
       </div>
