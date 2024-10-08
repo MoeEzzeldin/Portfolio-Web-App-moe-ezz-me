@@ -75,12 +75,13 @@ export default {
 #experience .card:hover {
   transition: all 0.5s ease;
   box-shadow: var(--shadow);
-}
+} 
 .card .wrapper {
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
-  justify-content: left;
+  align-items: center;
+  justify-content: space-between;
   gap: 1.5rem;
 }
 
@@ -167,5 +168,11 @@ export default {
   .card .date {
     order: 0;
   }
+  .card .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  justify-content: left;
+}
 }
 </style>

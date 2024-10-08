@@ -1,4 +1,7 @@
 <template>
+  <div class="contact" >
+    <Contact v-if="showContact"/>
+  </div>
   <!-- I want this png to also expand the background color@click -->
   <div :class="['switch', { 'switch-on': isSwitchOn }]">
     <div class="switch__1">
@@ -16,7 +19,7 @@
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
         <div id="about" class="hidden">
-          <ElPitch/>
+          <About/>
         </div>
         <div id="experience" class="hidden">
           <Experience
@@ -43,9 +46,10 @@
 
 <script>
 import StickyAbout from './components/Sticky-About.vue'
-import ElPitch from './components/El-Pitch.vue'
+import About from './components/About-Me.vue'
 import Experience from './components/My-Experience.vue'
 import MyProjects from './components/My-Projects.vue'
+import Contact from './components/Contact-Me.vue'
 
 import gitLight from '@/assets/github.png'
 import gitDark from '@/assets/github-d.png'
@@ -67,9 +71,10 @@ import { ref } from 'vue'
 export default {
   components: {
     StickyAbout,
-    ElPitch,
+    About,
     Experience,
-    MyProjects
+    MyProjects,
+    Contact
   },
   data() {
     return {
@@ -87,6 +92,7 @@ export default {
       myExperience: [],
       hiddenElements: document.querySelectorAll('.hidden'),
       observer: null,
+      showContact: false,
     }
   },
 
@@ -138,6 +144,10 @@ export default {
     getSwitch() {
       return this.isSwitchOn === true ? true : false
     },
+    toggleContact() {
+      this.showContact = !this.showContact;
+      console.log('i changed showContact to: '+ this.showContact)
+    }
   },
   created() {
 
@@ -303,7 +313,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
+    gap: 10rem;
     position: relative;
   }
   body {

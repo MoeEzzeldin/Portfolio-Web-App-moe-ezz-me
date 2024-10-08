@@ -34,7 +34,7 @@
         <a href="https://www.linkedin.com/in/moe-ezz-columbus-ohio/" target="_blank">
           <i class="fi fi-brands-linkedin"></i>
         </a>
-        <a href="mailto:ezzeldin.mo3@gmail.com" target="_blank">
+        <a @click.prevent="contactMe($event)">
           <i class="fi fi-sc-envelope"></i>
         </a>
         <a href="'tel:'+16148169143">
@@ -52,12 +52,19 @@
 
 export default {
   name: 'Sticky-About',
-  props: ['theme', 'icons', 'myData'],
+  props: ['theme', 'icons', 'myData', 'showContact'],
 
   data() {
     return {
+      
     }
   },
+  methods: {
+    contactMe(event) {
+      this.$emit('toggleContact', event.target.value = !event.target.value);
+      console.log('im getting hit!')
+    }
+  }
 
 }
 </script>
@@ -197,6 +204,7 @@ main .holder:hover a {
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
+    cursor: pointer;
 }
 
 .footer i:hover {

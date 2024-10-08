@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'El-Pitch',
+  name: 'About-me',
   props: ['myData'],
   data() {
     return {
