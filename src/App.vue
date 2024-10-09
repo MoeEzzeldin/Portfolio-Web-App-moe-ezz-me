@@ -1,7 +1,8 @@
 <template>
-  <div class="contact" >
-    <Contact v-if="showContact"/>
-  </div>
+  
+  <transition name="fade" class="contact">
+    <Contact v-if="showContact" @toggleContact="toggleContact" @handleData="handleData"/>
+  </transition>
   <!-- I want this png to also expand the background color@click -->
   <div :class="['switch', { 'switch-on': isSwitchOn }]">
     <div class="switch__1">
@@ -14,7 +15,7 @@
     <main id="main" class="wrapper">
       <!-- my info / Pic -->
       <div id="sticky">
-        <Sticky-About :myData="this.myData" :theme :icons />
+        <Sticky-About :myData="this.myData" :theme :icons @toggleContact="toggleContact" />
       </div>
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
@@ -79,7 +80,7 @@ export default {
   data() {
     return {
       theme: localStorage.getItem('theme') || 'light',
-      isSwitchOn: localStorage.getItem('isSwitchOn') === true,
+      isSwitchOn: localStorage.getItem('isSwitchOn') === 'true',
       icons: {
         gitHub: localStorage.getItem('gitHub') || gitLight,
         linkedIn: localStorage.getItem('linkedIn') || inLight,
@@ -93,6 +94,8 @@ export default {
       hiddenElements: document.querySelectorAll('.hidden'),
       observer: null,
       showContact: false,
+      status: "",
+      body:{}
     }
   },
 
@@ -100,11 +103,29 @@ export default {
     getProfile() {
       ResumeService.resume()
         .then((response) => {
-          const data = response.data
-          this.myData = data
+          this.myData = response.data
           console.log(this.myData)
         })
         .catch((error) => {
+          console.error('Error retrieving profile:', error)
+        })
+    },
+    handleData(contactData){
+      console.log(`data from handler: ${contactData.name}`)
+      this.body = contactData
+      this.sendEmail(this.body)
+    },
+    sendEmail(data){
+      if(!data || !data.email){
+        console.log("error occor recieving data")
+      }
+      console.log(`data from axios call: ${data.email}`)
+      ResumeService.Email(data)
+      .then((response) => {
+        this.status = response.status
+        console.log(this.status)
+      })
+      .catch((error) => {
           console.error('Error retrieving profile:', error)
         })
     },
@@ -182,6 +203,14 @@ export default {
 .show {
   opacity: 1;
   transition: 1s ease-in;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease-in;
+}
+.fade-enter, .fade-leave-to {
+  /* Starting/ending state for fade */
+  transition: opacity 0.5s ease-out;
+
 }
 .container {
   display: flex;

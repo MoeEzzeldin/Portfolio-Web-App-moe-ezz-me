@@ -61,8 +61,8 @@ export default {
   },
   methods: {
     contactMe(event) {
-      this.$emit('toggleContact', event.target.value = !event.target.value);
-      console.log('im getting hit!')
+      this.$emit('toggleContact', event);
+      console.log('im getting hit in contactMe AKA sticky')
     }
   }
 
