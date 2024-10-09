@@ -202,7 +202,6 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   gap: 4rem;
-  margin: 0 15px;
 }
 
 #loading {
@@ -316,9 +315,7 @@ export default {
     gap: 10rem;
     position: relative;
   }
-  body {
-    background: #ecf0f1;
-  }
+
 
   .load {
     position: absolute;
@@ -370,11 +367,6 @@ export default {
       transform: translate(0, 160%);
     }
   }
-  @media (min-width: 1440px) {
-  body {
-    transform: scale(1.05); /* Scale up by 5% */
-    transform-origin: top left; /* Set the scaling origin */
-  }
-}
+
 }
 </style>
