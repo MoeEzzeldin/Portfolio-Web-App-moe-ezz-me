@@ -126,9 +126,11 @@ console.log(domainName);
       .then((response) => {
         this.status = response.status
         console.log(this.status)
+        console.log(`these are the headers${response.headers}`)
+        console.log(`these are the data${response.data}`)
       })
       .catch((error) => {
-          console.error('Error retrieving profile:', error)
+          console.error('Error Sending Email:', error)
         })
     },
     toggleTheme() {
