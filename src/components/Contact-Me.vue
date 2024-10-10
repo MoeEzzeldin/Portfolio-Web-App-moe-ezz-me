@@ -1,7 +1,7 @@
 <template>
   <div class="contact-form" @click.prevent.stop="$emit('toggleContact')">
     <div class="wrapper" @click.stop>
-      <h3>lorem ipsom</h3>
+      <h3>lorem ipsum</h3>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum eius eum eos sapiente, quaerat ex. Modi ullam, ut qui delectus itaque quo sapiente nostrum adipisci libero eveniet fugiat quia voluptatum.</p>
     <span class="hide"><a @click.prevent.stop="$emit('toggleContact')">X</a></span> 
     <form class="form" @submit.prevent.stop="submit" action="">

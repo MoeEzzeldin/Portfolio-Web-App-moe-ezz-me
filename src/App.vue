@@ -111,15 +111,17 @@ export default {
         })
     },
     handleData(contactData){
-      console.log(`data from handler: ${contactData.name}`)
+      console.log(`data from handler: ${JSON.stringify(contactData, ['name'], 2)}`)
       this.body = contactData
       this.sendEmail(this.body)
+      const domainName = window.location.hostname;
+console.log(domainName);
     },
     sendEmail(data){
       if(!data || !data.email){
         console.log("error occor recieving data")
       }
-      console.log(`data from axios call: ${data.email}`)
+      console.log(`data from axios call: ${JSON.stringify(data, null, 2)}`)
       ResumeService.Email(data)
       .then((response) => {
         this.status = response.status
