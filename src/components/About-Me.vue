@@ -31,7 +31,9 @@ export default {
       TE: 'https://www.techelevator.com/'
     }
   },
-  methods: {}
+  methods: {
+    
+  }
 }
 </script>
 

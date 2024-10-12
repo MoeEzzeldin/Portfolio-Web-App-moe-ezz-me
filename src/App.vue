@@ -111,11 +111,9 @@ export default {
         })
     },
     handleData(contactData){
-      console.log(`data from handler: ${JSON.stringify(contactData, ['name'], 2)}`)
+      console.log(`data from handler: ${JSON.stringify(contactData,null , 2)}`)
       this.body = contactData
       this.sendEmail(this.body)
-      const domainName = window.location.hostname;
-console.log(domainName);
     },
     sendEmail(data){
       if(!data || !data.email){
@@ -126,8 +124,8 @@ console.log(domainName);
       .then((response) => {
         this.status = response.status
         console.log(this.status)
-        console.log(`these are the headers${response.headers}`)
-        console.log(`these are the data${response.data}`)
+        console.log(`these are the headers: ${JSON.stringify(response.headers, null, 2)}`);
+        console.log(`these are the data: ${JSON.stringify(response.data, null, 2)}`);
       })
       .catch((error) => {
           console.error('Error Sending Email:', error)
