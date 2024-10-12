@@ -122,8 +122,14 @@ export default {
       console.log(`data from axios call: ${JSON.stringify(data, null, 2)}`)
       ResumeService.Email(data)
       .then((response) => {
-        this.status = response.status
-        console.log(this.status)
+        this.status = response.statusCode
+        console.log(this.statusCode)
+        if(this.status === 200){
+          alert('email sent')
+        }
+        else{
+          alert('email not sent')
+        }
         console.log(`these are the headers: ${JSON.stringify(response.headers, null, 2)}`);
         console.log(`these are the data: ${JSON.stringify(response.data, null, 2)}`);
       })
