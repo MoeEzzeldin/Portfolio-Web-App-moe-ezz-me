@@ -64,25 +64,23 @@ export default {
 </script>
 
 <style scoped>
-/* Styling for the modal container */
 .contact-form {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5); /* Darker background */
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 10;
-  backdrop-filter: blur(10px); /* Adds depth with a blur effect */
+  backdrop-filter: blur(10px);
   padding: 20px;
 }
 
-/* Styling for the form container */
 .wrapper {
   background-color:var(--background-color);
   padding: 2rem;
-  max-width: 500px; /* Set a maximum width to contain everything properly */
+  max-width: 500px; 
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -153,13 +151,11 @@ textarea:focus {
   outline: none;
 }
 
-/* Textarea size */
 textarea {
   min-height: 120px;
   resize: vertical;
 }
 
-/* Error state */
 .form-group.error input {
   border-color: red;
 }
@@ -170,7 +166,6 @@ textarea {
   margin-top: 0.25rem;
 }
 
-/* Button styling */
 .btn {
   background-color: #007bff;
   color: white;
@@ -195,5 +190,25 @@ textarea {
   background-color: #ccc;
   cursor: not-allowed;
   box-shadow: none;
+}
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 0;
+  }
+  .wrapper {
+    max-width: 250px;
+    padding: 2rem 3rem;
+    margin: 0;
+    padding: 2rem 2rem 2rem 2rem; 
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  .btn {
+    max-width: 150px;
+    align-self: center;
+  }
 }
 </style>
