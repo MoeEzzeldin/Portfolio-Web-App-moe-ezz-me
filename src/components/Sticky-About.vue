@@ -245,7 +245,7 @@ main .holder:hover a {
 @media (orientation: landscape) {
   .main {
     gap: 2rem;
-    height: 100vh;
+    height: auto;
   }
   #scroll {
     gap: 2rem;

@@ -279,6 +279,7 @@ export default {
   /* box-shadow: var(--inner-shadow); */
 }
 
+
 .switch__1 label::after {
   content: '';
   position: absolute;

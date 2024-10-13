@@ -2,27 +2,29 @@
   <div class="contact-form" @click.prevent.stop="$emit('toggleContact')">
     <div class="wrapper" @click.stop>
       <h3>Contact Me!</h3>
-      <p>Let's connect! Whether you're a recruiter, hiring manager, or just someone looking to chat, feel free to drop me a message. I'd love to hear from you and explore how we can collaborate or help each other out. Looking forward to your message!</p>
-      <span class="hide"><a @click.prevent.stop="$emit('toggleContact')">X</a></span>
-
+      <p>Thanks for visiting my portfolio website! Feel free to leave your information and a message, and let's connect.</p>
+      <span class="hide"><a @click.prevent.stop="$emit('toggleContact')"><i class="fi fi-br-cross-small"></i></a></span>
       <form class="form" @submit.prevent.stop="submitForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input id="name" type="text" v-model="contact.name" placeholder="Enter your name" />
+          <input id="name" type="text" v-model="contact.name" placeholder="Enter your name" @blur="validateName"/>
+          <span v-if="nameError" class="error-message">Please enter a valid name</span>
         </div>
         <div class="form-group" :class="{ 'error': emailError }">
           <label for="email">Email</label>
-          <input id="email" type="text" v-model="contact.email" placeholder="Enter your email address" @blur="validateEmail" />
+          <input id="email" type="text" v-model="contact.email" placeholder="Enter your email address" @blur="validateEmail"/>
           <span v-if="emailError" class="error-message">Please enter a valid email address</span>
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" v-model="contact.message" placeholder="Enter a message"></textarea>
+          <textarea id="message" v-model="contact.message" placeholder="Enter a message" @blur="validateMessage"></textarea>
+          <span v-if="messageError" class="error-message">Please enter message</span>
         </div>
-        <button class="btn" :disabled="emailError" @click.prevent.stop="passToParent">Send</button>
+        <button class="btn" :disabled="emailError" @click.prevent.stop="passDataToParent">Send</button>
       </form>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -36,12 +38,31 @@ export default {
         message: '',
       },
       emailError: false,
+      nameError: false,
+      messageError: false,
     };
   },
   methods: {
-    passToParent() {
-      this.$emit('handleData', this.contact);
+    validateName() {
+      this.nameError = this.contact.name.trim().length <= 1;
+      console.log(this.nameError);
+      return this.nameError;
+    },
+    validateEmail() {
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      this.emailError = !emailPattern.test(this.contact.email);
+    },
+    validateMessage() {
+      return this.messageError = this.contact.message.trim().length <= 5;
+    },
+    submitForm() {
+      if (!this.emailError) {
+        this.passDataToParent();
+      }
+    },
+    passDataToParent() {
       this.clearContact();
+      this.$emit('handleData', this.contact);
     },
     clearContact() {
       this.contact = {
@@ -49,15 +70,6 @@ export default {
         email: '',
         message: '',
       };
-    },
-    validateEmail() {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      this.emailError = !emailPattern.test(this.contact.email);
-    },
-    submitForm() {
-      if (!this.emailError) {
-        this.passToParent();
-      }
     },
   },
 };
@@ -89,6 +101,7 @@ export default {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 100;
+  box-shadow: var(--shadow), var(--inner-shadow);
 }
 
 .hide {
@@ -98,6 +111,17 @@ export default {
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.hide i {
+  color: var(--btn-color);
+  transition: color 0.3s ease;
+
+}
+.hide i:hover {
+  opacity: 0.7;
+  color: var(--btn-hover);
+  transition: color 0.3s ease;
 }
 
 h3 {
@@ -142,13 +166,15 @@ textarea {
   transition: border 0.3s ease;
   box-sizing: border-box; 
   box-shadow: var(--shadow), var(--inner-shadow);
+  color: var(--text-color);
 }
 
 input:focus,
 textarea:focus {
-  border-color: #007bff;
+  border-color: var(--btn-color);
   background-color: #fff;
   outline: none;
+  color: #121212;
 }
 
 textarea {
@@ -167,7 +193,7 @@ textarea {
 }
 
 .btn {
-  background-color: #007bff;
+  background-color: var(--btn-color);
   color: white;
   height: 50px;
   width: 100%;
@@ -178,12 +204,14 @@ textarea {
   letter-spacing: 1px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transition: background-color 0.5s ease;
+  box-shadow: var(--inner-shadow);
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: var(--btn-hover);
+  transition: background-color 0.5s ease;
+  border: 2px solid var(--btn-hover);
 }
 
 .btn:disabled {
@@ -210,5 +238,32 @@ textarea {
     max-width: 150px;
     align-self: center;
   }
+}
+@media (orientation: landscape) {
+
+  .contact-form {
+    padding: 0;
+
+  }
+  .wrapper {
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 2rem 3rem;
+    margin: 0;
+    padding: 2rem 2rem 2rem 2rem; 
+  }
+
+  textarea {
+    height: auto;
+
+  }
+
+  .btn {
+    max-width: 150px;
+    align-self: center;
+
+  }
+
 }
 </style>

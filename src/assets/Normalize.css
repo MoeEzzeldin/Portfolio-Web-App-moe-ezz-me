@@ -22,7 +22,8 @@
   --heading-color: #2d2444; /* Heading color remains unchanged */
   --hover-color: #766e86; /* Darker hover effect */
   --border-color: #2d2444; /* Dark surface for subtle borders */
-  --button-color: #453c59; /* Surface color for buttons */
+  --btn-color: #ff6a00; /* Surface color for buttons */
+  --btn-hover: #02912d; /* Surface color for buttons */
   --input-color: #b9e4ff; /* Light input background */
   --tag-color: rgb(210, 235, 249);
   --shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
@@ -51,7 +52,8 @@ inset -.2rem -.2rem .5rem var(--white);
   --accent-color: #18ffff; /* Bright accent color */
   --hover-color: #8e24aa; /* Darker hover effect */
   --border-color: #ccebff; /* Light primary color for borders */
-  --button-color: #5d546f; /* Button color for better contrast */
+  --btn-color: #be5d18; /* Button color for better contrast */
+  --btn-hover: #02912d; /* Surface color for buttons */
   --input-color: #453c59; /* Darker input color */
   --tag-color: rgba(68, 68, 68, 0.3);
   --shadow: .3rem .3rem .6rem rgba(0, 0, 0, 0.6), -.2rem -.2rem .5rem rgba(255, 255, 255, 0.1);
@@ -62,10 +64,10 @@ inset -.2rem -.2rem .5rem var(--white);
   --primary-dark: #2c2771; /* Even darker version for dark mode */
 
   --white: #121212; /* Near-black for background or text */
-  --greyLight-1: #57D7D3; /* Dark grey */
+  --greyLight-1: #d86f24; /* Dark grey */
   --greyLight-2: #2a2a2a; /* Darker grey */
   --greyLight-3: #3a3a3a; /* Lighter grey for elements */
-  --greyDark: #57D7D3; /* Medium grey for text/icons */
+  --greyDark: #d86f24; /* Medium grey for text/icons */
 }
 
 
