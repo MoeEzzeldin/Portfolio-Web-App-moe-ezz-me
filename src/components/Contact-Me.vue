@@ -61,8 +61,8 @@ export default {
       }
     },
     passDataToParent() {
-      this.clearContact();
       this.$emit('handleData', this.contact);
+      this.clearContact();
     },
     clearContact() {
       this.contact = {
