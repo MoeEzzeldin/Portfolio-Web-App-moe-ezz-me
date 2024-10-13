@@ -123,9 +123,11 @@ export default {
         this.status = response.status
         if(this.status === 200){
           alert('email sent')
+          this.toggleContact()
         }
         else{
           alert('email not sent')
+          this.toggleContact()
         }
         console.log(`these are the data: ${JSON.stringify(response.data, null, 2)}`);
       })

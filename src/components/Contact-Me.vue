@@ -1,32 +1,33 @@
 <template>
   <div class="contact-form" @click.prevent.stop="$emit('toggleContact')">
     <div class="wrapper" @click.stop>
-      <h3>lorem ipsum</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum eius eum eos sapiente, quaerat ex. Modi ullam, ut qui delectus itaque quo sapiente nostrum adipisci libero eveniet fugiat quia voluptatum.</p>
-    <span class="hide"><a @click.prevent.stop="$emit('toggleContact')">X</a></span> 
-    <form class="form" @submit.prevent.stop="submit" action="">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input id="name" type="text" v-model="contact.name" placeholder="Enter your name">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input id="email" type="text" v-model="contact.email" placeholder="Enter your email address">
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <input id="message" type="text" v-model="contact.message" placeholder="Enter a message">
-      </div>
-      <button class="btn" @click.prevent.stop="passToParent">Send!</button>
-    </form>
+      <h3>Contact Me!</h3>
+      <p>Let's connect! Whether you're a recruiter, hiring manager, or just someone looking to chat, feel free to drop me a message. I'd love to hear from you and explore how we can collaborate or help each other out. Looking forward to your message!</p>
+      <span class="hide"><a @click.prevent.stop="$emit('toggleContact')">X</a></span>
+
+      <form class="form" @submit.prevent.stop="submitForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" v-model="contact.name" placeholder="Enter your name" />
+        </div>
+        <div class="form-group" :class="{ 'error': emailError }">
+          <label for="email">Email</label>
+          <input id="email" type="text" v-model="contact.email" placeholder="Enter your email address" @blur="validateEmail" />
+          <span v-if="emailError" class="error-message">Please enter a valid email address</span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" v-model="contact.message" placeholder="Enter a message"></textarea>
+        </div>
+        <button class="btn" :disabled="emailError" @click.prevent.stop="passToParent">Send</button>
+      </form>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 export default {
   name: 'Contact-Me',
-  props: [],
   data() {
     return {
       contact: {
@@ -34,64 +35,165 @@ export default {
         email: '',
         message: '',
       },
-    }
+      emailError: false,
+    };
   },
   methods: {
-passToParent(){
-  this.$emit('handleData',this.contact)
-  console.log(`data from form: ${this.contact}`)
-}
-  }
-}
+    passToParent() {
+      this.$emit('handleData', this.contact);
+      this.clearContact();
+    },
+    clearContact() {
+      this.contact = {
+        name: '',
+        email: '',
+        message: '',
+      };
+    },
+    validateEmail() {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      this.emailError = !emailPattern.test(this.contact.email);
+    },
+    submitForm() {
+      if (!this.emailError) {
+        this.passToParent();
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
+/* Styling for the modal container */
 .contact-form {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5); /* Darker background */
   position: fixed;
   z-index: 10;
-  backdrop-filter: blur(15px); /* Blur the content behind it */
+  backdrop-filter: blur(10px); /* Adds depth with a blur effect */
+  padding: 20px;
+}
 
-}
-.form {
-  display: grid;
-  grid-template-columns: auto;
-  gap: 1.5rem;
-}
+/* Styling for the form container */
 .wrapper {
-  background-color: var(--background-color);
-  height: 500px;
-  width: 800px;
+  background-color:var(--background-color);
+  padding: 2rem;
+  max-width: 500px; /* Set a maximum width to contain everything properly */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 100;
 }
-.hide{
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
-  cursor: pointer;
 
+.hide {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.form {
+  display: grid;
+  grid-gap: 1.5rem;
+  width: 100%;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
+  width: 100%;
+  position: relative;
 }
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: var(--background-color);
+  transition: border 0.3s ease;
+  box-sizing: border-box; 
+  box-shadow: var(--shadow), var(--inner-shadow);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Textarea size */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Error state */
+.form-group.error input {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Button styling */
 .btn {
+  background-color: #007bff;
+  color: white;
   height: 50px;
-  width: 150px;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 </style>
