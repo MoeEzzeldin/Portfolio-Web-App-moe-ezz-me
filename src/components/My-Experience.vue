@@ -17,15 +17,15 @@
         </div>
 
         <div class="content">
-          <ul class="list">
+          <ul class="list-text">
             <li class="tag" v-for="(point, index) in item.summary" :key="index">
               {{ point }}
             </li>
           </ul>
         </div>
         <div class="skills">
-          <ul class="list">
-            <li class="tag-skill" v-for="(skill, index) in item.skills" :key="index">
+          <ul class="list-skills">
+            <li class="tag-skills" v-for="(skill, index) in item.skills" :key="index">
               {{ skill }}
             </li>
           </ul>
@@ -69,31 +69,35 @@ export default {
   padding: 1rem;
   transition: all 0.5s ease;
   border-radius: 8px;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   box-shadow: var(--inner-shadow);
+  height: minmax(300px, auto);
 }
+
 #experience .card:hover {
   transition: all 0.5s ease;
   box-shadow: var(--shadow);
-} 
-.card .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
 }
 
+.card .wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+  gap: .8rem;
+}
+.date, .title {
+  display: flex;
+  align-items: center;
+}
 .card:hover .title {
   transform: translateY(-5px);
   transition: all 0.5s ease;
-  color: var(--card-title);
 }
 
 .card .promoted {
   height: 30px;
 }
+
 .card .date {
   transition: all 0.5s ease;
   padding-right: 1rem;
@@ -138,7 +142,7 @@ export default {
   transition: all 0.5s ease;
 }
 
-.card .list {
+.card .list-text {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
@@ -147,8 +151,17 @@ export default {
   padding: 0;
   gap: 10px;
 }
+.card .list-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 10px;
+}
 
-.skills .list .tag-skill {
+.skills .list-skills .tag-skills {
   color: var(--card-title);
   background-color: var(--tag-color);
   border-radius: 25px;
@@ -160,19 +173,29 @@ export default {
   font-size: var(--font-small);
 }
 
-.card:hover .tag-skill {
+.card:hover .tag-skills {
   transition: all 0.5s ease;
 }
 
 @media (min-width: 1200px) {
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
   .card .date {
     order: 0;
   }
-  .card .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  justify-content: left;
-}
+  .card .wrapper:not(:last-child) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: left;
+    gap: 1rem;
+
+  }
+  .card .wrapper:last-child {
+    justify-content: center;
+  }
 }
 </style>

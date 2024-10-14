@@ -1,8 +1,8 @@
 <template>
   <div class="contact-form" @click.prevent.stop="$emit('toggleContact')">
     <div class="wrapper" @click.stop>
-      <h3>Contact Me!</h3>
-      <p>Thanks for visiting my portfolio website! Feel free to leave your information and a message, and let's connect.</p>
+      <h3>Let's Connect!</h3>
+      <p>Thanks for visiting my portfolio website! Feel free to leave your information, a message, and let's connect.</p>
       <span class="hide"><a @click.prevent.stop="$emit('toggleContact')"><i class="fi fi-br-cross-small"></i></a></span>
       <form class="form" @submit.prevent.stop="submitForm">
         <div class="form-group">

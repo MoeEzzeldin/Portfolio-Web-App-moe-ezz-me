@@ -22,6 +22,11 @@
         <div id="about" class="hidden">
           <About/>
         </div>
+        <!-- skills -->
+        <div id="skills" class="hidden">
+          <Skills :mydata="this.myData" />
+        </div>
+        <!-- work -->
         <div id="experience" class="hidden">
           <Experience
             v-for="(item, index) in myData.work"
@@ -31,6 +36,7 @@
             :promoted
           />
         </div>
+        <!-- wrojects -->
         <div id="projects" class="hidden">
           <MyProjects v-for="(item, index) in myData.projects" :key="index" :item="item" :expo />
         </div>
@@ -51,6 +57,7 @@ import About from './components/About-Me.vue'
 import Experience from './components/My-Experience.vue'
 import MyProjects from './components/My-Projects.vue'
 import Contact from './components/Contact-Me.vue'
+import Skills from './components/My-Skills.vue'
 
 import gitLight from '@/assets/github.png'
 import gitDark from '@/assets/github-d.png'
@@ -73,6 +80,7 @@ export default {
   components: {
     StickyAbout,
     About,
+    Skills,
     Experience,
     MyProjects,
     Contact
@@ -239,6 +247,7 @@ export default {
   gap: 4rem;
 }
 
+
 #loading {
   height: 100vh;
   font: red 26px;
@@ -313,11 +322,13 @@ export default {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* CSS rules for tablets */
+
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -336,11 +347,12 @@ export default {
     width: 90%;
   }
 
-  #sticky,
   #scroll {
-    top: 45px;
+    top: 3rem;
   }
+
   #sticky {
+    top: 3rem;
     position: sticky;
   }
 
@@ -404,5 +416,14 @@ export default {
     }
   }
 
+}
+@media (orientation: landscape) {
+  .main {
+    gap: 2rem;
+    height: auto;
+  }
+  #scroll {
+    gap: 2rem;
+  }
 }
 </style>

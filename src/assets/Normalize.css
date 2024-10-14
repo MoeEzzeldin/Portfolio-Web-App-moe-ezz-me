@@ -16,7 +16,7 @@
 :root {
   --background-color: #E4EBF5; /* Light background */
   --card-background: #E4EBF5; /* Lighter card background */
-  --card-title: #57D7D3; /* Card title color */
+  --card-title: #ff6a00; /* Card title color */
   --accent-color: #5d546f; /* Darker surface as accent */
   --text-color: #2d2444; /* Updated dark text for readability */
   --heading-color: #2d2444; /* Heading color remains unchanged */
@@ -25,7 +25,7 @@
   --btn-color: #ff6a00; /* Surface color for buttons */
   --btn-hover: #02912d; /* Surface color for buttons */
   --input-color: #b9e4ff; /* Light input background */
-  --tag-color: rgb(210, 235, 249);
+  --tag-color: #ff6a002d;
   --shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
   --inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
 inset -.2rem -.2rem .5rem var(--white);
@@ -34,10 +34,10 @@ inset -.2rem -.2rem .5rem var(--white);
 --primary-dark: #5b0eeb;
 
 --white: #FFFFFF;
---greyLight-1: #9baacf;
+--greyLight-1: #ff6a00;
 --greyLight-2: #c8d0e7;
 --greyLight-3: #bec8e4;
---greyDark: #9baacf;
+--greyDark: #ff6a00;
 }
 
 
@@ -169,7 +169,8 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #18ffff;
+  color: var(--card-title);
+  opacity: 0.8;
 }
 
 /**

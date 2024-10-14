@@ -42,7 +42,7 @@
         </a>
       </div>
       <div class="copy">
-        <p>© 2024 Moe Ezzeldin. All rights reserved.</p>
+        <p>© 2024 Ahmed Ezzeldin. All rights reserved.</p>
       </div>
     </div>
   </main>
@@ -73,7 +73,7 @@ export default {
 .main{
   display: grid;
   grid-template-rows: 1fr .5fr .5fr;
-  height: 100vh;
+  height: 100vh!important;
   gap: 4rem;
 }
 
@@ -83,12 +83,20 @@ export default {
 } */
 
 main .header {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   gap: 1rem;
 }
-
+.greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  top: 0;
+}
 
 main .greet {
   /* font-family: 'Pixelify Sans', sans-serif; */
@@ -98,7 +106,6 @@ main .greet {
   background: linear-gradient(to right, rgb(255, 106, 0), blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-top: 4rem;
 }
 
 main .name {
@@ -212,17 +219,29 @@ main .holder:hover a {
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
+  .main{
+    gap: 2rem;
+    height: auto;
+  }
 
 }
 @media (min-width: 1200px) {
   main .main {
     display: grid;
     grid-template-rows: 1fr .5fr .5fr;
-    height: 88vh;    
     gap: 4rem;
+    height: calc(93vh - 3rem) !important;
   }
+.greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  top: 0;
+}
 .main .name {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
   .footer {
@@ -251,10 +270,5 @@ main .holder:hover a {
     gap: 2rem;
   }
 }
-@media (min-width: 1440px) {
-  body {
-    transform: scale(1.05); /* Scale up by 5% */
-    transform-origin: top left; /* Set the scaling origin */
-  }
-}
+
 </style>

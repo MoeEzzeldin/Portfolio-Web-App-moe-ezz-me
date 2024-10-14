@@ -50,6 +50,7 @@ export default {
   border-radius: 8px;
   margin-bottom: 3rem;
   box-shadow: var(--inner-shadow);
+  height: 300px;
 }
 
 .background-img {
@@ -58,8 +59,8 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover; /* Ensures the image covers the entire card */
-  background-position: center; /* Centers the image */
+  background-size: cover; 
+  background-position: center; 
   background-repeat: no-repeat;
   z-index: 2;
   transition: all 0.5s ease-out;
@@ -70,7 +71,7 @@ export default {
 .card:hover .background-img {
   opacity: 0.2;
   filter: blur(10px);
-  transition: all 0.5s ease-out;
+  transition: all 0.5s ease;
   z-index: -1;
 }
 
@@ -174,8 +175,8 @@ export default {
 
 @media (min-width: 1440px) {
   body {
-    transform: scale(1.05); /* Scale up by 5% */
-    transform-origin: top left; /* Set the scaling origin */
+    transform: scale(1.05);
+    transform-origin: top left;
   }
 }
 </style>
