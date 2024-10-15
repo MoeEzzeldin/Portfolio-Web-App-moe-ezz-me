@@ -7,12 +7,12 @@
       <form class="form" @submit.prevent.stop="submitForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input id="name" type="text" v-model="contact.name" placeholder="Enter your name" @blur="validateName"/>
+          <input id="name" type="text" v-model="contact.name" placeholder="Enter your name" @blur="validateName" autocomplete="given-name"/>
           <span v-if="nameError" class="error-message">Please enter a valid name</span>
         </div>
         <div class="form-group" :class="{ 'error': emailError }">
           <label for="email">Email</label>
-          <input id="email" type="text" v-model="contact.email" placeholder="Enter your email address" @blur="validateEmail"/>
+          <input id="email" type="text" v-model="contact.email" placeholder="Enter your email address" @blur="validateEmail" autocomplete="on"/>
           <span v-if="emailError" class="error-message">Please enter a valid email address</span>
         </div>
         <div class="form-group">
@@ -101,7 +101,7 @@ export default {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 100;
-  box-shadow: var(--shadow), var(--inner-shadow);
+  box-shadow: var(--inner-shadow);
 }
 
 .hide {

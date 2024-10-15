@@ -3,7 +3,6 @@
   <transition name="fade" class="contact">
     <Contact v-if="showContact" @toggleContact="toggleContact" @handleData="handleData"/>
   </transition>
-  <!-- I want this png to also expand the background color@click -->
   <div :class="['switch', { 'switch-on': isSwitchOn }]">
     <div class="switch__1">
       <input id="switch-1" type="checkbox" v-model="isSwitchOn" @click="toggleTheme" />
@@ -11,10 +10,10 @@
     </div>
   </div>
   <!-- im adding wrapper to make main fit 80vw in mobile views -->
-  <div class="container"  v-show="handleLoader">
+  <div class="container">
     <main id="main" class="wrapper">
       <!-- my info / Pic -->
-      <div id="sticky">
+      <div id="sticky" class="hidden">
         <Sticky-About :myData="this.myData" :theme :icons @toggleContact="toggleContact" />
       </div>
       <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
@@ -43,12 +42,7 @@
       </div>
     </main>
   </div>
-  <div class="load" v-show="!handleLoader">
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-  </div>
+
 </template>
 
 <script>
@@ -102,7 +96,7 @@ export default {
       hiddenElements: document.querySelectorAll('.hidden'),
       observer: null,
       showContact: false,
-      loader: false,
+      loader: ref(false),
       status: "",
       body:{}
     }
@@ -118,9 +112,6 @@ export default {
         .catch((error) => {
           console.error('Error retrieving profile:', error)
         })
-    },
-    handleLoader() {
-      return this.myData ? this.loader = true : this.loader = false
     },
     handleData(contactData){
       this.body = contactData
