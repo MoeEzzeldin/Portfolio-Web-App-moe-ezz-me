@@ -246,7 +246,10 @@ export default {
   align-items: center;
   gap: 4rem;
 }
-
+#sticky {
+  top: 3rem;
+  position: relative;
+}
 
 #loading {
   height: 100vh;
