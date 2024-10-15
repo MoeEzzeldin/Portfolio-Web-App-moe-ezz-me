@@ -220,7 +220,7 @@ main .holder:hover a {
   /* CSS rules for tablets */
   .main{
     gap: 2rem;
-    height: auto;
+    height: 95vh;
   }
 
 }

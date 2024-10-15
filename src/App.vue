@@ -11,7 +11,7 @@
     </div>
   </div>
   <!-- im adding wrapper to make main fit 80vw in mobile views -->
-  <div class="container"  v-if="myData">
+  <div class="container"  v-show="handleLoader">
     <main id="main" class="wrapper">
       <!-- my info / Pic -->
       <div id="sticky">
@@ -43,7 +43,7 @@
       </div>
     </main>
   </div>
-  <div class="load" v-else>
+  <div class="load" v-show="!handleLoader">
     <hr />
     <hr />
     <hr />
@@ -102,6 +102,7 @@ export default {
       hiddenElements: document.querySelectorAll('.hidden'),
       observer: null,
       showContact: false,
+      loader: false,
       status: "",
       body:{}
     }
@@ -117,6 +118,9 @@ export default {
         .catch((error) => {
           console.error('Error retrieving profile:', error)
         })
+    },
+    handleLoader() {
+      return this.myData ? this.loader = true : this.loader = false
     },
     handleData(contactData){
       this.body = contactData
