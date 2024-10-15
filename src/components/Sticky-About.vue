@@ -2,7 +2,7 @@
   <main class="main">
     <section class="greeting">
       <div class="header">
-        <h3 class="greet">Hi, my name is...</h3>
+        <h3 v-if="myData.basics" class="greet">Hi, my name is...</h3>
         <h1 class="name" v-if="myData.basics">{{ myData.basics.name }}</h1>
         <h2 class="whomi" v-if="myData.basics">{{ myData.basics.label }}</h2>
         <p class="intro" v-if="myData.basics">
@@ -72,7 +72,7 @@ export default {
 .main{
   display: grid;
   grid-template-rows: 1fr .5fr .5fr;
-  height: 100vh;
+  height: 95vh;
   gap: 4rem;
 }
 
