@@ -91,7 +91,7 @@ main .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   gap: 1rem;
   top: 0;
 }
@@ -127,7 +127,7 @@ main .intro {
   font-weight: 500;
   font-style: normal;
   font-size: 1.2rem;
-  /* max-width: 680px; */
+  max-width: 680px;
 }
 
 main .nav {
@@ -215,6 +215,15 @@ main .holder:hover a {
 .footer i:hover {
   text-shadow: var(--shadow);
 }
+@media (orientation: landscape) {
+  .main {
+    gap: 2rem;
+    height: auto
+  }
+  #scroll {
+    gap: 2rem;
+  }
+}
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
   .main{
@@ -223,6 +232,7 @@ main .holder:hover a {
   }
 
 }
+
 @media (min-width: 1200px) {
   main .main {
     display: grid;
@@ -259,14 +269,6 @@ main .holder:hover a {
   }
 }
 
-@media (orientation: landscape) {
-  .main {
-    gap: 2rem;
-    height: auto;
-  }
-  #scroll {
-    gap: 2rem;
-  }
-}
+
 
 </style>
