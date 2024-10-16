@@ -7,12 +7,12 @@
       Technology and computers have been my passion since I was little, but my journey with tech
       started back in 2010 when I got involved with the
       <b>Arab Digital Expression Foundation</b> (<a :href="deca" target="_blank">ADEF</a>) and
-      attended workshops on Linux and Ubuntu. Through these two days workshop, I learned how to install and use ubuntu for the first time .<br />
+      attended workshops on Linux and Ubuntu. Through these two days workshop, I learned how to install and use ubuntu for the first time, and it inspired me to keep looking into Linux.<br />
       <br />
-      After immigrating to the US, I started learning HTML, CSS, and JavaScript with
+      I started learning HTML, CSS, and JavaScript shortly after I moved to the US with
       <strong>Egypt Future Work Digital</strong> (<a href="https://egfwd.com/" target="_blank">FWD</a>), and enrolled for <a href="https://www.techelevator.com/" target="_blank">Tech Elevator</a> 
         in-person Spring 2024 cohort. I spend over 800+ hours coding and learning the languages and frameworks
-      necessary for software development. Since graduating in April 2024, my main focus
+      necessary to start my career in tech. Since graduating in April 2024, my main focus
       has been learning more about DevOps while using the tools I learn from the cloud in developing accessible scalable applications.<br />
       <br />
       When I’m not coding, I’m usually hanging out with my wife and daughter, chatting with a friend, or playing Pink Floyd in my patio!

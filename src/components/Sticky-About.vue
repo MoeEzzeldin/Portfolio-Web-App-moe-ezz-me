@@ -39,7 +39,6 @@
         <a href="'tel:'+16148169143">
           <i class="fi fi-ss-phone-flip"></i>
         </a>
-        .
       </div>
       <div class="copy">
         <p>© 2024 Ahmed Ezzeldin. All rights reserved.</p>
@@ -110,7 +109,7 @@ main .greet {
 main .name {
   font-weight: 700;
   font-style: normal;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   line-height: 1;
   margin: 0;
   color: var(--heading-color);
@@ -125,7 +124,7 @@ main .whomi {
 }
 
 main .intro {
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-size: 1.2rem;
   /* max-width: 680px; */
