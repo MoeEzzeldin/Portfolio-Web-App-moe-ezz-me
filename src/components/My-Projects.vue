@@ -42,6 +42,7 @@ export default {
 </script>
 
 <style scoped>
+
 .card {
   position: relative;
   padding: 1rem;

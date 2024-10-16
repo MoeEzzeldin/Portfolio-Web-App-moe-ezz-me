@@ -35,6 +35,9 @@
             :promoted
           />
         </div>
+        <div class="resume">
+          <a href="https://s3.amazonaws.com/moe-ezz.me/resume/Resume_AE.pdf" target="_blank">View Resume <i class="fi fi-br-download"></i></a>
+        </div>
         <!-- wrojects -->
         <div id="projects" class="hidden">
           <MyProjects v-for="(item, index) in myData.projects" :key="index" :item="item" :expo />
@@ -207,11 +210,12 @@ export default {
 
 .hidden {
   opacity: 0;
-  transition: 1s ease-in;
+  transition: .5s ease-in;
 }
 .show {
   opacity: 1;
-  transition: 1s ease-in;
+  transition: .5s ease-in;
+
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s ease-in;
@@ -244,6 +248,10 @@ export default {
 #sticky {
   top: 3rem;
   position: relative;
+}
+
+#projects {
+  margin-top: 2.5rem;
 }
 
 #loading {
