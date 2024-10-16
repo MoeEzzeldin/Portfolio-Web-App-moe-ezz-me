@@ -70,9 +70,9 @@ export default {
 <style scoped>
 .main{
   display: grid;
-  grid-template-rows: 1fr .5fr .5fr;
+  grid-template-rows: .8fr .5fr .5fr;
   height: 100vh;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 
@@ -215,15 +215,7 @@ main .holder:hover a {
 .footer i:hover {
   text-shadow: var(--shadow);
 }
-@media (orientation: landscape) {
-  .main {
-    gap: 2rem;
-    height: auto
-  }
-  #scroll {
-    gap: 2rem;
-  }
-}
+
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
   .main{
@@ -269,6 +261,14 @@ main .holder:hover a {
   }
 }
 
-
+@media (orientation: landscape) {
+  .main {
+    gap: 2rem;
+    height: auto
+  }
+  #scroll {
+    gap: 2rem;
+  }
+}
 
 </style>
