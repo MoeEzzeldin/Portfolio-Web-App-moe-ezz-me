@@ -50,19 +50,19 @@ export default {
     },
     validateEmail() {
       const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      this.emailError = !emailPattern.test(this.contact.email);
+      return this.emailError = !emailPattern.test(this.contact.email);
     },
     validateMessage() {
       return this.messageError = this.contact.message.trim().length <= 5;
     },
-    submitForm() {
-      if (!this.emailError) {
-        this.passDataToParent();
-      }
-    },
     passDataToParent() {
-      this.$emit('handleData', this.contact);
-      this.clearContact();
+      if (!this.validateName() || !this.emailError || !this.validateMessage()) {
+        this.$emit('handleData', this.contact);
+        this.clearContact();
+      }
+      else {
+        alert('Please enter valid data');
+      }
     },
     clearContact() {
       this.contact = {

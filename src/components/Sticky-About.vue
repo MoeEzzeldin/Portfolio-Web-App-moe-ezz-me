@@ -39,6 +39,7 @@
         <a href="'tel:'+16148169143">
           <i class="fi fi-ss-phone-flip"></i>
         </a>
+        .
       </div>
       <div class="copy">
         <p>© 2024 Ahmed Ezzeldin. All rights reserved.</p>
@@ -61,7 +62,6 @@ export default {
   methods: {
     contactMe(event) {
       this.$emit('toggleContact', event);
-      console.log('im getting hit in contactMe AKA sticky')
     }
   }
 
@@ -72,7 +72,7 @@ export default {
 .main{
   display: grid;
   grid-template-rows: 1fr .5fr .5fr;
-  height: 95vh;
+  height: 100vh;
   gap: 4rem;
 }
 
