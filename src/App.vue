@@ -21,10 +21,6 @@
         <div id="about" class="hidden">
           <About/>
         </div>
-        <!-- skills -->
-        <div id="skills" class="hidden">
-          <Skills :mydata="this.myData" />
-        </div>
         <!-- work -->
         <div id="experience" class="hidden">
           <Experience
@@ -54,7 +50,6 @@ import About from './components/About-Me.vue'
 import Experience from './components/My-Experience.vue'
 import MyProjects from './components/My-Projects.vue'
 import Contact from './components/Contact-Me.vue'
-import Skills from './components/My-Skills.vue'
 
 import gitLight from '@/assets/github.png'
 import gitDark from '@/assets/github-d.png'
@@ -77,7 +72,6 @@ export default {
   components: {
     StickyAbout,
     About,
-    Skills,
     Experience,
     MyProjects,
     Contact

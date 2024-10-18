@@ -51,7 +51,16 @@ export default {
   border-radius: 8px;
   margin-bottom: 3rem;
   box-shadow: var(--inner-shadow);
+  transition: opacity 0.6s ease;
   height: 300px;
+}
+.card:hover {
+  background-color: var(--card-background);
+  backdrop-filter: blur(25px);
+  box-shadow: var(--shadow);
+  /* i need to decide if i want to add the borders for better visibility or not */
+  /* border-top: 1px solid var(--card-title);
+  border-left: 1px solid var(--card-title); */
 }
 
 .background-img {
@@ -61,6 +70,7 @@ export default {
   width: 100%;
   height: 100%;
   background-size: cover; 
+  object-fit: contain;
   background-position: center; 
   background-repeat: no-repeat;
   z-index: 2;
@@ -76,20 +86,8 @@ export default {
   z-index: -1;
 }
 
-.card:hover {
-  background-color: var(--card-background);
-  backdrop-filter: blur(25px);
-  box-shadow: var(--shadow);
-  /* border-top: 1px solid var(--card-title);
-  border-left: 1px solid var(--card-title); */
-}
-.card {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 20px;
-}
+
+
 .card:hover .title {
   color: var(--card-title);
 }

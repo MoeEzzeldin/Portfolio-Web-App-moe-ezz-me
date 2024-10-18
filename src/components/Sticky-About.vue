@@ -91,7 +91,7 @@ main .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: flex-start;
   gap: 1rem;
   top: 0;
 }
@@ -127,7 +127,7 @@ main .intro {
   font-weight: 500;
   font-style: normal;
   font-size: 1.2rem;
-  max-width: 680px;
+  max-width: 510px;
 }
 
 main .nav {
@@ -236,9 +236,7 @@ main .holder:hover a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  top: 0;
+  align-items: flex-start;
 }
 .main .name {
   font-size: 3rem;
