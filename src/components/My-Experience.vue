@@ -70,7 +70,7 @@ export default {
   transition: all 0.5s ease;
   overflow: hidden;
   border-radius: 8px;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   box-shadow: var(--inner-shadow);
   height: minmax(300px, auto);
 }

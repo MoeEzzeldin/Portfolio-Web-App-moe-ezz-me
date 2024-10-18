@@ -5,28 +5,27 @@
         <img class="expo" :src="expo" alt="png" />
       </a>
       <div class="background-img" :style="{ backgroundImage: 'url(' + item.img + ')' }"></div>
+        <div class="title">
+          <h4>{{ item.name }}</h4>
+        </div>
+        <div class="date">
+          <h4>{{ item.startDate }} - {{ item.endDate }}</h4>
+        </div>
 
-      <div class="title">
-        <h4>{{ item.name }}</h4>
-      </div>
-      <div class="date">
-        <h4>{{ item.startDate }} - {{ item.endDate }}</h4>
-      </div>
-
-      <div class="content">
-        <ul class="list">
-          <li class="tag">
-            {{ item.description }}
-          </li>
-        </ul>
-      </div>
-      <div class="skills">
-        <ul class="list">
-          <li class="tag-skill" v-for="(skill, index) in item.skills" :key="index">
-            {{ skill }}
-          </li>
-        </ul>
-      </div>
+        <div class="content">
+          <ul class="list">
+            <li class="tag">
+              {{ item.description }}
+            </li>
+          </ul>
+        </div>
+        <div class="skills">
+          <ul class="list">
+            <li class="tag-skill" v-for="(skill, index) in item.skills" :key="index">
+              {{ skill }}
+            </li>
+          </ul>
+        </div>
     </section>
   </main>
 </template>
@@ -42,8 +41,10 @@ export default {
 </script>
 
 <style scoped>
-
 .card {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-evenly;
   position: relative;
   padding: 1rem;
   transition: all 0.5s ease;
@@ -52,7 +53,8 @@ export default {
   margin-bottom: 3rem;
   box-shadow: var(--inner-shadow);
   transition: opacity 0.6s ease;
-  height: 300px;
+  min-height: 250px;
+  max-height: 100%;
 }
 .card:hover {
   background-color: var(--card-background);
@@ -69,15 +71,16 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover; 
+  background-size: cover;
   object-fit: contain;
-  background-position: center; 
+  background-position: center;
   background-repeat: no-repeat;
   z-index: 2;
   transition: all 0.5s ease-out;
   border-radius: 8px;
   filter: grayscale(0.5);
   box-shadow: var(--inner-shadow), var(--shadow);
+
 }
 .card:hover .background-img {
   opacity: 0.2;
@@ -100,7 +103,6 @@ export default {
   padding-right: 2rem;
   display: flex;
   align-items: center;
-  order: -1;
 }
 
 .card .date h4 {
@@ -111,8 +113,8 @@ export default {
 
 .card:hover .date h4 {
   opacity: 1;
-  color: var(--card-title);
 }
+
 .card .expo {
   position: absolute;
   width: 20px;

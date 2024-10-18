@@ -1,8 +1,6 @@
 <template>
   <section id="skills">
-    <!-- <ul v-for="(skill, index) in myData.skills" :key="index">
-      <li> {{skill}}</li>
-    </ul> -->
+    <img src="" alt="" />
   </section>
 </template>
 
@@ -11,13 +9,9 @@ export default {
   name: 'My-Skills',
   props: ['myData'],
   data() {
-    return {
-
-    }
+    return {}
   },
-  methods: {
-    
-  }
+  methods: {}
 }
 </script>
 
