@@ -76,7 +76,7 @@ export default {
   data() {
     return {
       theme: localStorage.getItem('theme') || 'light',
-      isSwitchOn: localStorage.getItem('isSwitchOn') === 'true' ? 'switch-on' : 'switch',
+      isSwitchOn: localStorage.getItem('isSwitchOn') === 'true',
       icons: {
         gitHub: localStorage.getItem('gitHub') || gitLight,
         linkedIn: localStorage.getItem('linkedIn') || inLight,

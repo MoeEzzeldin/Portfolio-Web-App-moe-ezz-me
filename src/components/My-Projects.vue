@@ -54,7 +54,7 @@ export default {
   border-radius: 8px;
   margin-bottom: 3rem;
   box-shadow: var(--inner-shadow);
-  transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;  
   min-height: 250px;
   max-height: 100%;
   gap: 1rem;
