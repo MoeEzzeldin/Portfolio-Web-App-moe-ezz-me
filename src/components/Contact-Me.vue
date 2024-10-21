@@ -45,18 +45,22 @@ export default {
   methods: {
     validateName() {
       this.nameError = this.contact.name.trim().length <= 1;
-      console.log(this.nameError);
       return this.nameError;
     },
     validateEmail() {
       const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      return this.emailError = !emailPattern.test(this.contact.email);
+      this.emailError = !emailPattern.test(this.contact.email);
+      return this.emailError;
     },
     validateMessage() {
-      return this.messageError = this.contact.message.trim().length <= 5;
+      this.messageError = this.contact.message.trim().length <= 5;
+      return this.messageError;
     },
     passDataToParent() {
-      if (!this.validateName() || !this.emailError || !this.validateMessage()) {
+      this.validateName();
+      this.validateEmail();
+      this.validateMessage();
+      if (!this.validateName() && !this.emailError && !this.validateMessage()) {
         this.$emit('handleData', this.contact);
         this.clearContact();
       }

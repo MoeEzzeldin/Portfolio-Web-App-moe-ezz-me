@@ -1,22 +1,19 @@
 <template>
-  
   <transition name="fade" class="contact">
     <Contact v-if="showContact" @toggleContact="toggleContact" @handleData="handleData"/>
   </transition>
+  <!-- we applying switch here as a default and it switches to switch-on when isSwitchOn.value changes-->
   <div :class="['switch', { 'switch-on': isSwitchOn }]">
     <div class="switch__1">
       <input id="switch-1" type="checkbox" v-model="isSwitchOn" @click="toggleTheme" />
       <label for="switch-1"></label>
     </div>
   </div>
-  <!-- im adding wrapper to make main fit 80vw in mobile views -->
   <div class="container">
     <main id="main" class="wrapper">
-      <!-- my info / Pic -->
       <div id="sticky" class="hidden">
         <Sticky-About :myData="this.myData" :theme :icons @toggleContact="toggleContact" />
       </div>
-      <!-- Elevator pitch / pro-exp / tech-exp / projects / connect -->
       <div id="scroll">
         <div id="about" class="hidden">
           <About/>
@@ -79,7 +76,7 @@ export default {
   data() {
     return {
       theme: localStorage.getItem('theme') || 'light',
-      isSwitchOn: localStorage.getItem('isSwitchOn') === 'true',
+      isSwitchOn: localStorage.getItem('isSwitchOn') === 'true' ? 'switch-on' : 'switch',
       icons: {
         gitHub: localStorage.getItem('gitHub') || gitLight,
         linkedIn: localStorage.getItem('linkedIn') || inLight,
@@ -100,11 +97,11 @@ export default {
   },
 
   methods: {
+    // axios calls are declaired in my service class to get resume object from DDB
     getProfile() {
       ResumeService.resume()
         .then((response) => {
           this.myData = response.data
-          console.log(this.myData)
         })
         .catch((error) => {
           console.error('Error retrieving profile:', error)
@@ -204,11 +201,11 @@ export default {
 
 .hidden {
   opacity: 0;
-  transition: .5s ease-in;
+  transition: 0.8s ease-in;
 }
 .show {
   opacity: 1;
-  transition: .5s ease-in;
+  transition: 0.8s ease-in;
 
 }
 .fade-enter-active, .fade-leave-active {
@@ -362,58 +359,6 @@ export default {
     align-items: center;
     gap: 10rem;
     position: relative;
-  }
-
-
-  .load {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /*change these sizes to fit into your project*/
-    width: 100px;
-    height: 100px;
-  }
-  .load hr {
-    border: 0;
-    margin: 0;
-    width: 40%;
-    height: 40%;
-    position: absolute;
-    border-radius: 50%;
-    animation: spin 2s ease infinite;
-  }
-
-  .load :first-child {
-    background: #19a68c;
-    animation-delay: -1.5s;
-  }
-  .load :nth-child(2) {
-    background: #f63d3a;
-    animation-delay: -1s;
-  }
-  .load :nth-child(3) {
-    background: #fda543;
-    animation-delay: -0.5s;
-  }
-  .load :last-child {
-    background: #193b48;
-  }
-
-  @keyframes spin {
-    0%,
-    100% {
-      transform: translate(0);
-    }
-    25% {
-      transform: translate(160%);
-    }
-    50% {
-      transform: translate(160%, 160%);
-    }
-    75% {
-      transform: translate(0, 160%);
-    }
   }
 
 }
