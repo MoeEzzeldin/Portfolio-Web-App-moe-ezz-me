@@ -64,7 +64,6 @@ export default {
   grid-template-columns: 1fr;
   gap: 0.3rem;
   align-items: center;
-  padding: 1rem;
   position: relative;
   transition: all 0.5s ease;
 }
@@ -103,11 +102,14 @@ export default {
 
 
 .card:hover  .title {
-  transform: translateY(-5px);
   transition: all 0.5s ease;
   color: var(--card-title);
+  margin-left: 0.2rem;
 }
 
+.content {
+  margin-left: 0.5rem;
+}
 .card .promoted {
   height: 40px;
 }
@@ -125,9 +127,8 @@ export default {
 }
 
 .card:hover .date h4 {
-  transform: translateY(-5px);
-
   opacity: 1;
+  margin-left: 0.5rem;
 }
 
 .card .expo {

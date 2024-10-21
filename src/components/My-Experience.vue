@@ -5,16 +5,18 @@
         <img class="expo" :src="expo" alt="png" />
       </a>
       <div class="wrapper">
+        <div class="head">
         <div class="title">
-          <h4>
-            {{ item.name }} &nbsp; | &nbsp;{{ item.position }}
-            <img class="promoted" :src="this.promoted" v-show="item.promotion" alt="promoted" />
-            {{ item.promotion ? item.promotion : '' }}
-          </h4>
-        </div>
-        <div class="date">
-          <h4>{{ item.startDate }} - {{ item.endDate }}</h4>
-        </div>
+            <h4>
+              {{ item.name }} &nbsp; | &nbsp;{{ item.position }}
+              <img class="promoted" :src="this.promoted" v-show="item.promotion" alt="promoted" />
+              {{ item.promotion ? item.promotion : '' }}
+            </h4>
+          </div>
+          <div class="date">
+            <h4>{{ item.startDate }} - {{ item.endDate }}</h4>
+          </div>
+          </div>
 
         <div class="content">
           <ul class="list-text">
@@ -91,18 +93,22 @@ export default {
   align-items: center;
 }
 .card:hover .title {
-  transform: translateY(-5px);
   transition: all 0.5s ease;
   color: var(--card-title);
+  margin-left: 0.2rem;
 }
+.head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
 
+}
 .card .promoted {
   height: 30px;
 }
 
 .card .date {
   transition: all 0.5s ease;
-  padding-right: 1rem;
   display: flex;
   align-items: center;
   /* order: -1; */
@@ -115,9 +121,12 @@ export default {
 }
 
 .card:hover .date h4 {
-  transform: translateY(-5px);
   opacity: 1;
   transition: all 0.5s ease;
+  margin-left: 0.5rem;
+}
+.content{
+  margin-left: 0.5rem;
 }
 .card .expo {
   position: absolute;
