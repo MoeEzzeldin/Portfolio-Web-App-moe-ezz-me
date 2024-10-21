@@ -239,9 +239,16 @@ main .holder:hover a {
   align-items: flex-start;
 }
 .main .name {
-  font-size: 3rem;
+  font-size: var(--heading-font);
+}
+.whomi {
+  font-size: 2rem;
 }
 
+.nav {
+
+  font-size: var(--font-large);
+}
   .footer {
     height: 150px;
     display: flex;

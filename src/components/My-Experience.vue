@@ -93,6 +93,7 @@ export default {
 .card:hover .title {
   transform: translateY(-5px);
   transition: all 0.5s ease;
+  color: var(--card-title);
 }
 
 .card .promoted {
@@ -104,7 +105,7 @@ export default {
   padding-right: 1rem;
   display: flex;
   align-items: center;
-  order: -1;
+  /* order: -1; */
 }
 
 .card .date h4 {
@@ -116,7 +117,6 @@ export default {
 .card:hover .date h4 {
   transform: translateY(-5px);
   opacity: 1;
-  color: var(--card-title);
   transition: all 0.5s ease;
 }
 .card .expo {

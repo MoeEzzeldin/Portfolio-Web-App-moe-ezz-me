@@ -76,6 +76,7 @@ inset -.2rem -.2rem .5rem var(--white);
   --font-medium: 16px;
   --font-large: 20px;
   --font-xlarge: 24px;
+  --heading-font: 4rem;
   --primary-font: 'Poppins', sans-serif;
   --secondary-font: '';
 }

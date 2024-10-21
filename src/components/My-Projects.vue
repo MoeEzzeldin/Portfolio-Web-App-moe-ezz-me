@@ -5,12 +5,14 @@
         <img class="expo" :src="expo" alt="png" />
       </a>
       <div class="background-img" :style="{ backgroundImage: 'url(' + item.img + ')' }"></div>
+      <div class="head">
         <div class="title">
           <h4>{{ item.name }}</h4>
         </div>
         <div class="date">
           <h4>{{ item.startDate }} - {{ item.endDate }}</h4>
         </div>
+      </div>
 
         <div class="content">
           <ul class="list">
@@ -55,6 +57,16 @@ export default {
   transition: opacity 0.6s ease;
   min-height: 250px;
   max-height: 100%;
+  gap: 1rem;
+}
+.head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.5s ease;
 }
 .card:hover {
   background-color: var(--card-background);
@@ -90,8 +102,9 @@ export default {
 }
 
 
-
-.card:hover .title {
+.card:hover  .title {
+  transform: translateY(-5px);
+  transition: all 0.5s ease;
   color: var(--card-title);
 }
 
@@ -112,6 +125,8 @@ export default {
 }
 
 .card:hover .date h4 {
+  transform: translateY(-5px);
+
   opacity: 1;
 }
 
