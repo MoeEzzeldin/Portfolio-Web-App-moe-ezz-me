@@ -7,17 +7,17 @@
       <form class="form" @submit.prevent.stop="submitForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input id="name" type="text" v-model="contact.name" placeholder="Enter your name" @blur="validateName" autocomplete="given-name"/>
+          <input id="name" type="text" v-model="contact.name" placeholder="Enter your name" @blur="validateName" autocomplete="given-name" :maxlength="20" />
           <span v-if="nameError" class="error-message">Please enter a valid name</span>
         </div>
         <div class="form-group" :class="{ 'error': emailError }">
           <label for="email">Email</label>
-          <input id="email" type="text" v-model="contact.email" placeholder="Enter your email address" @blur="validateEmail" autocomplete="on"/>
+          <input id="email" type="text" v-model="contact.email" placeholder="Enter your email address" @blur="validateEmail" autocomplete="on" :maxlength="40" />
           <span v-if="emailError" class="error-message">Please enter a valid email address</span>
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" v-model="contact.message" placeholder="Enter a message" @blur="validateMessage"></textarea>
+          <textarea id="message" v-model="contact.message" placeholder="Enter a message" @blur="validateMessage" :maxlength="100"></textarea>
           <span v-if="messageError" class="error-message">Please enter message</span>
         </div>
         <button class="btn" :disabled="emailError" @click.prevent.stop="passDataToParent">Send</button>
@@ -65,7 +65,7 @@ export default {
         this.clearContact();
       }
       else {
-        alert('Please enter valid data');
+        alert('Please enter valid information');
       }
     },
     clearContact() {
