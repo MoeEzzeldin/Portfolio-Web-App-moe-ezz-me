@@ -88,6 +88,9 @@ export default {
   height: 100%;
   gap: .8rem;
 }
+.title{
+  font-size: 0.9rem;
+}
 .date, .title {
   display: flex;
   align-items: center;
@@ -195,7 +198,9 @@ export default {
   flex-wrap: wrap;
   gap: 1rem;
 }
-
+.title {
+  font-size: var(--font-medium);
+}
   .card .wrapper:not(:last-child) {
     display: flex;
     flex-wrap: wrap;

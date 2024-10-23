@@ -99,7 +99,9 @@ export default {
   z-index: -1;
 }
 
-
+.title {
+  font-size: 0.9rem;
+}
 .card:hover  .title {
   transition: all 0.5s ease;
   color: var(--card-title);
@@ -184,6 +186,9 @@ export default {
   .card .date {
     color: var(--text-color);
   }
+  .title {
+  font-size: var(--font-medium);
+}
 }
 
 @media (min-width: 1440px) {
