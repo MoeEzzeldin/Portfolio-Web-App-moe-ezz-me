@@ -195,8 +195,7 @@ export default {
   flex-wrap: wrap;
   gap: 1rem;
 }
-  .card .date {
-  }
+
   .card .wrapper:not(:last-child) {
     display: flex;
     flex-wrap: wrap;
