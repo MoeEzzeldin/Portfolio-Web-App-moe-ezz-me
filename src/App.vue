@@ -245,6 +245,18 @@ export default {
   margin-top: 2.5rem;
 }
 
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--card-title);
+  transition: opacity 0.6s ease;  
+}
+
 #loading {
   height: 100vh;
   font: red 26px;

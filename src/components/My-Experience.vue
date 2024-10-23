@@ -99,9 +99,10 @@ export default {
 }
 .head {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
   gap: 0.3rem;
-
+  margin-top: 1rem;
 }
 .card .promoted {
   height: 30px;
@@ -111,6 +112,7 @@ export default {
   transition: all 0.5s ease;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   /* order: -1; */
 }
 
@@ -123,7 +125,7 @@ export default {
 .card:hover .date h4 {
   opacity: 1;
   transition: all 0.5s ease;
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .content{
   margin-left: 0.5rem;
@@ -194,7 +196,6 @@ export default {
   gap: 1rem;
 }
   .card .date {
-    order: 0;
   }
   .card .wrapper:not(:last-child) {
     display: flex;

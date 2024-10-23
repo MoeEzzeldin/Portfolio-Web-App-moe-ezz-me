@@ -55,17 +55,16 @@ export default {
   margin-bottom: 3rem;
   box-shadow: var(--inner-shadow);
   transition: opacity 0.6s ease;  
-  min-height: 250px;
+  min-height: 200px;
   max-height: 100%;
   gap: 1rem;
 }
 .head {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
   gap: 0.3rem;
-  align-items: center;
-  position: relative;
-  transition: all 0.5s ease;
+  margin-top: 0.6rem;
 }
 .card:hover {
   background-color: var(--card-background);
@@ -115,9 +114,9 @@ export default {
 }
 .card .date {
   transition: all 0.5s ease-out;
-  padding-right: 2rem;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .card .date h4 {
@@ -128,7 +127,7 @@ export default {
 
 .card:hover .date h4 {
   opacity: 1;
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .card .expo {
@@ -150,7 +149,6 @@ export default {
 
 .card .title {
   display: flex;
-  flex-grow: 1;
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s ease;
@@ -176,7 +174,6 @@ export default {
   justify-content: center;
   padding: 0 10px;
   font-size: var(--font-small);
-  font-weight: 600;
 }
 
 .card:hover .tag-skill {
@@ -185,7 +182,6 @@ export default {
 }
 @media (min-width: 1200px) {
   .card .date {
-    order: 0;
     color: var(--text-color);
   }
 }
