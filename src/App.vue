@@ -114,6 +114,7 @@ export default {
     sendEmail(data){
       if(!data || !data.email){
         console.log("error occor recieving data")
+        return;
       }
       ResumeService.Email(data)
       .then((response) => {

@@ -34,7 +34,7 @@
      "username": "MoeEzzeldin"
     }
    ],
-   "summary": "I enjoy building engaging accessible applications",
+   "summary": "I'm a backend developer with hands-on experience in .NET, focused on building data-driven applications using DAOs and MVC. I also have a solid understanding of Vue.js, and AWS services like Lambda, EC2, and DynamoDB.",
    "url": "https://Moe-Ezz.me"
   },
   "certificates": [
@@ -116,7 +116,7 @@
   "projects": [
    {
     "description": "Designed and built a portfolio web app utelizing the skills learned form AWS services using DynamoDB to store my resume and Lambda to operate on my Get request sent by Vue.js through AWS APIgateway.",
-    "endDate": "Oct'24",
+    "endDate": "Oct'15",
     "img": "https://s3.amazonaws.com/moe-ezz.me/Projects/portfolio.png",
     "name": "Portfolio Web Application",
     "skills": [
@@ -129,7 +129,7 @@
     ],
     "startDate": "Sep'24",
     "status": "public",
-    "url": "https://project.com/"
+    "url": "https://github.com/MoeEzzeldin/Portfolio-Web-App-moe-ezz-me"
    },
    {
     "description": "During my AWS course I built and deployed my To Do static web application on AWS cloud Amplify using Vue.js, but focused my practice on using ref, watch, and computed life-hooks utilizing the user's LocalStorage for cach for a quick smooth user experience and responsive design.",
@@ -166,7 +166,7 @@
     ],
     "startDate": "Jun'24",
     "status": "public",
-    "url": "https://project.com/"
+    "url": "https://github.com/MoeEzzeldin/Web-Store"
    },
    {
     "description": "Designed and developed a dynamic application that allows the users to find breweries in columbus as well as a login as a brewer with the functionality to add and remove products in and out of your brewery. also built admin view to manage breweries in columbus, create breweries, and assigning brewer a brewery to manage.",
@@ -187,7 +187,7 @@
     ],
     "startDate": "Apr'24",
     "status": "private",
-    "url": "https://project.com/"
+    "url": "https://github.com/MoeEzzeldin/FinalCapstone-TE-CBUS22-Jan-2024"
    },
    {
     "description": "Money transfer console app that allows users to load and check their balance, send, recieve transfers as well as seeing their transaction history.",
@@ -202,7 +202,7 @@
     ],
     "startDate": "Mar'24",
     "status": "private",
-    "url": "https://project.com/"
+    "url": "https://github.com/MoeEzzeldin/Tenmo-App-Pair-"
    },
    {
     "description": "built a console app using OOP concepts, C#, and file I/O, using StreamReader-StreamWriter to complete user transaction.",
@@ -215,7 +215,7 @@
     ],
     "startDate": "Feb'24",
     "status": "private",
-    "url": "https://project.com/"
+    "url": "https://github.com/MoeEzzeldin/Candy-Shop-Pair-"
    }
   ],
   "publications": [
@@ -237,24 +237,18 @@
    {
     "keywords": [
      "bash",
-     "WSL",
      "C#",
      "ASP.NET",
-     "MVC",
      "MS SQL",
      "DynamoDB",
      "Postman",
      "JavaScript",
      "Vue.JS",
-     "MVVM",
      "HTML5",
      "CSS",
-     "Agile",
-     "CSS",
-     "Amazon Web Services",
-     "Deployment"
+     "Amazon Web Services"
     ],
-    "level": "Master",
+    "level": "Junior",
     "name": "Web Development"
    }
   ],
@@ -273,6 +267,66 @@
   ],
   "work": [
    {
+    "endDate": "Present",
+    "name": "Starbucks",
+    "position": "Partner",
+    "skills": [
+     "Customer Service",
+     "Problem Solving",
+     "Team Building"
+    ],
+    "startDate": "Jun'24",
+    "summary": [
+     "staying connected to the community through my experience with Starbucks, while learning about the community needs and what software development can do to help!"
+    ],
+    "url": "https://www.starbucks.com/"
+   },
+   {
+    "endDate": "Oct'23",
+    "name": "Starbucks",
+    "position": "Shift Lead",
+    "skills": [
+     "Customer Service",
+     "Team Building"
+    ],
+    "startDate": "Feb'23",
+    "summary": [
+     "Hired to assist the manager in submitting over 500 daily orders in an efficient and timely manner",
+     "Planned daily team operations for 5-7 staff members and created reports that were communicated with upper management"
+    ],
+    "url": "https://www.starbucks.com/"
+   },
+   {
+    "endDate": "Feb'23",
+    "name": "The Ohio State University",
+    "position": "Sales Assistant",
+    "skills": [
+     "Customer Service"
+    ],
+    "startDate": "Aug'21",
+    "summary": [
+     "Oversaw operations of EspressOH cafe, supervising 5-7 student employees per shift",
+     "Contributed to a positive team environment by providing timely and concise direction and feedback to 25 employees"
+    ],
+    "url": "https://studentlife.osu.edu/"
+   },
+   {
+    "endDate": "Aug'21",
+    "name": "Starbucks",
+    "position": "Partner",
+    "promotion": "Shift Lead",
+    "skills": [
+     "Customer Service",
+     "Team Management"
+    ],
+    "startDate": "Jun'19'",
+    "summary": [
+     "Achieved Partner of the Quarter recognition in November 2019 for outstanding performance, dependability, and friendliness, resulting in increased positive customer reviews",
+     "Earned positive customer reviews & store score went up 32-37 for maintaining a professional attitude"
+    ],
+    "url": "https://www.starbucks.com/"
+   },
+   {
     "endDate": "May'18",
     "name": "Egyptian Armed Forces",
     "position": "Soldier",
@@ -290,55 +344,6 @@
      "Facilitated clear and responsive communication between officers, ensuring prompt resolution of 20-30 inquiries each day"
     ],
     "url": "https://www.mod.gov.eg/ModWebSite/Default.aspx"
-   },
-   {
-    "endDate": "Aug'21",
-    "name": "Starbucks",
-    "position": "Partner",
-    "promotion": "Shift Lead",
-    "skills": [
-     "Customer Service",
-     "Team Management",
-     "Problem Solving"
-    ],
-    "startDate": "Jun'19'",
-    "summary": [
-     "Achieved Partner of the Quarter recognition in November 2019 for outstanding performance, dependability, and friendliness, resulting in increased positive customer reviews",
-     "Earned positive customer reviews & store score went up 32-37 for maintaining a professional attitude"
-    ],
-    "url": "https://www.starbucks.com/"
-   },
-   {
-    "endDate": "Feb'21",
-    "name": "The Ohio State University",
-    "position": "Sales Assistant",
-    "skills": [
-     "Customer Service",
-     "Problem Solving",
-     "Test Skill"
-    ],
-    "startDate": "Aug'21",
-    "summary": [
-     "Oversaw operations of EspressOH cafe, supervising 5-7 student employees per shift",
-     "Contributed to a positive team environment by providing timely and concise direction and feedback to 25 employees"
-    ],
-    "url": "https://studentlife.osu.edu/"
-   },
-   {
-    "endDate": "Present",
-    "name": "Starbucks",
-    "position": "Partner",
-    "skills": [
-     "Customer Service",
-     "Problem Solving",
-     "Test Skill"
-    ],
-    "startDate": "Feb'23",
-    "summary": [
-     "Hired to assist the manager in submitting over 500 daily orders in an efficient and timely manner",
-     "Planned daily team operations for 5-7 staff members and created reports that were communicated with upper management"
-    ],
-    "url": "https://www.starbucks.com/"
    }
   ]
  }

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pITO6EqZnCk=",
+  "dgSpecHash": "dZmwlvxMv2k=",
   "success": true,
   "projectFilePath": "C:\\Users\\Ahmed\\workspace\\Portfolio-Web-App-moe-ezz-me\\src\\assets\\send\\src\\send\\send.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ahmed\\.nuget\\packages\\amazon.lambda.core\\2.2.0\\amazon.lambda.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.4.1\\amazon.lambda.serialization.systemtextjson.2.4.1.nupkg.sha512",
-    "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.8\\microsoft.netcore.app.crossgen2.win-x64.8.0.8.nupkg.sha512"
+    "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.10\\microsoft.netcore.app.crossgen2.win-x64.8.0.10.nupkg.sha512"
   ],
   "logs": []
 }
