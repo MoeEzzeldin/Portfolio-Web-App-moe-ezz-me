@@ -206,19 +206,18 @@ export default {
         }
       });
     },
-    { rootMargin: '0px 0px -40% 0px' } // Adjust rootMargin slightly higher
+    { rootMargin: '0px 0px -40% 0px' }
   );
 
   // Observe all hidden sections
   const hiddenSections = document.querySelectorAll('.hidden');
   hiddenSections.forEach((section) => this.observer.observe(section));
 
-  // Manually check for the first section when the page loads
-  const firstSection = hiddenSections[0];
-  if (firstSection && window.scrollY === 0) {
-    firstSection.classList.add('show');
-    this.activeNav = firstSection.id;
-  }
+  // const firstSection = hiddenSections[0];
+  // if (firstSection && window.scrollY === 0) {
+  //   firstSection.classList.add('show');
+  //   this.activeNav = firstSection.id;
+  // }
 }
 
 

@@ -70,7 +70,7 @@ export default {
     if (section) {
       // Scroll to the section smoothly
       section.scrollIntoView({ behavior: 'smooth' });
-    }
+      }
     }
 
   }
