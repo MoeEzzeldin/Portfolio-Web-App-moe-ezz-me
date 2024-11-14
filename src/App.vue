@@ -206,7 +206,7 @@ export default {
         }
       });
     },
-    { rootMargin: '0px 0px -40% 0px' }
+    { rootMargin: '0px 0px -20% 0px' }
   );
 
   // Observe all hidden sections

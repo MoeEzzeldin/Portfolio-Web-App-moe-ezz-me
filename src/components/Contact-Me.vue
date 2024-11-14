@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-form">
+  <div class="contact-form" @submit.prevent.stop="$emit('toggleContact')">
     <div class="wrapper" @click.stop>
       <h3>Let's Connect!</h3>
       <p>Thanks for visiting my portfolio website! Feel free to leave your information, a message, and let's connect.</p>
