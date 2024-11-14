@@ -60,7 +60,7 @@ export default {
       this.validateEmail();
       this.validateMessage();
       if (!this.validateName() && !this.emailError && !this.validateMessage()) {
-        this.$emit('toggleContact');
+        // this.$emit('toggleContact');
         this.$emit('handleData', this.contact);
         this.clearContact();
       }
