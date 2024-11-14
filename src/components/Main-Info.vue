@@ -13,15 +13,11 @@
     <!-- Nav -->
     <nav class="nav">
       <ul class="list">
-        <li class="holder">
-          <span></span><a class="link" href="#scroll"><span></span>About</a>
-        </li>
-        <li class="holder">
-          <span></span><a class="link" href="#experience"><span></span>Experience</a>
-        </li>
-        <li class="holder">
-          <span></span><a class="link" href="#projects"><span></span>Projects</a>
-        </li>
+        <li class="holder" v-for="item in navItems" :key="item.id">
+        <span :class="{ active: item.id === activeNav }"></span>
+        <a @click="scrollToSection(item.id)"
+        :class="{ active: item.id === activeNav }">{{ item.label }}</a>
+      </li>
       </ul>
     </nav>
     <div class="footer">
@@ -33,7 +29,7 @@
         <a href="https://www.linkedin.com/in/moe-ezz-columbus-ohio/" target="_blank">
           <i class="fi fi-brands-linkedin"></i>
         </a>
-        <a @click.prevent="contactMe($event)">
+        <a @click.prevent="contactMe()">
           <i class="fi fi-sc-envelope"></i>
         </a>
         <a href="'tel:'+16148169143">
@@ -48,24 +44,39 @@
 </template>
 
 <script>
-
 export default {
-  name: 'Sticky-About',
-  props: ['theme', 'icons', 'myData', 'showContact'],
+  name: 'Main-Info',
+  props: ['theme', 'icons', 'myData', 'showContact', 'activeNav'],
 
   data() {
     return {
-      
-    }
+      navItems: [
+        { id: 'about', label: 'About' },
+        // { id: 'skills', label: 'Skills' }, // Commented out to remove Skills section
+        { id: 'experience', label: 'Experience' },
+        { id: 'projects', label: 'Projects' },
+      ],
+    };
   },
-  methods: {
-    contactMe(event) {
-      this.$emit('toggleContact', event);
-    }
-  }
+  mounted() {
+  },
 
-}
+  methods: {
+    contactMe() {
+      this.$emit('toggleContact');
+    },
+    scrollToSection(id){
+      const section = document.getElementById(id);
+    if (section) {
+      // Scroll to the section smoothly
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    }
+
+  }
+};
 </script>
+
 
 <style scoped>
 .main{
@@ -159,6 +170,11 @@ main .holder:hover span {
   width: 75px;
   transform: scale(1.1);
 }
+main .holder span.active {
+  height: 3px;
+  width: 75px;
+  transform: scale(1.1);
+}
 
 main .list span {
   background-color: black;
@@ -185,6 +201,15 @@ main .holder:hover a {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.active {
+  transform: scale(1.3);
+  background: linear-gradient(to right, rgb(255, 89, 0), rgb(255, 204, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 
 .footer {
   position: relative;

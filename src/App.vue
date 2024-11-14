@@ -12,7 +12,7 @@
   <div class="container">
     <main id="main" class="wrapper">
       <div id="sticky" class="hidden">
-        <Sticky-About :myData="this.myData" :theme :icons @toggleContact="toggleContact" />
+        <mainInfo :myData="this.myData" :theme :icons :activeNav @toggleContact="toggleContact" />
       </div>
       <div id="scroll">
         <div id="about" class="hidden">
@@ -42,12 +42,16 @@
 </template>
 
 <script>
-import StickyAbout from './components/Sticky-About.vue'
+import { ref } from 'vue'
+//components
+import mainInfo from './components/Main-Info.vue'
 import About from './components/About-Me.vue'
 import Experience from './components/My-Experience.vue'
 import MyProjects from './components/My-Projects.vue'
 import Contact from './components/Contact-Me.vue'
+// import MySkills from './components/My-Skills.vue'    // to be continued
 
+//Icons based on theme.    i need to check if im still using these because i have a color switcher now.
 import gitLight from '@/assets/github.png'
 import gitDark from '@/assets/github-d.png'
 
@@ -62,19 +66,21 @@ import phoneDark from '@/assets/phone-d.png'
 
 import expo from '@/assets/export.png'
 import promoted from '@/assets/promoted.png'
+//services to get data from DDB
 import ResumeService from './Services/ResumeService'
-import { ref } from 'vue'
 
 export default {
   components: {
-    StickyAbout,
+    mainInfo,
     About,
+    // MySkills,   // to be continued
     Experience,
     MyProjects,
-    Contact
+    Contact,
   },
   data() {
     return {
+      // get theme data for users whom have visited before or default Light theme
       theme: localStorage.getItem('theme') || 'light',
       isSwitchOn: localStorage.getItem('isSwitchOn') === 'true',
       icons: {
@@ -83,16 +89,16 @@ export default {
         gmail: localStorage.getItem('gmail') || mailLight,
         phone: localStorage.getItem('phone') || phoneLight
       },
-      expo: expo,
-      promoted: promoted,
       myData: ref({}),
-      myExperience: [],
-      hiddenElements: document.querySelectorAll('.hidden'),
-      observer: null,
-      showContact: false,
-      loader: ref(false),
-      status: "",
-      body:{}
+      expo: expo, // imported
+      promoted: promoted, // imported
+      hiddenElements: document.querySelectorAll('.hidden'), // selects main sections in my portfolio to applay fade in effect using interceptor
+      observer: null, // observer to watch for elements to fade in
+      showContact: false, // toggles Contact form for users to send me an email SES service
+      loader: ref(false), // loader to show while fetching data from DDB
+      status: "", // status of email sent to display alert sent or complete form
+      body:{}, // body of email to send
+      activeNav: "", // active nav to highlight the current section in the nav based on user scrolls 
     }
   },
 
@@ -107,10 +113,12 @@ export default {
           console.error('Error retrieving profile:', error)
         })
     },
+    //handle data from contact form, then pass to service method
     handleData(contactData){
       this.body = contactData
       this.sendEmail(this.body)
     },
+    // send contact form data to SES service for lambda to operate on it
     sendEmail(data){
       if(!data || !data.email){
         console.log("error occor recieving data")
@@ -133,6 +141,7 @@ export default {
           console.error('Error Sending Email:', error)
         })
     },
+    //asign local variables to the current theme and icons from viewer browser
     toggleTheme() {
       this.theme = this.theme === 'light' ? 'dark' : 'light'
       this.icons.gitHub = this.getGitPng()
@@ -143,9 +152,11 @@ export default {
       this.setDocToCurrent()
       this.setLocalStorage()
     },
+    //set the page doc theme to the current theme
     setDocToCurrent() {
       document.documentElement.setAttribute('data-theme', this.theme)
     },
+    //set local storage to the current theme and icons for the viewer
     setLocalStorage() {
       localStorage.setItem('theme', this.theme)
       localStorage.setItem('isSwitchOn', this.isSwitchOn)
@@ -154,6 +165,7 @@ export default {
       localStorage.setItem('gmail', this.icons.gmail)
       localStorage.setItem('phone', this.icons.phone)
     },
+    // set png to light or dark based on theme
     getGitPng() {
       return this.theme === 'light' ? gitLight : gitDark
     },
@@ -169,36 +181,52 @@ export default {
     getSwitch() {
       return this.isSwitchOn === true ? true : false
     },
+    // toggle contact form
     toggleContact() {
       this.showContact = !this.showContact;
-      console.log('i changed showContact to: '+ this.showContact)
-    }
+    },
   },
   created() {
-
-    this.setDocToCurrent()
+    // we getting profile data from DDB once the component is created as well as setting theme for viewer first thing when they call the page
     this.getProfile()
+    this.setDocToCurrent()
   },
+  
   mounted() {
-    this.observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show')
-          } else {
-            entry.target.classList.remove('show')
-          }
-        })
-      })
+  // Observer callback with adjusted rootMargin
+  this.observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          this.activeNav = entry.target.id;
+          console.log(this.activeNav);
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    },
+    { rootMargin: '0px 0px -40% 0px' } // Adjust rootMargin slightly higher
+  );
 
-      document.querySelectorAll('.hidden').forEach((section) => {
-        this.observer.observe(section)
-      })
+  // Observe all hidden sections
+  const hiddenSections = document.querySelectorAll('.hidden');
+  hiddenSections.forEach((section) => this.observer.observe(section));
+
+  // Manually check for the first section when the page loads
+  const firstSection = hiddenSections[0];
+  if (firstSection && window.scrollY === 0) {
+    firstSection.classList.add('show');
+    this.activeNav = firstSection.id;
   }
+}
+
+
 }
 </script>
 
 <style scoped>
-/* Mobile settings */
+/* Mobile styling */
 
 .hidden {
   opacity: 0;
@@ -245,6 +273,14 @@ export default {
 #projects {
   margin-top: 2.5rem;
 }
+
+/* nav ul li a.active {
+  transform: scale(1.3);
+  background: linear-gradient(to right, rgb(255, 89, 0), rgb(255, 204, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+} */
 
 .resume {
   display: flex;

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import StickyAbout from '@/components/Sticky-About.vue'
+import StickyAbout from '@/components/Main-Info.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

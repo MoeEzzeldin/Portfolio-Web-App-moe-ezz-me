@@ -23,19 +23,14 @@
       When I’m not coding, I’m usually hanging out with my wife and daughter, chatting with a
       friend, or playing Pink Floyd in my patio!
     </p>
-    <div id="skills" class="hidden">
-      <Skills :my-data="this.myData" />
-    </div>
   </section>
 </template>
 
 <script>
-import Skills from './My-Skills.vue'
 export default {
   name: 'About-me',
   props: ['myData'],
   components: {
-    Skills
   },
   data() {
     return {
