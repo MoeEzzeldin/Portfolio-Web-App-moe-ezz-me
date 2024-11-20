@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade" class="contact">
+  <transition name="fade">
     <Contact v-if="showContact" @toggleContact="toggleContact" @handleData="handleData"/>
   </transition>
   <!-- we applying switch here as a default and it switches to switch-on when isSwitchOn.value changes-->
@@ -206,7 +206,7 @@ export default {
         }
       });
     },
-    { rootMargin: '0px 0px -20% 0px' }
+    { rootMargin: '0px 0px -50% 0px' }
   );
 
   // Observe all hidden sections
@@ -236,13 +236,11 @@ export default {
   transition: 0.8s ease-in;
 
 }
-.fade-enter-active, .fade-leave-active {
+.fade-in-enter-active, .fade-in-leave-active {
   transition: opacity 0.5s ease-in;
 }
-.fade-enter, .fade-leave-to {
-  /* Starting/ending state for fade */
-  transition: opacity 0.5s ease-out;
-
+.fade-in-enter, .fade-in-leave-to {
+  opacity: 0;
 }
 .container {
   display: flex;
@@ -262,7 +260,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4rem;
 }
 #sticky {
   top: 3rem;
@@ -297,7 +294,9 @@ export default {
   height: 100vh;
   font: red 26px;
 }
-
+#about {
+height: auto;
+}
 .switch {
   grid-column: 1 / 2;
   display: grid;
@@ -416,7 +415,7 @@ export default {
     height: auto;
   }
   #scroll {
-    gap: 2rem;
+    gap: 10rem;
   }
 }
 </style>

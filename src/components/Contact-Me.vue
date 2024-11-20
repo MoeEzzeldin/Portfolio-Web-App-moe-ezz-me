@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-form" @submit.prevent.stop="$emit('toggleContact')">
+  <div class="contact-form" @click.prevent.stop="$emit('toggleContact')">
     <div class="wrapper" @click.stop>
       <h3>Let's Connect!</h3>
       <p>Thanks for visiting my portfolio website! Feel free to leave your information, a message, and let's connect.</p>
@@ -60,7 +60,6 @@ export default {
       this.validateEmail();
       this.validateMessage();
       if (!this.validateName() && !this.emailError && !this.validateMessage()) {
-        // this.$emit('toggleContact');
         this.$emit('handleData', this.contact);
         this.clearContact();
       }

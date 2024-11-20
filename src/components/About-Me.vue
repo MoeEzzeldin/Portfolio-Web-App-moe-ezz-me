@@ -47,7 +47,7 @@ export default {
 #about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 3rem;
   top: 5rem;
@@ -72,5 +72,12 @@ img {
   border-radius: 50%;
   padding: 10px;
   filter: grayscale();
+}
+@media (min-width: 1440px) {
+
+  #about {
+    font-size: 1.5rem;
+    height: 100vh;
+  }
 }
 </style>
