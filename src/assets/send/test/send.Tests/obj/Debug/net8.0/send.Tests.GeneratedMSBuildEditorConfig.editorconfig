@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = send.Tests
-build_property.ProjectDir = C:\Users\Ahmed\workspace\Portfolio-Web-App-moe-ezz-me\src\assets\send\test\send.Tests\
+build_property.ProjectDir = C:\Users\Ahmed\workspace\repositories\Portfolio-Web-App-moe-ezz-me\src\assets\send\test\send.Tests\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

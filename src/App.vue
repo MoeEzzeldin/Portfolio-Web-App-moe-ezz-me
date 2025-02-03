@@ -206,7 +206,7 @@ export default {
         }
       });
     },
-    { rootMargin: '0px 0px -40% 0px' }
+    { rootMargin: '0px 0px -60% 0px' }
   );
 
   // Observe all hidden sections
@@ -296,6 +296,7 @@ export default {
 }
 #about {
 height: auto;
+margin-bottom: 2rem;
 }
 .switch {
   grid-column: 1 / 2;
