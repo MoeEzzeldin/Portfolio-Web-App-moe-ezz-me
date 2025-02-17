@@ -135,7 +135,7 @@ export default {
           alert('email not sent')
           this.toggleContact()
         }
-        console.log(`these are the data: ${JSON.stringify(response.data, null, 2)}`);
+        // console.log(`these are the data: ${JSON.stringify(response.data, null, 2)}`);
       })
       .catch((error) => {
           console.error('Error Sending Email:', error)
@@ -200,7 +200,6 @@ export default {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
           this.activeNav = entry.target.id;
-          console.log(this.activeNav);
         } else {
           entry.target.classList.remove('show');
         }
