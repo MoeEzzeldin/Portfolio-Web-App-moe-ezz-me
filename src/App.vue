@@ -115,6 +115,7 @@ export default {
           console.error('Error retrieving profile:', error)
         })
     },
+    
     //handle data from contact form, then pass to service method
     handleData(contactData){
       this.body = contactData
