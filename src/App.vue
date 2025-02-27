@@ -29,7 +29,7 @@
           />
         </div>
         <div class="resume">
-          <a href="https://s3.amazonaws.com/moe-ezz.me/resume/Resume_AE.pdf" target="_blank">View Resume <i class="fi fi-br-download"></i></a>
+          <a :href="resumeURL" target="_blank">View Resume <i class="fi fi-br-download"></i></a>
         </div>
         <!-- wrojects -->
         <div id="projects" class="hidden">
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+
 import { ref } from 'vue'
 //components
 import mainInfo from './components/Main-Info.vue'
@@ -99,6 +100,7 @@ export default {
       status: "", // status of email sent to display alert sent or complete form
       body:{}, // body of email to send
       activeNav: "", // active nav to highlight the current section in the nav based on user scrolls 
+      resumeURL: import.meta.env.VITE_DOWNLOAD_URL,
     }
   },
 

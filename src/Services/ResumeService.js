@@ -2,16 +2,16 @@ import axios from 'axios';
 
 export default {
   resume() {
-    return axios.get('https://evqgg7vggb.execute-api.us-east-1.amazonaws.com/info/resume'); 
+    return axios.get(import.meta.env.VITE_RESUME_URL); 
   },
   Email(data) {
     return axios({
       method: 'post',
-      url: 'https://ujbefj66q2.execute-api.us-east-1.amazonaws.com/test/contact',
+      url: import.meta.env.VITE_EMAIL_URL,
       headers: {
-        'Content-Type': 'application/json', // Set the content type to JSON
+        'Content-Type': 'application/json',
       },
-      data: JSON.stringify(data), // Ensure data is in stringified JSON format if necessary
+      data: JSON.stringify(data),
     });
   }
 };
