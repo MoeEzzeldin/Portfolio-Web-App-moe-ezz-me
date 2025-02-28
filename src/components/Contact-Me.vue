@@ -2,7 +2,7 @@
   <div class="contact-form" @click.prevent.stop="$emit('toggleContact')">
     <div class="wrapper" @click.stop>
       <h3>Let's Connect!</h3>
-      <p>Thanks for visiting my portfolio website! Feel free to leave your information, a message, and let's connect.</p>
+      <p>Thank you for visiting my portfolio! If you'd like to chat or view my private repositories, please share your contact details and a brief message so we can connect</p>
       <span class="hide"><a @click.prevent.stop="$emit('toggleContact')"><i class="fi fi-br-cross-small"></i></a></span>
       <form class="form" @submit.prevent.stop="submitForm">
         <div class="form-group">

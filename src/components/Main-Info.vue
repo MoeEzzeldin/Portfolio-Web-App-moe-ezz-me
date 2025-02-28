@@ -14,10 +14,11 @@
     <nav class="nav">
       <ul class="list">
         <li class="holder" v-for="item in navItems" :key="item.id">
-        <span :class="{ active: item.id === activeNav }"></span>
-        <a @click="scrollToSection(item.id)"
-        :class="{ active: item.id === activeNav }">{{ item.label }}</a>
-      </li>
+          <span :class="{ active: item.id === activeNav }"></span>
+          <a @click="scrollToSection(item.id)" :class="{ active: item.id === activeNav }">{{
+            item.label
+          }}</a>
+        </li>
       </ul>
     </nav>
     <div class="footer">
@@ -32,10 +33,12 @@
         <a @click.prevent="contactMe()">
           <i class="fi fi-sc-envelope"></i>
         </a>
+
         <a href="'tel:'+16148169143">
           <i class="fi fi-ss-phone-flip"></i>
         </a>
       </div>
+
       <div class="copy">
         <p>© 2024 Ahmed Ezzeldin. All rights reserved.</p>
       </div>
@@ -54,38 +57,46 @@ export default {
         { id: 'about', label: 'About' },
         // { id: 'skills', label: 'Skills' }, // Commented out to remove Skills section
         { id: 'experience', label: 'Experience' },
-        { id: 'projects', label: 'Projects' },
+        { id: 'projects', label: 'Projects' }
       ],
-    };
+      animateContactBtn: false
+    }
   },
-  mounted() {
-  },
+  mounted() {},
 
   methods: {
     contactMe() {
-      this.$emit('toggleContact');
+      this.$emit('toggleContact')
     },
-    scrollToSection(id){
-      const section = document.getElementById(id);
-    if (section) {
-      // Scroll to the section smoothly
-      section.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(id) {
+      const section = document.getElementById(id)
+      if (section) {
+        // Scroll to the section smoothly
+        section.scrollIntoView({ behavior: 'smooth' })
       }
+    },
+    showPrivateRepoTip() {
+      this.animateContactBtn = true
+      // Optionally scroll to the contact button
+      if (window.innerWidth <= 768) {
+        // Adjust the value as needed for your tablet breakpoint
+        this.$refs.contactButton.scrollIntoView({ behavior: 'smooth' })
+      } // Hide the tooltip after 5 seconds
+      setTimeout(() => {
+        this.animateContactBtn = false
+      }, 1500)
     }
-
   }
-};
+}
 </script>
 
-
 <style scoped>
-.main{
+.main {
   display: grid;
-  grid-template-rows: .8fr .5fr .5fr;
+  grid-template-rows: 0.8fr 0.5fr 0.5fr;
   height: 100vh;
   gap: 2rem;
 }
-
 
 /* .main >*:not(:last-child) {
   margin-left: 25px;
@@ -210,7 +221,6 @@ main .holder:hover a {
   background-clip: text;
 }
 
-
 .footer {
   position: relative;
   align-self: center;
@@ -220,13 +230,11 @@ main .holder:hover a {
   display: flex;
   justify-content: space-evenly;
   gap: 30px;
-  
 }
 
 .footer .copy {
   display: none;
 }
-
 
 .footer i {
   color: var(--text-color);
@@ -234,46 +242,76 @@ main .holder:hover a {
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
-    cursor: pointer;
+  cursor: pointer;
+  display: inline-block; /* add this */
 }
 
 .footer i:hover {
   text-shadow: var(--shadow);
 }
 
+.animate-click {
+  animation: clickPulse 0.5s ease-in-out 2;
+}
+
+@keyframes clickPulse {
+  0% {
+    transform: scale(1);
+    color: yellow;
+  }
+  50% {
+    transform: scale(0.9);
+    color: green;
+  }
+  100% {
+    transform: scale(1);
+    color: yellow;
+  }
+  0% {
+    transform: scale(1);
+    color: yellow;
+  }
+  50% {
+    transform: scale(0.9);
+    color: green;
+  }
+  100% {
+    transform: scale(1);
+    color: yellow;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* CSS rules for tablets */
-  .main{
+  .main {
     gap: 2rem;
     height: 95vh;
   }
-
 }
 
 @media (min-width: 1200px) {
   main .main {
     display: grid;
-    grid-template-rows: 1fr .5fr .5fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr;
     gap: 4rem;
     height: calc(93vh - 3rem) !important;
   }
-.greeting {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.main .name {
-  font-size: var(--heading-font);
-}
-.whomi {
-  font-size: 2rem;
-}
+  .greeting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .main .name {
+    font-size: var(--heading-font);
+  }
+  .whomi {
+    font-size: 2rem;
+  }
 
-.nav {
-
-  font-size: var(--font-large);
-}
+  .nav {
+    font-size: var(--font-large);
+  }
   .footer {
     height: 150px;
     display: flex;
@@ -287,18 +325,17 @@ main .holder:hover a {
     gap: 50px;
   }
   .footer .copy {
-    display:block;
+    display: block;
   }
 }
 
 @media (orientation: landscape) {
   .main {
     gap: 2rem;
-    height: auto
+    height: auto;
   }
   #scroll {
     gap: 2rem;
   }
 }
-
 </style>

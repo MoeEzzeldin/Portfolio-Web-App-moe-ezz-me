@@ -12,7 +12,12 @@
   <div class="container">
     <main id="main" class="wrapper">
       <div id="sticky" class="hidden">
-        <mainInfo :myData="this.myData" :theme :icons :activeNav @toggleContact="toggleContact" />
+        <mainInfo
+        :myData="this.myData"
+        :theme :icons :activeNav 
+        @toggleContact="toggleContact"
+        ref="mainInfo"
+         />
       </div>
       <div id="scroll">
         <div id="about" class="hidden">
@@ -33,7 +38,12 @@
         </div>
         <!-- wrojects -->
         <div id="projects" class="hidden">
-          <MyProjects v-for="(item, index) in myData.projects" :key="index" :item="item" :expo />
+          <MyProjects
+           v-for="(item, index) in myData.projects"
+           :key="index"
+           :item="item" :expo
+           @handlePrivateRepo="toggleContact"
+           />
         </div>
       </div>
     </main>

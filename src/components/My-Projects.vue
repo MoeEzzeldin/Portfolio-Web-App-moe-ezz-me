@@ -1,9 +1,18 @@
 <template>
   <main id="projects">
     <section class="card">
-      <a :href="item.url" target="_blank" class="expo">
-        <img class="expo" :src="expo" alt="png" />
-      </a>
+      
+      <template v-if="item.status === 'public'">
+        <a :href="item.url" target="_blank" class="expo">
+          <img class="expo" :src="expo" alt="png" />
+        </a>
+      </template>
+      <!-- If the project is private, use a click handler to trigger the contact tip -->
+      <template v-else-if="item.status === 'private'">
+        <a @click.prevent="handlePrivateRepo" class="expo">
+          <img class="expo" :src="expo" alt="png" />
+        </a>
+      </template>
       <div class="background-img" :style="{ backgroundImage: 'url(' + item.img + ')' }"></div>
       <div class="head">
         <div class="title">
@@ -36,9 +45,11 @@
 export default {
   name: 'My-Projects',
   props: ['expo', 'item'],
-  data() {
-    return {}
-  }
+  methods: {
+    handlePrivateRepo() {
+      this.$emit('handlePrivateRepo');
+    },
+  },
 }
 </script>
 
