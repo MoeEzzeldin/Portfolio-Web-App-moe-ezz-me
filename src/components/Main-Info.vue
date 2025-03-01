@@ -101,6 +101,7 @@ export default {
   min-height: 90vh;
   gap: clamp(1.5rem, 3vh, 2.5rem);
   padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 /* 
@@ -327,6 +328,7 @@ main .holder:hover a {
   .main {
     gap: 1.5rem;
     min-height: 95vh;
+    padding-left: 0;
   }
   
   .footer {
@@ -339,6 +341,7 @@ main .holder:hover a {
   .main { 
     gap: clamp(2rem, 4vh, 4rem);
     min-height: calc(95vh - 3rem);
+    padding-left: 0;
   }
   
   main .name {
@@ -358,6 +361,7 @@ main .holder:hover a {
 @media (min-width: 1440px) {
   .main {
     gap: clamp(3rem, 5vh, 5rem);
+    padding-left: 0;
   }
   
   main .name {
@@ -415,6 +419,8 @@ main .holder:hover a {
 @media (orientation: landscape) and (max-height: 500px) {
   .main {
     gap: 0.5rem;
+    padding-left: 0;
+
   }
   
   main .intro {
