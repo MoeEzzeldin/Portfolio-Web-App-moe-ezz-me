@@ -343,7 +343,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: clamp(4rem, 8vw, 10rem);
+  /* gap: clamp(4rem, 8vw, 10rem); */
 }
 
 /***************************************

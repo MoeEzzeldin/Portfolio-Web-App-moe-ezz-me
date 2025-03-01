@@ -313,12 +313,29 @@ export default {
   height: 24px;
   filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(0.8);
 }
+/* Add animation properties to the company-link */
+.card:hover .company-link .company-logo {
+  animation: jump 0.6s ease 2;
+  filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(1); /* Brighten on hover */
+}
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
 
 .company-link:hover,
 .company-link:focus {
   opacity: 1;
   transform: scale(1.1);
+  background-color: var(--tag-color); /* Add subtle background */
+  border-radius: 50%; /* Make it circular */
+  padding: 3px; /* Add some padding */
 }
+
 
 .company-link:focus {
   outline: 3px solid var(--primary);
@@ -416,6 +433,15 @@ export default {
   font-weight: 500;
 }
 
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 /* 
   Mobile was challenging - had to stack elements and adjust spacing.
   I removed separators because they looked weird with stacked content.
@@ -489,6 +515,10 @@ export default {
 
   .company-link:hover,
   .company-link:focus {
+    transform: none;
+  }
+  .card:hover .company-link .company-logo {
+    animation: none !important;
     transform: none;
   }
 }
