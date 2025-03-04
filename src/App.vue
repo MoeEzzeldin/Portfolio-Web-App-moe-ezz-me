@@ -1,33 +1,33 @@
 <template>
-  <!-- Loading State - Shows while data is being fetched -->
+  <!-- Loading State - Shows while data is being fetched from AWS -->
   <div class="loader-container" v-if="loading">
     <div class="loader"></div>
   </div>
 
-  <!-- Contact Form Modal with Fade Transition -->
+  <!-- Contact Form Model with Fade Transition -->
   <transition name="fade">
     <Contact v-if="showContact" @toggleContact="toggleContact" @handleData="handleData" />
   </transition>
   
   <!-- Theme Switch - Toggles between light and dark mode -->
-  <div :class="['switch', { 'switch-on': isSwitchOn }]">
-    <div class="switch__1">
+  <div :class="['theme-toggle', { 'theme-toggle--active': isSwitchOn }]">
+    <div class="theme-toggle__slider">
       <input id="switch-1" type="checkbox" v-model="isSwitchOn" @click="toggleTheme" />
       <label for="switch-1"></label>
     </div>
   </div>
   
-  <!-- Notification System - Shows success/error messages -->
+  <!-- Notification System - Shows success/error messages with SES service-->
   <div v-if="notification" class="notification" :class="notificationType">
     {{ notificationMessage }}
   </div>
   
   <!-- Main Content Container -->
   <div class="container">
-    <main id="main" class="wrapper">
+    <main id="portfolio-layout" class="wrapper">
       <!-- Left Column: Fixed Information (Sticky on Desktop) -->
-      <div id="sticky" class="hidden">
-        <mainInfo
+      <div id="sidebar" class="hidden">
+        <MainInfo
           :myData="myData"
           :theme="theme"
           :activeNav="activeNav"
@@ -37,7 +37,7 @@
       </div>
       
       <!-- Right Column: Scrollable Content -->
-      <div id="scroll">
+      <div id="content-area">
         <!-- About Section -->
         <div id="about" class="hidden">
           <About />
@@ -46,18 +46,17 @@
         <!-- Work Experience Section -->
         <div id="experience" class="hidden">
           <CardComponent
+          type="experience"
             v-for="(item, index) in myData.work"
             :key="index"
-            type="experience"
             :item="item"
             :expo="expo"
             :promoted="promoted"
-            @handlePrivateRepo="toggleContact"
           />
         </div>
         
         <!-- Resume Download Link -->
-        <div class="resume">
+        <div class="resume-link">
           <a :href="resumeURL" target="_blank" rel="noopener noreferrer">
             View Resume <i class="fi fi-br-download"></i>
           </a>
@@ -66,9 +65,9 @@
         <!-- Projects Section -->
         <div id="projects" class="hidden">
           <CardComponent
+          type="project"
             v-for="(item, index) in myData.projects"
             :key="index"
-            type="project"
             :item="item"
             :expo="expo"
             @handlePrivateRepo="toggleContact"
@@ -80,10 +79,18 @@
 </template>
 
 <script>
+// // comment for myself
+// Component names: PascalCase (e.g., MainInfo)
+// Props: camelCase (e.g., myData)
+// Events: kebab-case (e.g., toggle-contact)
+// Methods: camelCase (e.g., toggleTheme)
+// Data properties: camelCase (e.g., isSwitchOn)
+
+// Script section unchanged
 import { ref } from 'vue'
 
 // Component Imports
-import mainInfo from './components/Main-Info.vue'
+import MainInfo from './components/Main-Info.vue'
 import About from './components/About-Me.vue'
 import Contact from './components/Contact-Me.vue'
 import CardComponent from './components/CardComponent.vue'
@@ -94,10 +101,10 @@ import promoted from '@/assets/promoted.png'
 
 // API Service
 import ResumeService from './Services/ResumeService'
-
+import SES from './Services/SES'
 export default {
   components: {
-    mainInfo,
+    MainInfo,
     About,
     Contact,
     CardComponent
@@ -130,15 +137,15 @@ export default {
 
   methods: {
     /**
-     * Data & API Methods
+     * Data & API gateway Methods
      * ==================
      */
     
     /**
-     * Fetches portfolio data from DynamoDB through API
+     * Fetches portfolio data from DynamoDB using API Gateway
      * Shows loader during fetch and handles error states
      */
-    getProfile() {
+    getPortfolio() {
       this.loading = true
       ResumeService.resume()
         .then((response) => {
@@ -171,7 +178,7 @@ export default {
         return
       }
       
-      ResumeService.Email(data)
+      SES.Email(data)
         .then((response) => {
           if (response.status === 200) {
             this.showNotification('Email sent successfully!', 'success')
@@ -253,7 +260,7 @@ export default {
   
   created() {
     // Initialize data and theme
-    this.getProfile()
+    this.getPortfolio()
     this.setDocToCurrent()
   },
 
@@ -307,13 +314,13 @@ export default {
   display: flex;
   align-items: flex-start; /* Allows sticky positioning to work properly */
   justify-content: center;
-  width: 100%;
+  width: 90%;
   max-width: 1600px; /* Prevent excessive width on ultra-wide screens */
   margin: 0 auto;
   height: 100vh; /* Set exact viewport height */
 }
 
-#main {
+#portfolio-layout {
   display: grid;
   grid-template-columns: 1fr;
   align-items: flex-start;
@@ -327,7 +334,7 @@ export default {
  * - Uses position:sticky to keep element in viewport while scrolling
  * - For mobile/tablet: falls back to position:relative
  */
-#sticky {
+#sidebar {
   position: relative;
   top: max(3rem, 5vh); /* More responsive positioning */
   height: max-content; /* Prevent stretching */
@@ -339,7 +346,7 @@ export default {
  * - Flex layout for vertical content sections
  * - Gap provides consistent spacing between sections
  */
-#scroll {
+#content-area {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -364,7 +371,7 @@ export default {
  * - Centered design with download icon
  * - Uses theme colors for consistency
  */
-.resume {
+.resume-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -376,7 +383,7 @@ export default {
   transition: opacity 0.6s ease;
 }
 
-.resume a {
+.resume-link a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -396,23 +403,23 @@ export default {
  * - Custom slider design with animation
  * - Different colors for light/dark states
  */
-.switch {
+.theme-toggle {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 2rem;
+  top: 2rem;
   z-index: 10;
   cursor: pointer;
 }
 
-.switch input {
+.theme-toggle input {
   display: none;
 }
 
-.switch__1 {
+.theme-toggle__slider {
   width: 5rem;
 }
 
-.switch__1 label {
+.theme-toggle__slider label {
   display: flex;
   align-items: center;
   width: 100%;
@@ -428,7 +435,7 @@ export default {
 }
 
 /* Switch toggle indicator */
-.switch__1 label::after {
+.theme-toggle__slider label::after {
   content: '';
   position: absolute;
   left: 0.4rem;
@@ -439,7 +446,7 @@ export default {
   transition: all 0.4s ease;
 }
 
-.switch__1 label::before {
+.theme-toggle__slider label::before {
   content: '';
   width: 100%;
   height: 100%;
@@ -449,11 +456,11 @@ export default {
 }
 
 /* Toggle states */
-.switch input:checked ~ label::before {
+.theme-toggle input:checked ~ label::before {
   opacity: 1;
 }
 
-.switch input:checked ~ label::after {
+.theme-toggle input:checked ~ label::after {
   left: 55%;
   background: var(--greyLight-1);
 }
@@ -662,7 +669,7 @@ input:focus {
     transition-duration: 0.1s !important;
   }
   
-  .switch__1 label::after {
+  .theme-toggle__slider label::after {
     transition: none !important;
   }
   
@@ -685,79 +692,66 @@ input:focus {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  #main {
+  #portfolio-layout {
     grid-template-columns: 1fr;
     max-width: 720px; /* Constrain width on tablets */
   }
 
-  #sticky {
+  #sidebar {
     position: relative; /* No sticky on tablets */
     margin-bottom: 2rem;
   }
-
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  #main {
+  #portfolio-layout {
     grid-template-columns: 1fr 1fr; /* Two-column layout */
     align-items: start;
     gap: 3rem;
   }
 
-  #sticky {
+  #sidebar {
     position: sticky; /* Enable sticky on desktop */
     top: 3rem;
   }
 
-  #scroll {
+  #content-area {
     gap: 8rem; /* More spacing between sections */
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  #main {
+  #portfolio-layout {
     gap: 4rem;
   }
 
-  #scroll {
+  #content-area {
     gap: 10rem; /* Even more spacing on large screens */
   }
 }
 
 /* Landscape orientation adjustments */
 @media (orientation: landscape) and (max-height: 600px) {
-  .main {
-    gap: 2rem;
+  #portfolio-layout {
     height: auto;
   }
   
-  #scroll {
+  #content-area {
     gap: 5rem; /* Less vertical spacing in landscape */
   }
   
-  #sticky {
+  #sidebar {
     /* Fix for mobile landscape mode */
     height: auto;
     max-height: 80vh;
-    overflow-y: auto;
   }
 }
 
 @media (orientation: landscape) {
-  .switch {
+  .theme-toggle {
     position: fixed;
   }
 }
-
-/* Keep the rest of the switch styling unchanged */
-.switch input {
-  display: none;
-}
-
-.switch__1 {
-  width: 5rem;
-}
-
 </style>

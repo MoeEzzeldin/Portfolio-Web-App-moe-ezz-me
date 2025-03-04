@@ -386,14 +386,13 @@ main .holder:hover a {
 @media (orientation: landscape) and (max-height: 800px) {
   .main {
     grid-template-rows: auto auto auto;
-    gap: clamp(0.5rem, 2vh, 1.5rem);
+    gap: clamp(3rem, 2vh, 1.5rem);
     min-height: auto;
     padding: clamp(1rem, 3vh, 2rem) 0;
   }
   
   main .intro {
     max-height: clamp(3rem, 15vh, 6rem);
-    overflow-y: auto;
   }
   
   .footer {
@@ -418,15 +417,12 @@ main .holder:hover a {
 /* Super small heights like on my phone in landscape */
 @media (orientation: landscape) and (max-height: 500px) {
   .main {
-    gap: 0.5rem;
+    gap: 3rem;
     padding-left: 0;
-
   }
   
   main .intro {
-    max-height: 2.5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-height: 3.5rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
