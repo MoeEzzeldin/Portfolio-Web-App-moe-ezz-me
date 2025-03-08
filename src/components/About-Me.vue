@@ -9,14 +9,14 @@
         started back in 2010 when I got involved with the
         <b>Arab Digital Expression Foundation</b> (<a :href="deca" target="_blank" class="link">ADEF<span class="sr-only">(opens in a new tab)</span></a>) and
         attended workshops on Linux and Ubuntu. Through these workshops, I learned how to
-        install and use ubuntu for the first time, and it inspired me to keep looking into Linux.
+        install and use Ubuntu for the first time, and it inspired me to keep looking into Linux.
       </p>
       <p>
         I started learning HTML, CSS, and JavaScript shortly after I moved to the US with
         <strong>Egypt Future Work Digital</strong> (<a href="https://egfwd.com/" target="_blank"
-        class="link">FWD<span class="sr-only">(opens in a new tab)</span></a>), and enrolled for
+        class="link">FWD<span class="sr-only">(opens in a new tab)</span></a>), and enrolled in
         <a href="https://www.techelevator.com/" target="_blank" class="link">Tech Elevator<span class="sr-only">(opens in a new tab)</span></a> in-person Spring
-        2024 cohort. I spent over 800+ hours coding and learning the languages and frameworks
+        2024 cohort. I spent "over 800+ hours" coding and learning the languages and frameworks
         necessary to start my career in tech. Since graduating in April 2024, my main focus has been
         learning more about DevOps while using the tools I learn from the cloud in developing scalable
         applications.
