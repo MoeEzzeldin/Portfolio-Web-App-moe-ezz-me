@@ -4,27 +4,20 @@
       <img src="../assets/moe.jpg" alt="Moe Ezz - Software Developer" loading="lazy" />
     </div>
     <div class="about-content">
-      <p>
-        Technology and computers have been my passion since I was little, but my journey with tech
-        started back in 2010 when I got involved with the
-        <b>Arab Digital Expression Foundation</b> (<a :href="deca" target="_blank" class="link">ADEF<span class="sr-only">(opens in a new tab)</span></a>) and
-        attended workshops on Linux and Ubuntu. Through these workshops, I learned how to
-        install and use Ubuntu for the first time, and it inspired me to keep looking into Linux.
-      </p>
-      <p>
-        I started learning HTML, CSS, and JavaScript shortly after I moved to the US with
-        <strong>Egypt Future Work Digital</strong> (<a href="https://egfwd.com/" target="_blank"
-        class="link">FWD<span class="sr-only">(opens in a new tab)</span></a>), and enrolled in
-        <a href="https://www.techelevator.com/" target="_blank" class="link">Tech Elevator<span class="sr-only">(opens in a new tab)</span></a> in-person Spring
-        2024 cohort. I spent "over 800+ hours" coding and learning the languages and frameworks
-        necessary to start my career in tech. Since graduating in April 2024, my main focus has been
-        learning more about DevOps while using the tools I learn from the cloud in developing scalable
-        applications.
-      </p>
-      <p>
-        When I'm not coding, I'm usually hanging out with my wife and daughter, chatting with a
-        friend, or playing Pink Floyd in my patio!
-      </p>
+      <p> My passion for technology and computers ignited at an early age, and my tech journey truly took off in 2010
+        when I joined the <b>Arab Digital Expression Foundation</b> (<a :href="deca" target="_blank"
+          class="link">ADEF<span class="sr-only">(opens in a new tab)</span></a>). Attending inspiring workshops on
+        Linux and Ubuntu not only taught me to install and use Ubuntu for the first time, but also sparked a lifelong
+        curiosity for exploring Linux! </p>
+      <p> After moving to the US, I dove headfirst into HTML, CSS, and JavaScript with <strong>Egypt Future Work
+          Digital</strong> (<a href="https://egfwd.com/" target="_blank" class="link">FWD<span class="sr-only">(opens in
+            a new tab)</span></a>), and joined the in-person Spring 2024 cohort at <a
+          href="https://www.techelevator.com/" target="_blank" class="link">Tech Elevator<span class="sr-only">(opens in
+            a new tab)</span></a>.<br>" I dedicated over 800 hours" to mastering essential languages and frameworks, and since
+        graduating in April 2024, I’ve passionately focused on DevOps and leveraging cloud tools to build scalable
+        applications. </p>
+      <p> When I’m not immersed in code, I love spending time with my wife and daughter, catching up with friends, or
+        rocking out to Pink Floyd on my patio! </p>
     </div>
   </section>
 </template>
@@ -126,7 +119,8 @@ p {
   transition: color 0.3s ease, text-decoration-thickness 0.3s ease;
 }
 
-.link:hover, .link:focus {
+.link:hover,
+.link:focus {
   outline: none;
   text-decoration-thickness: 0.2em;
   color: var(--card-title);
@@ -153,7 +147,7 @@ p {
   #about {
     padding: 5rem 1rem 1rem 1rem;
   }
-  
+
   p {
     text-align: left;
   }
@@ -182,7 +176,7 @@ p {
     font-size: 1.2rem;
     padding: 5rem 0 4rem 0;
   }
-  
+
   .img-container {
     width: 18rem;
     height: 18rem;
