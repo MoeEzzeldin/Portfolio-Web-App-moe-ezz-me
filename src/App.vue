@@ -70,6 +70,7 @@
             :key="index"
             :item="item"
             :expo="expo"
+            :emptyUrlImage="s3ProgressImage"
             @handlePrivateRepo="toggleContact"
           />
         </div>
@@ -128,6 +129,8 @@ export default {
       expo,               // Export icon for cards
       promoted,           // Promotion icon for cards
       resumeURL: import.meta.env.VITE_DOWNLOAD_URL,
+      s3ProgressImage: import.meta.env.VITE_LOADING_URL,
+
       
       // Navigation & Animation
       activeNav: '',      // Currently visible section for highlighting nav

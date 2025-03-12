@@ -1,11 +1,10 @@
 <template>
   <article class="card" :class="[type, { show: isVisible }]">
     <!-- Project-specific background image -->
-    <div
-      v-if="type === 'project'"
-      class="background-img"
-      :style="{ backgroundImage: 'url(' + item.img + ')' }"
-    ></div>
+    <!-- Project-specific background image with fallback -->
+    <div v-if="type === 'project'" class="background-img"
+      :style="{ backgroundImage: 'url(' + (item.img || emptyUrlImage) + ')' }">
+    </div>
 
     <header class="card-header">
       <!-- Title section with conditional elements -->
@@ -33,35 +32,19 @@
 
       <!-- Project-specific link handling -->
       <template v-if="type === 'project'">
-        <a
-          v-if="item.status === 'public'"
-          :href="item.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="company-link"
-          :aria-label="`Visit ${item.name} project`"
-        >
+        <a v-if="item.status && item.status.toLowerCase() === 'public'" :href="item.url" target="_blank" rel="noopener noreferrer"
+          class="company-link" :aria-label="`Visit ${item.name} project`">
           <img :src="expo" :alt="`${item.name} logo`" class="company-logo" />
         </a>
-        <a
-          v-else-if="item.status === 'private'"
-          @click.prevent="handlePrivateRepo"
-          class="company-link"
-          :aria-label="'Request access to private repository'"
-        >
+        <a v-else-if="item.status && item.status.toLowerCase() === 'private'" @click.prevent="handlePrivateRepo" class="company-link"
+          :aria-label="'Request access to private repository'">
           <img :src="expo" :alt="'Private repository' + item.name" class="company-logo" />
         </a>
       </template>
 
       <!-- Experience-specific company link -->
-      <a
-        v-else-if="type === 'experience' && item.url"
-        :href="item.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        :aria-label="`Visit ${item.name} website`"
-        class="company-link"
-      >
+      <a v-else-if="type === 'experience' && item.url" :href="item.url" target="_blank" rel="noopener noreferrer"
+        :aria-label="`Visit ${item.name} website`" class="company-link">
         <img :src="expo" :alt="`${item.name} logo`" class="company-logo" />
       </a>
     </header>
@@ -69,11 +52,7 @@
     <!-- Conditional content section -->
     <div class="card-content">
       <!-- Experience specific content (bullet points) -->
-      <ul
-        v-if="type === 'experience'"
-        class="achievement-list"
-        aria-label="Achievements and responsibilities"
-      >
+      <ul v-if="type === 'experience'" class="achievement-list" aria-label="Achievements and responsibilities">
         <li v-for="(point, index) in item.summary" :key="index" class="achievement-item">
           {{ point }}
         </li>
@@ -117,6 +96,10 @@ export default {
     promoted: {
       type: String,
       default: ''
+    },
+    emptyUrlImage: {
+      type: String,
+      required: true
     }
   },
 
@@ -313,15 +296,21 @@ export default {
   height: 24px;
   filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(0.8);
 }
+
 /* Add animation properties to the company-link */
 .card:hover .company-link .company-logo {
   animation: jump 0.6s ease 2;
-  filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(1); /* Brighten on hover */
+  filter: hue-rotate(90deg) sepia(1) saturate(5) brightness(1);
+  /* Brighten on hover */
 }
+
 @keyframes jump {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
@@ -331,9 +320,12 @@ export default {
 .company-link:focus {
   opacity: 1;
   transform: scale(1.1);
-  background-color: var(--tag-color); /* Add subtle background */
-  border-radius: 50%; /* Make it circular */
-  padding: 3px; /* Add some padding */
+  background-color: var(--tag-color);
+  /* Add subtle background */
+  border-radius: 50%;
+  /* Make it circular */
+  padding: 3px;
+  /* Add some padding */
 }
 
 
@@ -434,9 +426,12 @@ export default {
 }
 
 @keyframes jump {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
@@ -470,11 +465,13 @@ export default {
   }
 
   .experience .company-name::after {
-    display: none; /* Hide separator in mobile */
+    display: none;
+    /* Hide separator in mobile */
   }
 
   .position-title.has-promotion::after {
-    display: none; /* Hide separator in mobile */
+    display: none;
+    /* Hide separator in mobile */
   }
 
   .promotion-badge {
@@ -517,6 +514,7 @@ export default {
   .company-link:focus {
     transform: none;
   }
+
   .card:hover .company-link .company-logo {
     animation: none !important;
     transform: none;
